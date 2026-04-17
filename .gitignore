@@ -11,6 +11,22 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Internal notes and scratch files
+.tmp/
+findings.md
+gemini.md
+progress.md
+task_plan.md
+Wireframe.md
 
 # Editor directories and files
 .vscode/*

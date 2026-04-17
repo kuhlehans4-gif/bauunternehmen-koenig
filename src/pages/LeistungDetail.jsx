@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2 } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
+import { contactDetails } from '../data/contactDetails'
 
 const iconMap = {
   Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2
@@ -178,7 +179,7 @@ export default function LeistungDetail() {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-32">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-52">
         <div className="text-center px-4">
           <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-charcoal">Dienstleistung nicht gefunden</h1>
           <p className="text-gray-500 mb-8">Die angeforderte Seite existiert nicht oder wurde verschoben.</p>
@@ -191,7 +192,7 @@ export default function LeistungDetail() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
+      <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
         <div className="absolute inset-0 opacity-[0.25]">
           <img src={data.heroImage} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" />
         </div>
@@ -359,11 +360,11 @@ export default function LeistungDetail() {
                 
                 <div className="relative z-10">
                   <p className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider">Lassen Sie uns Ihr Vorhaben besprechen:</p>
-                  <a href="tel:+4917612345678" className="inline-flex items-center gap-3 text-gold hover:text-white transition-colors font-bold text-2xl group">
+                  <a href={contactDetails.phoneHref} className="inline-flex items-center gap-3 text-gold hover:text-white transition-colors font-bold text-2xl group">
                     <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/30 transition-colors">
                       <Phone size={20} />
                     </div>
-                    0176 - 123 456 78
+                    {contactDetails.phoneDisplay}
                   </a>
                 </div>
               </div>
@@ -386,9 +387,9 @@ export default function LeistungDetail() {
               Kontaktieren Sie uns für eine kostenlose Objektbegehung vor Ort. Wir kalkulieren transparent und fair.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/kontakt" className="btn-primary w-full sm:w-auto shadow-2xl shadow-charcoal/20 !px-8 !py-4 text-lg">
-                <FileText size={20} className="mr-2 inline" />
-                Unverbindliches Angebot
+              <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1 shadow-2xl shadow-charcoal/20 text-lg">
+                <Phone size={20} className="mr-2" />
+                Kostenlose Beratung sichern
               </Link>
             </div>
           </RevealSection>

@@ -1,0 +1,18 @@
+export const contactDetails = {
+  businessName: 'Bauunternehmen König',
+  ownerName: 'Tim König',
+  phoneDisplay: '0179 684 98 63',
+  phoneHref: 'tel:+491796849863',
+  phoneIntl: '+49 179 684 98 63',
+  whatsappHref: 'https://wa.me/491796849863',
+  email: 'maurermeister.koenig@web.de',
+  emailHref: 'mailto:maurermeister.koenig@web.de',
+  addressLine1: 'August-Bebel-Siedlung 45',
+  addressLine2: '04288 Leipzig',
+  addressSingleLine: 'August-Bebel-Siedlung 45, 04288 Leipzig',
+  city: 'Leipzig',
+  region: 'Sachsen',
+  openingHoursDisplay: 'Mo-Fr: 07:00 - 18:00',
+  tradeRegistrationLabel: 'Handwerkskammer (HWK) Leipzig',
+  tradeRegistrationId: '52 491 380 759',
+}

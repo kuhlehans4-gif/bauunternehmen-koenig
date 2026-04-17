@@ -17,6 +17,7 @@ const navLinks = [
   },
   { name: 'Referenzen', path: '/referenzen' },
   { name: 'Über uns', path: '/ueber-uns' },
+  { name: 'Ratgeber', path: '/ratgeber' },
   { name: 'Kontakt', path: '/kontakt' },
 ]
 
@@ -26,16 +27,24 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const location = useLocation()
 
+  const closeMenus = () => {
+    setIsOpen(false)
+    setMobileServicesOpen(false)
+  }
+
+  const toggleMenu = () => {
+    if (isOpen) {
+      setMobileServicesOpen(false)
+    }
+
+    setIsOpen(!isOpen)
+  }
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  useEffect(() => {
-    setIsOpen(false)
-    setMobileServicesOpen(false)
-  }, [location])
 
   return (
     <nav
@@ -46,7 +55,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link to="/" className="flex items-center relative z-10 group">
+        <Link to="/" onClick={closeMenus} className="flex items-center relative z-10 group">
           <div className={`relative flex items-center transition-all duration-500 ${
             scrolled 
               ? 'h-14 w-40 md:h-16 md:w-56' 
@@ -67,6 +76,7 @@ export default function Navbar() {
               <div className="flex items-center gap-1 group">
                 <Link
                   to={link.path}
+                  onClick={closeMenus}
                   className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-gold relative ${
                     location.pathname === link.path || location.pathname.startsWith(link.path + '/')
                       ? 'text-gold'
@@ -93,6 +103,7 @@ export default function Navbar() {
                         <Link
                           key={sub.path}
                           to={sub.path}
+                          onClick={closeMenus}
                           className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 text-white/70 hover:text-gold transition-all duration-300 group/sub"
                         >
                           <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/sub:bg-gold/20 transition-colors">
@@ -107,15 +118,15 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <Link to="/kontakt" className="btn-primary !px-5 !py-2.5 text-sm ml-2 font-heading">
+          <Link to="/kontakt" onClick={closeMenus} className="btn-primary !px-5 !py-2.5 text-sm ml-2 font-heading">
             <Phone size={16} />
-            Beratung anfragen
+            Kostenlose Beratung sichern
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleMenu}
           className="lg:hidden relative z-10 text-white p-2 hover:text-gold transition-colors"
           aria-label="Menü öffnen"
         >
@@ -137,6 +148,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-3">
                     <Link
                       to={link.path}
+                      onClick={closeMenus}
                       className={`text-3xl font-heading font-semibold tracking-tight transition-all duration-500 ${
                         location.pathname.startsWith(link.path) ? 'text-gold' : 'text-white/70'
                       }`}
@@ -164,6 +176,7 @@ export default function Navbar() {
                         <Link
                           key={sub.path}
                           to={sub.path}
+                          onClick={closeMenus}
                           className="flex items-center gap-3 text-lg text-white/50 hover:text-gold"
                         >
                           <SubIcon size={18} />
@@ -176,6 +189,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   to={link.path}
+                  onClick={closeMenus}
                   className={`text-3xl font-heading font-semibold tracking-tight transition-all duration-500 hover:scale-105 ${
                     location.pathname === link.path ? 'text-gold' : 'text-white/70 hover:text-white'
                   }`}
@@ -192,6 +206,7 @@ export default function Navbar() {
           ))}
           <Link 
             to="/kontakt" 
+            onClick={closeMenus}
             className="btn-primary mt-6 text-lg !py-4 !px-8 w-full"
             style={{ 
               transitionDelay: isOpen ? `${navLinks.length * 100}ms` : '0ms',

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
 import logoWhite from '../assets/logo/Transparent weiß neu.png'
+import { contactDetails } from '../data/contactDetails'
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -14,7 +15,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logoWhite} alt="Bauunternehmen König" className="h-14 w-auto mb-6" />
+            <div className="relative h-16 w-full mb-8">
+              <img 
+                src={logoWhite} 
+                alt="Bauunternehmen König" 
+                className="absolute top-0 left-0 w-full h-full object-contain object-left scale-[2.4] origin-left -translate-x-[12%] sm:-translate-x-[14%]" 
+              />
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Ihr Maurer- und Betonbauermeister in Leipzig. Qualität, Zuverlässigkeit und faire Preise — darauf bauen wir.
             </p>
@@ -65,24 +72,24 @@ export default function Footer() {
             <h4 className="text-gold font-semibold text-sm uppercase tracking-wider mb-6">Kontakt</h4>
             <ul className="space-y-4">
               <li>
-                <a href="tel:01796849863" className="flex items-center gap-3 text-gray-400 hover:text-gold transition-colors duration-300 text-sm">
+                <a href={contactDetails.phoneHref} className="flex items-center gap-3 text-gray-400 hover:text-gold transition-colors duration-300 text-sm">
                   <Phone size={16} className="text-gold flex-shrink-0" />
-                  0179 684 98 63
+                  {contactDetails.phoneDisplay}
                 </a>
               </li>
               <li>
-                <a href="mailto:maurermeister.koenig@web.de" className="flex items-center gap-3 text-gray-400 hover:text-gold transition-colors duration-300 text-sm">
+                <a href={contactDetails.emailHref} className="flex items-center gap-3 text-gray-400 hover:text-gold transition-colors duration-300 text-sm">
                   <Mail size={16} className="text-gold flex-shrink-0" />
-                  maurermeister.koenig@web.de
+                  {contactDetails.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin size={16} className="text-gold flex-shrink-0 mt-0.5" />
-                <span>August-Bebel-Siedlung 45<br />04288 Leipzig</span>
+                <span>{contactDetails.addressLine1}<br />{contactDetails.addressLine2}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Clock size={16} className="text-gold flex-shrink-0" />
-                Mo–Fr: 07:00 – 18:00
+                {contactDetails.openingHoursDisplay}
               </li>
             </ul>
           </address>

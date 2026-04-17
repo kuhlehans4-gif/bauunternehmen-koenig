@@ -1,9 +1,10 @@
 import { RevealSection } from '../components/UI'
+import { contactDetails } from '../data/contactDetails'
 
 export function Impressum() {
   return (
     <>
-      <section className="pt-32 pb-10 bg-charcoal">
+      <section className="pt-52 pb-10 bg-charcoal">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-900 text-white">Impressum</h1>
         </div>
@@ -13,16 +14,17 @@ export function Impressum() {
           <RevealSection>
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
-              Bauunternehmen König<br />
-              Inh. Tim König<br />
+              {contactDetails.businessName}<br />
+              Inh. {contactDetails.ownerName}<br />
               Maurer- und Betonbauermeister<br />
-              Leipzig, Sachsen
+              {contactDetails.addressLine1}<br />
+              {contactDetails.addressLine2}
             </p>
 
             <h2>Kontakt</h2>
             <p>
-              Telefon: <a href="tel:01796849863">0179 684 98 63</a><br />
-              E-Mail: <a href="mailto:maurermeister.koenig@web.de">maurermeister.koenig@web.de</a>
+              Telefon: <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a><br />
+              E-Mail: <a href={contactDetails.emailHref}>{contactDetails.email}</a>
             </p>
 
             <h2>Berufsbezeichnung</h2>
@@ -48,7 +50,7 @@ export function Impressum() {
 export function Datenschutz() {
   return (
     <>
-      <section className="pt-32 pb-10 bg-charcoal">
+      <section className="pt-52 pb-10 bg-charcoal">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-900 text-white">Datenschutz</h1>
         </div>
@@ -89,9 +91,16 @@ export function Datenschutz() {
             <h2>4. Datenerfassung auf dieser Website</h2>
             <h3>Kontaktformular</h3>
             <p>
-              Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
-              Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung
-              der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+              Das Kontaktformular ist derzeit noch nicht an einen Versanddienst oder ein Backend
+              angebunden. Beim Absenden werden daher aktuell keine Daten an uns übermittelt oder bei
+              uns gespeichert.
+            </p>
+
+            <h3>Google Fonts</h3>
+            <p>
+              Diese Website bindet Schriftarten von Google Fonts ein. Beim Aufruf der Website kann
+              Ihre IP-Adresse an Server der Google Ireland Limited übertragen werden, damit die
+              Schriftarten im Browser dargestellt werden können.
             </p>
 
             <h3>Google Maps</h3>
@@ -99,6 +108,13 @@ export function Datenschutz() {
               Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited.
               Durch die Nutzung von Google Maps können Informationen über Ihre Benutzung dieser Website
               an Google in den USA übertragen werden.
+            </p>
+
+            <h3>WhatsApp</h3>
+            <p>
+              Wenn Sie den WhatsApp-Link auf dieser Website nutzen, werden Sie zu einem Angebot der
+              WhatsApp Ireland Limited weitergeleitet. Dabei können personenbezogene Daten wie Ihre
+              IP-Adresse oder Meta-Daten der Verbindung verarbeitet werden.
             </p>
           </RevealSection>
         </div>

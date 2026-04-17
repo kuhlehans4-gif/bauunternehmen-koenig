@@ -23,7 +23,7 @@ export default function Referenzen() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-charcoal">
+      <section className="relative pt-52 pb-20 bg-charcoal">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Abgeschlossene Projekte</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6">

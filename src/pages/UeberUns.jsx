@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Phone, Award, Heart, Shield, Users, ArrowRight } from 'lucide-react'
+import { Phone, Award, Heart, Shield, Users } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
+import { contactDetails } from '../data/contactDetails'
 
 const values = [
   { icon: Shield, title: 'Qualität nach DIN', desc: 'Jede Arbeit wird nach den aktuellen DIN-Normen und Höchststandards ausgeführt — keine Abkürzungen.' },
@@ -13,7 +14,7 @@ export default function UeberUns() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden">
+      <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src="/images/team.png" alt="" className="w-full h-full object-cover" />
         </div>
@@ -38,16 +39,16 @@ export default function UeberUns() {
             <div>
               <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Maurer- und Betonbauermeister Leipzig</span>
               <h2 className="text-3xl md:text-4xl font-800 mb-6">
-                Bauen, Sanieren und <br />Gestalten mit Leidenschaft
+                Bauen, Sanieren und<br />Gestalten mit Leidenschaft
               </h2>
               <div className="space-y-4 text-gray-500 leading-relaxed">
                 <p>
                   Herzlich willkommen! Mein Name ist <strong className="text-gray-700">Tim König</strong>. Als{' '}
                   <strong className="text-gray-700">Maurer- und Betonbauermeister</strong> sowie angehender{' '}
-                  <strong className="text-gray-700">Geprüfter Betriebswirt (HwO)</strong> stehe ich für handwerkliche Präzision, Zuverlässigkeit und fundiertes Fachwissen. Seit nunmehr <strong className="text-gray-700">drei Jahren</strong> führe ich mit großem Stolz mein eigenes Bauunternehmen, um die Visionen und Wohnträume meiner Kunden Wirklichkeit werden zu lassen.
+                  <strong className="text-gray-700">Geprüfter Betriebswirt (HwO)</strong> stehe ich für handwerkliche Präzision, Zuverlässigkeit und fundiertes Fachwissen. Seit nunmehr <strong className="text-gray-700">drei Jahren</strong> führe ich mit großem Stolz mein eigenes Bauunternehmen, um die Visionen und Wohnträume meiner Kunden Wirklichkeit werden zu lassen.
                 </p>
                 <p>
-                  Mit einem starken Netzwerk und in enger Zusammenarbeit mit hochqualifizierten Partnerfirmen haben wir uns auf <strong className="text-gray-700">umfassende Sanierung</strong> sowie <strong className="text-gray-700">professionelle Fassadenarbeiten</strong> spezialisiert — für optimalen Schutz, verbesserte Energieeffizienz und eine ansprechende Optik Ihres Zuhauses. Alles aus einer Hand.
+                  Mit einem starken Netzwerk und in enger Zusammenarbeit mit hochqualifizierten Partnerfirmen haben wir uns auf <strong className="text-gray-700">umfassende Sanierung</strong> sowie <strong className="text-gray-700">professionelle Fassadenarbeiten</strong> spezialisiert — für optimalen Schutz, verbesserte Energieeffizienz und eine ansprechende Optik Ihres Zuhauses. Alles aus einer Hand.
                 </p>
                 <p>
                   Unser Credo: <strong className="text-gray-700">Kein Projekt ist uns zu klein</strong>, und jedes Vorhaben verdient unsere allterhöchste Aufmerksamkeit. Eine gute Partnerschaft beginnt mit einer ehrlichen Beratung — deshalb sind Erstberatung und Angebot für Sie immer <strong className="text-gray-700">kostenlos und unverbindlich</strong>.
@@ -71,8 +72,8 @@ export default function UeberUns() {
                 <p className="text-sm text-gray-700 font-semibold">
                   🏆 Bauunternehmen König — Einzelunternehmen
                 </p>
-                <p className="text-xs text-gray-500">August-Bebel-Siedlung 45, 04288 Leipzig</p>
-                <p className="text-xs text-gray-500">Handwerkskammer (HWK) Leipzig · IdNr.: 52 491 380 759</p>
+                <p className="text-xs text-gray-500">{contactDetails.addressSingleLine}</p>
+                <p className="text-xs text-gray-500">{contactDetails.tradeRegistrationLabel} · IdNr.: {contactDetails.tradeRegistrationId}</p>
                 <p className="text-xs text-gray-400 mt-1">Geprüfte Qualifikation · Ausbildungsberechtigung · Haftpflichtversichert</p>
               </div>
             </div>
@@ -119,8 +120,8 @@ export default function UeberUns() {
               Vereinbaren Sie einen unverbindlichen Kennenlern-Termin. Wir freuen uns auf Ihr Projekt.
             </p>
             <Link to="/kontakt" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1">
-              <Phone size={18} />
-              Kontakt aufnehmen
+              <Phone size={20} />
+              Kostenlose Beratung sichern
             </Link>
           </RevealSection>
         </div>

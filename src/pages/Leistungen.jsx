@@ -37,7 +37,7 @@ export default function Leistungen() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden">
+      <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src="/images/hero.png" alt="" className="w-full h-full object-cover" />
         </div>

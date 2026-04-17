@@ -8,6 +8,8 @@ import LeistungDetail from './pages/LeistungDetail'
 import Referenzen from './pages/Referenzen'
 import UeberUns from './pages/UeberUns'
 import Kontakt from './pages/Kontakt'
+import Ratgeber from './pages/Ratgeber'
+import RatgeberDetail from './pages/RatgeberDetail'
 import { Impressum, Datenschutz } from './pages/Legal'
 
 function ScrollToTop() {
@@ -30,6 +32,8 @@ export default function App() {
           <Route path="/leistungen/:slug" element={<LeistungDetail />} />
           <Route path="/referenzen" element={<Referenzen />} />
           <Route path="/ueber-uns" element={<UeberUns />} />
+          <Route path="/ratgeber" element={<Ratgeber />} />
+          <Route path="/ratgeber/:slug" element={<RatgeberDetail />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />

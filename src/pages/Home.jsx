@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Phone, ArrowRight, ShieldCheck, Clock, Sparkles, Hammer, Building2, PaintBucket, Wrench, CheckCircle2, ChevronDown } from 'lucide-react'
 import { RevealSection, SectionHeading, ServiceCard, ProcessStep } from '../components/UI'
 import { useState } from 'react'
+import { contactDetails } from '../data/contactDetails'
 
 const services = [
   {
@@ -35,7 +36,7 @@ const services = [
 ]
 
 const process = [
-  { number: '01', title: 'Anfrage', description: 'Schildern Sie uns Ihr Vorhaben — bequem telefonisch unter 0179 684 98 63 oder über unser Online-Formular.' },
+  { number: '01', title: 'Anfrage', description: `Schildern Sie uns Ihr Vorhaben - bequem telefonisch unter ${contactDetails.phoneDisplay} oder über unser Online-Formular.` },
   { number: '02', title: 'Vor-Ort-Termin', description: 'Wir besichtigen Ihr Projekt kostenlos und persönlich. So erhalten Sie eine ehrliche, individuelle Beratung.' },
   { number: '03', title: 'Festpreis-Angebot', description: 'Sie erhalten innerhalb von 48 Stunden ein verbindliches Angebot — schriftlich, transparent und ohne versteckte Kosten.' },
   { number: '04', title: 'Meisterhafte Ausführung', description: 'Pünktliche Fertigstellung, täglich aufgeräumte Baustelle und Qualität nach DIN-Normen — das ist unser Versprechen.' },
@@ -110,7 +111,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-5">
                 <Link to="/kontakt" className="btn-primary text-base">
                   <Phone size={18} />
-                  Offerte anfragen
+                  Kostenlose Beratung sichern
                 </Link>
                 <Link to="/leistungen" className="btn-secondary text-base group">
                   Unsere Leistungen
@@ -294,8 +295,8 @@ export default function Home() {
                   <Phone size={20} />
                   Projekt starten
                 </Link>
-                <a href="tel:01796849863" className="btn-secondary text-base px-10 py-5 !text-gray-900 !border-gray-200 hover:!border-gold hover:!bg-gray-50">
-                  0179 684 98 63
+                <a href={contactDetails.phoneHref} className="btn-secondary text-base px-10 py-5 !text-gray-900 !border-gray-200 hover:!border-gold hover:!bg-gray-50">
+                  {contactDetails.phoneDisplay}
                 </a>
               </div>
             </div>
