@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 
 export function RevealSection({ children, className = '', delay = 0 }) {
@@ -66,12 +67,12 @@ export function ServiceCard({ icon: Icon, title, description, link, image, index
         <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900 group-hover:text-gold transition-colors duration-300 pr-16">{title}</h3>
         <p className="text-gray-500 text-base leading-relaxed mb-8">{description}</p>
         {link && (
-          <a href={link} className="inline-flex items-center gap-2 text-black font-semibold text-sm uppercase tracking-wide group/link">
+          <Link to={link} className="inline-flex items-center gap-2 text-black font-semibold text-sm uppercase tracking-wide group/link">
             Details ansehen
             <span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover/link:bg-gold group-hover/link:text-white transition-colors duration-300">
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
-          </a>
+          </Link>
         )}
       </div>
     </div>
