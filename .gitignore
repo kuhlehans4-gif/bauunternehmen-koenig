@@ -38,3 +38,5 @@ Wireframe.md
 *.njsproj
 *.sln
 *.sw?
+.claude/
+.gemini/

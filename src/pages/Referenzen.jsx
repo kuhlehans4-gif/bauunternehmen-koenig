@@ -4,14 +4,14 @@ import { MapPin, Clock, Filter } from 'lucide-react'
 
 const projects = [
   { title: 'Komplettsanierung Altbau', location: 'Leipzig-Gohlis', type: 'Sanierung', duration: '6 Wochen', img: '/images/sanierung.png', desc: 'Umfassende Sanierung eines Gründerzeithauses inkl. neuer Fassade, Innenausbau und energetischer Modernisierung.' },
-  { title: 'Neubau Einfamilienhaus', location: 'Leipzig-Südvorstadt', type: 'Neubau', duration: '14 Wochen', img: '/images/hero.png', desc: 'Schlüsselfertiger Neubau eines modernen Einfamilienhauses mit Keller und Doppelgarage.' },
+  { title: 'Kernsanierung Einfamilienhaus', location: 'Leipzig-Südvorstadt', type: 'Sanierung', duration: '14 Wochen', img: '/images/hero.png', desc: 'Umfassende Kernsanierung eines Einfamilienhauses inkl. Mauerwerk, Innenausbau und energetischer Modernisierung.' },
   { title: 'Fassadensanierung Mehrfamilienhaus', location: 'Leipzig-Connewitz', type: 'Fassade', duration: '4 Wochen', img: '/images/fassade.png', desc: 'Kompletterneuerung der Fassade inkl. WDVS und Strukturputz an einem 6-Parteien-Haus.' },
   { title: 'Innenausbau Dachgeschoss', location: 'Leipzig-Plagwitz', type: 'Innenausbau', duration: '5 Wochen', img: '/images/innenausbau.png', desc: 'Ausbau des Dachgeschosses zu 2 Wohneinheiten mit Trockenbau, Spachtelung Q3 und Trockenestrich.' },
   { title: 'Mauerwerksanierung', location: 'Leipzig-Lindenau', type: 'Maurer', duration: '3 Wochen', img: '/images/maurer.png', desc: 'Sanierung und Teilerneuerung des tragenden Mauerwerks an einer Gewerbeimmobilie.' },
-  { title: 'Anbau Wintergarten', location: 'Leipzig-Mölkau', type: 'Neubau', duration: '8 Wochen', img: '/images/hero.png', desc: 'Errichtung eines massiven Wintergartens mit Fundamentarbeiten, Mauerwerk und Putzarbeiten.' },
+  { title: 'Anbau Wintergarten', location: 'Leipzig-Mölkau', type: 'Maurer', duration: '8 Wochen', img: '/images/hero.png', desc: 'Errichtung eines massiven Wintergartens mit Fundamentarbeiten, Mauerwerk und Putzarbeiten.' },
 ]
 
-const filterOptions = ['Alle', 'Neubau', 'Sanierung', 'Fassade', 'Innenausbau', 'Maurer']
+const filterOptions = ['Alle', 'Sanierung', 'Fassade', 'Innenausbau', 'Maurer']
 
 export default function Referenzen() {
   const [activeFilter, setActiveFilter] = useState('Alle')

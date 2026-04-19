@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Hammer, Building2, Wrench, PaintBucket, ArrowRight, Phone } from 'lucide-react'
+import { Hammer, Building2, Wrench, PaintBucket, Phone } from 'lucide-react'
 import { RevealSection, SectionHeading, ServiceCard } from '../components/UI'
 
 const services = [
@@ -12,8 +12,8 @@ const services = [
   },
   {
     icon: Building2,
-    title: 'Neubau & Sanierung',
-    description: 'Ihr Traumhaus oder die Komplettsanierung Ihrer Bestandsimmobilie. Vom Rohbau bis zum schlüsselfertigen Objekt.',
+    title: 'Sanierung & Instandsetzung',
+    description: 'Komplettsanierung, Altbaumodernisierung und Instandsetzung von Bestandsimmobilien. Fachgerecht und termintreu aus einer Hand.',
     link: '/leistungen/sanierung',
     image: '/images/sanierung.png',
   },
@@ -71,13 +71,13 @@ export default function Leistungen() {
             <SectionHeading
               eyebrow="Projekt geplant?"
               title="Wir beraten Sie gerne"
-              description="Egal ob Neubau, Sanierung oder Innenausbau — sprechen Sie uns an. Die Erstberatung ist kostenlos."
+              description="Egal ob Sanierung, Instandsetzung oder Innenausbau — sprechen Sie uns an. Die Erstberatung ist kostenlos."
               light
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/kontakt" className="btn-primary">
                 <Phone size={18} />
-                Kostenlose Beratung anfordern
+                Kostenlose Beratung sichern
               </Link>
             </div>
           </RevealSection>

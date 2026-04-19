@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Phone, Hammer, Building2, Wrench, PaintBucket, ChevronDown } from 'lucide-react'
-import logoWhite from '../assets/logo/Transparent weiß neu.png'
+import logoWhite from '../assets/logo/Logo weiß transparent.png'
 
 const navLinks = [
   { name: 'Startseite', path: '/' },
@@ -10,7 +10,7 @@ const navLinks = [
     path: '/leistungen',
     subLinks: [
       { name: 'Maurer- & Betonbau', path: '/leistungen/maurer-betonbau', icon: Hammer },
-      { name: 'Neubau & Sanierung', path: '/leistungen/sanierung', icon: Building2 },
+      { name: 'Sanierung & Instandsetzung', path: '/leistungen/sanierung', icon: Building2 },
       { name: 'Innenausbau & Trockenbau', path: '/leistungen/innenausbau', icon: Wrench },
       { name: 'Fassaden- & Putzarbeiten', path: '/leistungen/fassade', icon: PaintBucket },
     ]
@@ -58,13 +58,13 @@ export default function Navbar() {
         <Link to="/" onClick={closeMenus} className="flex items-center relative z-10 group">
           <div className={`relative flex items-center transition-all duration-500 ${
             scrolled 
-              ? 'h-14 w-40 md:h-16 md:w-56' 
-              : 'h-20 w-48 md:h-28 md:w-72 lg:h-32 lg:w-80'
+              ? 'h-8 w-28 md:h-10 md:w-36' 
+              : 'h-12 w-36 md:h-14 md:w-48 lg:h-16 lg:w-56'
           }`}>
             <img
               src={logoWhite}
               alt="Bauunternehmen König"
-              className="absolute inset-0 w-full h-full object-contain -ml-[15%] md:-ml-[22%] lg:-ml-[28%] scale-[1.6] sm:scale-[1.8] md:scale-[2.0] lg:scale-[2.2] origin-center drop-shadow-2xl group-hover:scale-[1.63] sm:group-hover:scale-[1.83] md:group-hover:scale-[2.03] lg:group-hover:scale-[2.23] transition-all duration-500"
+              className="absolute inset-0 w-full h-full object-contain -ml-[10%] md:-ml-[15%] lg:-ml-[20%] scale-[1.2] sm:scale-[1.25] md:scale-[1.3] lg:scale-[1.35] origin-center drop-shadow-2xl group-hover:scale-[1.23] sm:group-hover:scale-[1.28] md:group-hover:scale-[1.33] lg:group-hover:scale-[1.38] transition-all duration-500"
             />
           </div>
         </Link>
@@ -215,7 +215,7 @@ export default function Navbar() {
             }}
           >
             <Phone size={20} />
-            Jetzt anrufen
+            Kostenlose Beratung sichern
           </Link>
         </div>
       </div>

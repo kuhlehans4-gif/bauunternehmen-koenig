@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
-import logoWhite from '../assets/logo/Transparent weiß neu.png'
+import logoWhite from '../assets/logo/Logo weiß transparent.png'
 import { contactDetails } from '../data/contactDetails'
 
 export default function Footer() {
@@ -15,11 +15,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="relative h-16 w-full mb-8">
+            <div className="relative h-10 w-full mb-8">
               <img 
                 src={logoWhite} 
                 alt="Bauunternehmen König" 
-                className="absolute top-0 left-0 w-full h-full object-contain object-left scale-[2.4] origin-left -translate-x-[12%] sm:-translate-x-[14%]" 
+                className="absolute top-0 left-0 w-full h-full object-contain object-left scale-[1.5] origin-left translate-x-0" 
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

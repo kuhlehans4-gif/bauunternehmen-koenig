@@ -17,7 +17,7 @@ const serviceData = {
     details: [
       { title: 'Fundamente & Bodenplatten', desc: 'Zuverlässige und DIN-gerechte Basis für Ihr Bauwerk – ob für Garage, Anbau oder Einfamilienhaus.', icon: 'LayoutGrid' },
       { title: 'Tragendes Mauerwerk', desc: 'Ziegel, Kalksandstein oder Porenbeton: Fachgerechte Errichtung von statisch belastbaren Wänden.', icon: 'Home' },
-      { title: 'Stahlbetonbau & Decken', desc: 'Betonage von Decken, Stützen und Unterzügen inkl. präziser Schalung und solider Bewehrung.', icon: 'HardHat' },
+      { title: 'Mauerwerkssanierung', desc: 'Reparaturarbeiten, Risssanierung und Instandsetzung von altem Mauerwerk.', icon: 'HardHat' },
       { title: 'Ringbalken & Stürze', desc: 'Sichere Lastabtragung für Fenster-, Türöffnungen und massive Dachkonstruktionen.', icon: 'Ruler' },
       { title: 'Keller & Abdichtung', desc: 'Schutz vor drückender Feuchtigkeit durch professionelle Perimeterdämmung und Bitumenabdichtung.', icon: 'Droplet' },
       { title: 'Schornsteinbau', desc: 'Formschöner und funktionaler Neubau oder Sanierung unter Einhaltung aktueller Brandschutzvorgaben.', icon: 'Wrench' },
@@ -43,16 +43,16 @@ const serviceData = {
     lokalerHinweis: 'Wir führen Maurer- und Betonarbeiten in ganz Leipzig durch — von Gohlis bis Connewitz, von Plagwitz bis Reudnitz.',
   },
   'sanierung': {
-    title: 'Sanierung & Modernisierung',
-    eyebrow: 'Wertsteigerung im Bestand',
+    title: 'Sanierung & Instandsetzung',
+    eyebrow: 'Erhalt & Wertsteigerung im Bestand',
     heroImage: '/images/sanierung.png',
-    intro: 'Ob Sie eine Bestandsimmobilie in Leipzig modernisieren oder eine denkmalgerechte Sanierung planen — wir stehen Ihnen mit Fachwissen zur Seite. Vom kontrollierten Rückbau bis zum schlüsselfertigen Innenausbau koordinieren wir alle Gewerke. Wir sanieren Altbauten und Mehrfamilienhäuser mit dem nötigen Respekt vor der Bausubstanz und dem Blick für Langlebigkeit.',
+    intro: 'Ob Sie eine Bestandsimmobilie in Leipzig modernisieren oder eine denkmalgerechte Sanierung planen — wir stehen Ihnen mit Fachwissen zur Seite. Vom kontrollierten Rückbau bis zur Instandsetzung koordinieren wir alle Gewerke. Wir sanieren Altbauten und Mehrfamilienhäuser mit dem nötigen Respekt vor der Bausubstanz und dem Blick für Langlebigkeit.',
     details: [
       { title: 'Altbausanierung', desc: 'Umfassende Modernisierung von Gründerzeithäusern und historischen Gebäuden unter Berücksichtigung der Substanz.', icon: 'Home' },
       { title: 'Grundrissoptimierung', desc: 'Wanddurchbrüche inkl. Stahlträger-Einbau für moderne, offene Raumkonzepte (Statik-konform).', icon: 'Ruler' },
       { title: 'Energetische Sanierung', desc: 'Dämmung und Optimierung der Gebäudehülle zur Senkung der Heizkosten und Wertsteigerung.', icon: 'Zap' },
       { title: 'Feuchte-/Schimmelsanierung', desc: 'Ursachenbekämpfung, Trockenlegung und fachgerechter Neuaufbau bei Feuchtigkeitsschäden.', icon: 'Droplet' },
-      { title: 'Badezimmer-Komplettumbau', desc: 'Koordination von Rohbau, Sanitär, Fliesen und Trockenbau für ein schlüsselfertiges neues Bad.', icon: 'CheckSquare' },
+      { title: 'Renovierung', desc: 'Dient der ästhetischen Verbesserung wie z.B. Streichen, Tapezieren oder Bodenbeläge erneuern.', icon: 'CheckSquare' },
       { title: 'Fassadenrenovierung', desc: 'Neuer Putz und Anstrich zur optischen und funktionellen Auffrischung des Gebäudeäußeren.', icon: 'PaintRoller' },
     ],
     prozess: [
@@ -240,7 +240,7 @@ export default function LeistungDetail() {
 
               <Link to="/kontakt" className="btn-primary inline-flex">
                 <Phone size={18} />
-                Jetzt Termin vereinbaren
+                Kostenlose Beratung sichern
               </Link>
             </div>
           </RevealSection>
@@ -290,7 +290,7 @@ export default function LeistungDetail() {
           <RevealSection>
              <SectionHeading
                 eyebrow="Zusammenarbeit"
-                title="Der König-Prozess"
+                title="Unser Prozess"
                 description="Klar definiert, transparent und termintreu. So läuft die Umsetzung Ihres Projekts ab."
               />
           </RevealSection>

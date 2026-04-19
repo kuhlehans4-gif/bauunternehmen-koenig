@@ -89,14 +89,14 @@ export function ProcessStep({ number, title, description, index = 0 }) {
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="text-5xl font-heading font-900 text-white/5 mb-6 absolute top-4 right-6 pointer-events-none">
+      <div className="text-5xl font-heading font-900 text-white/5 mb-6 absolute top-4 right-6 pointer-events-none select-none">
         {number}
       </div>
-      <div className="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center mb-8 text-black text-xl font-bold shadow-lg shadow-gold/20">
+      <div className="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center mb-6 text-black text-xl font-bold shadow-lg shadow-gold/20">
         {number}
       </div>
       <h3 className="text-xl font-heading font-bold mb-3 text-white">{title}</h3>
-      <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+      <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
     </div>
   )
 }

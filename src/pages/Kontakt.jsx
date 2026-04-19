@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from 'l
 import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 
-const gewerke = ['Maurer- & Betonbau', 'Neubau & Sanierung', 'Innenausbau & Trockenbau', 'Fassaden- & Putzarbeiten', 'Sonstiges']
+const gewerke = ['Maurer- & Betonbau', 'Sanierung & Instandsetzung', 'Innenausbau & Trockenbau', 'Fassaden- & Putzarbeiten', 'Sonstiges']
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({

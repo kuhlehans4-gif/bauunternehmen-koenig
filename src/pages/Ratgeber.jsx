@@ -5,56 +5,88 @@ import { BookOpen, Clock, Filter, ArrowRight } from 'lucide-react'
 
 const articles = [
   {
-    slug: 'foerdermittel-sanierung-2026',
-    title: 'Fördermittel für die Sanierung 2026',
+    slug: 'fassadensanierung-leipzig-kosten-foerderung',
+    title: 'Fassaden sanieren in Leipzig: Kosten & Förderungen 2026',
     category: 'Sanierung',
-    readTime: '5 Min.',
-    img: '/images/sanierung.png',
-    excerpt: 'Ein Überblick über die aktuellen KfW- und BAFA-Förderungen für energetische Sanierungen und wie Sie diese beantragen.'
+    readTime: '6 Min.',
+    img: '/images/article_fassade.png',
+    excerpt: 'Wann eine Komplettsanierung sinnvoll ist, welche Förderungen es gibt und woran man erkennt, dass Putz und Fassade Probleme machen.'
   },
   {
-    slug: 'bauantrag-leipzig',
-    title: 'Der Weg zum Bauantrag in Leipzig',
+    slug: 'risse-fassade-mauerwerk-leipzig',
+    title: 'Risse in Fassade & Mauerwerk richtig sanieren',
+    category: 'Materialkunde',
+    readTime: '5 Min.',
+    img: '/images/article_risse.png',
+    excerpt: 'Setzungen oder Feuchtigkeit? Ursachen für Risse in Leipziger Altbauten erkennen und wann zur Sicherheit der Profi ran muss.'
+  },
+  {
+    slug: 'trockenbau-altbauwohnungen-leipzig',
+    title: 'Trockenbau in Altbauwohnungen Leipzig',
+    category: 'Innenausbau',
+    readTime: '6 Min.',
+    img: '/images/article_trockenbau.png',
+    excerpt: 'Schallschutz, Brandschutz und schneller Raumgewinn: Was man bei Leipziger Plattenbauten oder Gründerzeit-Häusern beachten muss.'
+  },
+  {
+    slug: 'feuchtigkeit-schimmel-sanieren-leipzig',
+    title: 'Feuchtigkeit & Schimmel dauerhaft beheben',
+    category: 'Sanierung',
+    readTime: '6 Min.',
+    img: '/images/article_schimmel.png',
+    excerpt: 'Die 7 häufigsten Ursachen, warum einfach Putz drüberstreichen rein gar nichts bringt und welche echten Sanierungsmaßnahmen wirklich helfen.'
+  },
+  {
+    slug: 'sanierungskosten-leipzig-2026',
+    title: 'Sanierungskosten Leipzig 2026: Ein Praxischeck',
+    category: 'Kosten',
+    readTime: '7 Min.',
+    img: '/images/article_kosten.png',
+    excerpt: 'Realistische Preisspannen pro m² für kleinere bis mittlere Aufträge wie Fassadenputz, Trockenbau oder nachhaltige Rissverpressung.'
+  },
+  {
+    slug: 'denkmalgeschuetzte-haeuser-sanieren-leipzig',
+    title: 'Denkmalgeschützte Häuser sanieren',
     category: 'Baugenehmigung',
     readTime: '7 Min.',
-    img: '/images/hero.png',
-    excerpt: 'Welche Unterlagen werden benötigt und wie lange dauert die Bearbeitung beim Bauamt Leipzig? Wir klären auf.'
+    img: '/images/article_denkmal.png',
+    excerpt: 'Denkmalsanierung in Leipzig: Was bei Fassade, Putz und Innenwänden genehmigt wird und wie der Umbau ohne teure Überraschungen gelingt.'
   },
   {
-    slug: 'trockenbau-q-stufen',
-    title: 'Trockenbau Spachtelqualität: Q2, Q3 oder Q4?',
-    category: 'Materialkunde',
-    readTime: '4 Min.',
-    img: '/images/innenausbau.png',
-    excerpt: 'Worin sich die verschiedenen Qualitätsstufen im Trockenbau unterscheiden und welche Sie für Ihr Projekt benötigen.'
-  },
-  {
-    slug: 'putzarten-vergleich',
-    title: 'Welcher Außenputz ist der richtige?',
-    category: 'Materialkunde',
-    readTime: '6 Min.',
-    img: '/images/fassade.png',
-    excerpt: 'Mineralputz, Silikatputz oder Kunstharzputz: Ein Vergleich der gängigsten Putzarten für eine langlebige Fassade.'
-  },
-  {
-    slug: 'keller-abdichten',
-    title: 'Feuchten Keller richtig abdichten',
-    category: 'Sanierung',
+    slug: 'innenwaende-modernisieren-trockenbau-massivbau',
+    title: 'Innenwände modernisieren ohne Baustaub-Chaos',
+    category: 'Innenausbau',
     readTime: '5 Min.',
-    img: '/images/maurer.png',
-    excerpt: 'Ursachen für nasse Keller und wie man sie nachhaltig von innen oder außen abdichtet.'
+    img: '/images/article_innenwand.png',
+    excerpt: 'Zeitaufwand, Kosten und der direkte Vergleich: Wann schlanker Trockenbau in der Wohnung die weitaus bessere Alternative zum Massivbau ist.'
   },
   {
-    slug: 'hausbau-trends',
-    title: 'Hausbau-Trends des Jahres',
+    slug: 'betonreparatur-spachteln-statiker-leipzig',
+    title: 'Betonreparatur Leipzig: Spachteln oder Statiker?',
+    category: 'Materialkunde',
+    readTime: '5 Min.',
+    img: '/images/article_beton.png',
+    excerpt: 'Risse im Beton an alten Treppen, Balkonen und Garagen beurteilen und typische Leipziger Schadstellen nachhaltig abdichten.'
+  },
+  {
+    slug: 'energieeffiziente-fassadendaemmung-leipzig',
+    title: 'Energieeffiziente Fassadendämmung: Was bringt sie?',
+    category: 'Sanierung',
+    readTime: '6 Min.',
+    img: '/images/article_daemmung.png',
+    excerpt: 'Fassade dämmen in Leipzig: GEG-Vorgaben, was bei Altbauten überhaupt möglich ist und wie man Putz mit intelligenter Dämmung kombiniert.'
+  },
+  {
+    slug: 'die-8-teuersten-fehler-sanierung-leipzig',
+    title: 'Die 8 teuersten Fehler bei der Sanierung',
     category: 'Tipps',
-    readTime: '3 Min.',
-    img: '/images/hero.png',
-    excerpt: 'Von Smart Home bis hin zu nachhaltigen Baustoffen: Das sind die wichtigsten Trends im modernen Hausbau.'
+    readTime: '8 Min.',
+    img: '/images/article_fehler.png',
+    excerpt: 'Falscher Putz, fehlende Abnahmen, Förderungen verpasst. Wir zeigen, wie Sie diese Planungsdesaster beim Hausumbau von Anfang an vermeiden.'
   }
 ]
 
-const filterOptions = ['Alle', 'Sanierung', 'Baugenehmigung', 'Materialkunde', 'Tipps']
+const filterOptions = ['Alle', 'Sanierung', 'Innenausbau', 'Kosten', 'Baugenehmigung', 'Materialkunde', 'Tipps']
 
 export default function Ratgeber() {
   const [activeFilter, setActiveFilter] = useState('Alle')

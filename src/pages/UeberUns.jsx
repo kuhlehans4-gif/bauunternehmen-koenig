@@ -16,7 +16,7 @@ export default function UeberUns() {
       {/* Hero */}
       <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/images/team.png" alt="" className="w-full h-full object-cover" />
+          <img src="/images/tim-portrait.png" alt="" className="w-full h-full object-cover opacity-10" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -32,7 +32,7 @@ export default function UeberUns() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <RevealSection>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/images/team.png" alt="Tim König — Maurer- und Betonbauermeister" className="w-full h-[500px] object-cover" />
+              <img src="/images/tim-portrait.png" alt="Tim König — Maurer- und Betonbauermeister" className="w-full h-[500px] object-cover" />
             </div>
           </RevealSection>
           <RevealSection delay={200}>
@@ -94,8 +94,8 @@ export default function UeberUns() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((v, i) => (
-              <RevealSection key={v.title} delay={i * 100}>
-                <div className="text-center p-8 bg-white rounded-2xl border border-gray-100 card-hover">
+              <RevealSection key={v.title} delay={i * 100} className="h-full">
+                <div className="text-center p-8 bg-white rounded-2xl border border-gray-100 card-hover h-full flex flex-col">
                   <div className="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center mx-auto mb-5">
                     <v.icon size={24} className="text-black" />
                   </div>
