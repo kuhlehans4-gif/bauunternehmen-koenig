@@ -114,10 +114,10 @@ const serviceData = {
     subtitle: 'Energieeffiziente Wärmedämmung und langlebiger Witterungsschutz für den Werterhalt Ihrer Immobilie.',
     showHeroCTAs: true,
     trustSignals: [
-      { text: 'Meisterbetrieb', icon: 'ShieldCheck' },
-      { text: 'Regional in Leipzig & Umgebung', icon: 'MapPin' },
-      { text: 'Verarbeitung nach aktueller DIN-Norm', icon: 'CheckSquare' },
-      { text: 'Energieeffizient (GEG-konform)', icon: 'Leaf' }
+      { text: 'Meisterbetrieb', sub: 'Zertifizierte Qualität', icon: 'ShieldCheck' },
+      { text: 'Regional in Leipzig', sub: '& Umgebung', icon: 'MapPin' },
+      { text: 'Nach DIN-Norm', sub: 'Aktuelle Verarbeitung', icon: 'CheckSquare' },
+      { text: 'Energieeffizient', sub: 'GEG-konform', icon: 'Leaf' }
     ],
     heroImage: '/images/fassade.png',
     intro: 'Die Fassade ist die Visitenkarte Ihres Gebäudes — und elementar für Energieeffizienz und Werterhalt. Als Fachbetrieb sind wir spezialisiert auf professionelle Putzarbeiten, Altbausanierung und Wärmedämmverbundsysteme (WDVS) in Leipzig. Wir verleihen Ihrem Haus ein makelloses, dauerhaftes Gesicht, das Wind und Wetter trotzt.',
@@ -237,22 +237,25 @@ export default function LeistungDetail() {
 
       {/* Trust Bar conditionally rendered */}
       {data.trustSignals && (
-        <section className="bg-white border-b border-gray-100 py-6 relative z-20 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="flex flex-wrap justify-between items-center gap-6 md:gap-4">
+        <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+          <RevealSection delay={300}>
+            <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap items-center justify-between gap-6 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)]">
               {data.trustSignals.map((signal, i) => {
                 const Icon = iconMap[signal.icon]
                 return (
-                  <div key={i} className="flex items-center gap-3 w-full sm:w-auto">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
-                      {Icon && <Icon size={20} className="text-gold" />}
+                  <div key={i} className="flex items-center gap-4 flex-1 min-w-[200px]">
+                    <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 flex-shrink-0">
+                      {Icon && <Icon size={22} className="text-gold" />}
                     </div>
-                    <span className="font-semibold text-gray-800 text-sm md:text-base">{signal.text}</span>
+                    <div>
+                      <span className="text-base font-semibold text-gray-900 block">{signal.text}</span>
+                      {signal.sub && <span className="text-xs text-gray-400">{signal.sub}</span>}
+                    </div>
                   </div>
                 )
               })}
             </div>
-          </div>
+          </RevealSection>
         </section>
       )}
 
