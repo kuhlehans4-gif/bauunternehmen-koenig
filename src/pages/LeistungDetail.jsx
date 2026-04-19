@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2 } from 'lucide-react'
-import { RevealSection, SectionHeading } from '../components/UI'
+import { Phone, ArrowLeft, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Users } from 'lucide-react'
+import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
+import { TrustBar, ServiceGrid, ProcessSteps, ReferenceSection, FAQAccordionSection } from '../components/ServiceComponents'
 
 const iconMap = {
-  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2
+  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Users, Phone
 }
 
 const serviceData = {
@@ -109,68 +110,37 @@ const serviceData = {
     lokalerHinweis: 'Vom Dachausbau in Connewitz bis zur Praxiseinrichtung im Zentrum — wir schaffen neue Räume in Leipzig.',
   },
   'fassade': {
-    title: 'Fassaden- & Putzarbeiten',
+    title: 'Professionelle Fassadengestaltung & Sanierung in Leipzig',
     eyebrow: 'Außengestaltung & Schutz',
+    subtitle: 'Energieeffiziente Wärmedämmung und langlebiger Witterungsschutz für den Werterhalt Ihrer Immobilie.',
     heroImage: '/images/fassade.png',
-    intro: 'Die Fassade ist die Visitenkarte Ihres Gebäudes — und elementar für Energieeffizienz und Werterhalt. Als Fachbetrieb sind wir spezialisiert auf professionelle Putzarbeiten, Altbausanierung und Wärmedämmverbundsysteme (WDVS) in Leipzig. Wir verleihen Ihrem Haus ein makelloses, dauerhaftes Gesicht, das Wind und Wetter trotzt.',
+    trustSignals: [
+      { icon: 'ShieldCheck', text: 'Meisterbetrieb' },
+      { icon: 'MapPin', text: 'Regional in Leipzig & Umgebung' },
+      { icon: 'CheckSquare', text: 'Verarbeitung nach aktueller DIN-Norm' },
+      { icon: 'Leaf', text: 'Energieeffizient (GEG-konform)' }
+    ],
     details: [
-      { title: 'Wärmedämmung (WDVS)', desc: 'Erhebliche Heizkosteneinsparung durch fachgerecht angebrachte Dämmsysteme nach GEG-Standards.', icon: 'Zap' },
-      { title: 'Außen- & Mineralputz', desc: 'Atmungsaktive Putzsysteme (Silikat, Kalk) zur Regulierung der Feuchtigkeit und Schutz des Mauerwerks.', icon: 'PaintRoller' },
-      { title: 'Riss- & Fassadensanierung', desc: 'Abklopfen von losem Putz, Einlegen von Armierungsgewebe und nachhaltige Rissbeseitigung.', icon: 'Wrench' },
-      { title: 'Struktur- & Edelputze', desc: 'Individuelle Oberflächengestaltung von rustikaler Kratzstruktur bis hin zum modernen Glattputz.', icon: 'LayoutGrid' },
-      { title: 'Sockelabdichtung', desc: 'Spezifischer Spritzwasser- und Feuchteschutz im erdberührten Fassadenbereich.', icon: 'Droplet' },
-      { title: 'Innenputz-Systeme', desc: 'Grundierung und professionelles Verputzen von Innenräumen für ein optimales Raumklima.', icon: 'Home' },
+      { title: 'Wärmedämmverbundsysteme (WDVS)', desc: 'Senken Sie Ihre Heizkosten deutlich durch fachgerechte Dämmung nach aktuellen Energiestandards.', icon: 'Zap' },
+      { title: 'Putz- & Stuckarbeiten', desc: 'Optische Aufwertung und Schutz Ihrer Fassade mit atmungsaktiven, witterungsbeständigen Putzen.', icon: 'PaintRoller' },
+      { title: 'Fassadensanierung', desc: 'Sichere Beseitigung von Rissen, Feuchtigkeitsschäden und Algen für einen langlebigen Werterhalt.', icon: 'Wrench' },
     ],
     prozess: [
-      { title: 'Untergrundprüfung', desc: 'Prüfung der Fassade auf Tragfähigkeit und Feuchtigkeit.', icon: 'CheckSquare' },
-      { title: 'Vorbereitung', desc: 'Gerüststellung, Abkleben von Fenstern und Anbringen der Grundierung.', icon: 'Wrench' },
-      { title: 'Aufbau', desc: 'Dämmung kleben, Verdübeln und Einbetten von Armierungsgewebe.', icon: 'LayoutGrid' },
-      { title: 'Oberputz', desc: 'Auftragen des finalen Edelputzes und farbliche Gestaltung.', icon: 'PaintRoller' },
+      { title: 'Unverbindliche Anfrage', desc: 'Sie schildern uns Ihr Projekt und Ihre Wünsche für die Fassade.', icon: 'Phone' },
+      { title: 'Vor-Ort-Termin & Angebot', desc: 'Wir prüfen die Bausubstanz in Leipzig und erstellen ein transparentes Festpreisangebot.', icon: 'CheckSquare' },
+      { title: 'Fachgerechte Umsetzung', desc: 'Pünktliche Fertigstellung durch unsere qualifizierten Facharbeiter.', icon: 'HardHat' },
     ],
+    testimonial: {
+      quote: 'Das Team von Herrn König hat unsere Fassade nicht nur energetisch auf den neuesten Stand gebracht, sondern auch den Zeitplan exakt eingehalten.',
+      author: 'Max Mustermann, Leipzig'
+    },
     faq: [
-      { q: 'Lohnt sich ein Vollwärmeschutz (WDVS) finanziell?', a: 'Ja, eine moderne WDVS-Fassade spart bis zu 30% der Heizkosten ein und steigert den Verkaufswert der Immobilie erheblich.' },
-      { q: 'Stellt Ihr das Gerüst selbst?', a: 'Wir organisieren in Zusammenarbeit mit lokalen Gerüstbauern das exakt auf das Haus zugeschnittene Gerüst, sodass Sie sich um nichts kümmern müssen.' },
-      { q: 'Welche Putzart ist gegen Algenbefall am besten?', a: 'Wir empfehlen mineralische Putze und diffusionsoffene (atmungsaktive) Farben, die schnell abtrocknen und Schimmel/Algen so die Lebensgrundlage entziehen.' }
+      { q: 'Bieten Sie auch die Stellung des Gerüsts an?', a: 'Ja, wir organisieren in Zusammenarbeit mit lokalen Gerüstbauern das exakt auf das Haus zugeschnittene Gerüst, sodass Sie sich um nichts kümmern müssen.' },
+      { q: 'Wie lange dauert eine durchschnittliche Fassadensanierung?', a: 'Die Dauer hängt von der Größe und dem Zustand des Gebäudes ab, in der Regel planen wir bei einem Einfamilienhaus etwa 2 bis 4 Wochen.' },
+      { q: 'Können Sie bei der Beantragung von Fördermitteln (KfW) helfen?', a: 'Wir unterstützen Sie gerne mit den nötigen Nachweisen und Fachunternehmererklärungen, damit Sie Ihre Förderung (z. B. für WDVS) erfolgreich beantragen können.' }
     ],
-    vorteile: [
-      'Geringere Heizkosten',
-      'Optimaler Witterungsschutz',
-      'Keine Algenbildung',
-      'Wertsteigerung',
-      'Inklusive Gerüstkoordination'
-    ],
-    lokalerHinweis: 'Hochwertige Fassaden für Einfamilienhäuser und Villen in Leutzsch, Markkleeberg und ganz Leipzig.',
+    ctaText: "Bereit für eine neue Fassade? Lassen Sie uns über Ihr Projekt in Leipzig sprechen."
   },
-}
-
-// Accordion Component für FAQs
-function FAQAccordion({ faq }) {
-  const [openIndex, setOpenIndex] = useState(null)
-
-  return (
-    <div className="space-y-4">
-      {faq.map((item, i) => (
-        <div key={i} className={`bg-white rounded-xl border transition-colors duration-300 ${openIndex === i ? 'border-gold shadow-md' : 'border-gray-200 hover:border-gray-300'}`}>
-          <button 
-            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-          >
-            <span className="font-semibold text-gray-900 pr-8">{item.q}</span>
-            <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-300 ${openIndex === i ? 'bg-gold rotate-180' : 'bg-gray-100'}`}>
-              {openIndex === i ? <Minus size={16} className="text-black" /> : <Plus size={16} className="text-gray-600" />}
-            </div>
-          </button>
-          <div 
-            className={`overflow-hidden transition-all duration-300 ${openIndex === i ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
-          >
-            <div className="p-6 pt-0 text-gray-600 leading-relaxed">
-              {item.a}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
 }
 
 export default function LeistungDetail() {
@@ -191,8 +161,7 @@ export default function LeistungDetail() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
+      <section className="relative pt-52 pb-24 bg-charcoal overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0 opacity-[0.25]">
           <img src={data.heroImage} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" />
         </div>
@@ -207,191 +176,67 @@ export default function LeistungDetail() {
             <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/20 text-gold font-medium rounded-full text-xs uppercase tracking-widest mb-6 border-solid">
               {data.eyebrow}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight">{data.title}</h1>
-          </div>
-        </div>
-      </section>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight mb-6">
+              {data.title}
+            </h1>
+            
+            {data.subtitle ? (
+              <h2 className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-10 max-w-3xl">
+                {data.subtitle}
+              </h2>
+            ) : (
+              <h2 className="text-lg md:text-xl font-light text-gray-300 leading-relaxed mb-10 max-w-3xl">
+                {data.intro}
+              </h2>
+            )}
 
-      {/* Intro & Philosophy */}
-      <section className="section-padding bg-white relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <RevealSection>
-            <div>
-              <SectionHeading
-                eyebrow="Meisterqualität"
-                title="Präzision in jeder Phase"
-                center={false}
-              />
-              <div className="prose prose-lg text-gray-600 mb-8">
-                <p className="leading-relaxed">{data.intro}</p>
-              </div>
-              
-              {data.lokalerHinweis && (
-                <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 mb-8">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Home size={20} className="text-gold" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-charcoal mb-1">Ihr Partner vor Ort</h4>
-                    <p className="text-sm text-gray-600">{data.lokalerHinweis}</p>
-                  </div>
-                </div>
-              )}
-
-              <Link to="/kontakt" className="btn-primary inline-flex">
-                <Phone size={18} />
-                Kostenlose Beratung sichern
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black font-bold rounded-xl hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1 shadow-lg text-lg">
+                <Phone size={20} />
+                Kostenlose Vor-Ort-Beratung anfragen
               </Link>
+              
+              {data.testimonial && (
+                <a href="#referenzen" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-gray-500 text-white font-medium rounded-xl hover:bg-white/10 hover:border-white transition-all duration-300 text-lg">
+                  Unsere Referenzen ansehen
+                </a>
+              )}
             </div>
-          </RevealSection>
-          
-          <RevealSection delay={200}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-              <div className="absolute inset-0 bg-gold/10 group-hover:bg-gold/0 transition-colors z-10 duration-500"></div>
-              <img src={data.heroImage} alt={data.title} className="w-full h-[400px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* Bento Grid: Im Detail */}
-      <section className="section-padding bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <RevealSection>
-            <SectionHeading
-              eyebrow="Leistungsspektrum"
-              title="Unsere Expertise im Detail"
-              description="Transparenz und Fachwissen. Diese Bau- und Sanierungsleistungen führen wir professionell für Sie durch."
-            />
-          </RevealSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
-            {data.details.map((item, i) => {
-              const IconComponent = iconMap[item.icon] || CheckCircle2
-              return (
-                <RevealSection key={item.title} delay={i * 100}>
-                  <div className="h-full bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300 group">
-                    <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-gold group-hover:border-gold transition-colors">
-                      <IconComponent size={24} className="text-gold group-hover:text-black transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </RevealSection>
-              )
-            })}
           </div>
         </div>
       </section>
 
-      {/* NEW: Der Prozess (Timeline) */}
-      <section className="section-padding bg-white border-y border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <RevealSection>
-             <SectionHeading
-                eyebrow="Zusammenarbeit"
-                title="Unser Prozess"
-                description="Klar definiert, transparent und termintreu. So läuft die Umsetzung Ihres Projekts ab."
-              />
-          </RevealSection>
+      <TrustBar signals={data.trustSignals} iconMap={iconMap} />
+      
+      <ServiceGrid details={data.details} iconMap={iconMap} />
+      
+      <ProcessSteps processData={data.prozess} iconMap={iconMap} />
+      
+      <ReferenceSection testimonial={data.testimonial} />
+      
+      <FAQAccordionSection faq={data.faq} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mt-16 lg:mt-24">
-            {data.prozess.map((step, i) => {
-              const IconComp = iconMap[step.icon] || CheckCircle2
-              return (
-                <RevealSection key={step.title} delay={i * 100}>
-                  <div className="relative text-center group h-full">
-                    {/* Connecting line visible on LG */}
-                    {i !== data.prozess.length - 1 && (
-                      <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-gray-100 -z-10 group-hover:bg-gold/30 transition-colors"></div>
-                    )}
-                    
-                    <div className="relative inline-flex items-center justify-center w-20 h-20 bg-white border-4 border-gray-50 rounded-full text-2xl font-bold text-black mb-6 shadow-sm group-hover:border-gold group-hover:scale-110 transition-all duration-300">
-                      <IconComp size={32} strokeWidth={1.5} className="text-gold" />
-                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-bold ring-4 ring-white shadow-sm">
-                        0{i + 1}
-                      </div>
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
-                    <p className="text-gray-500 text-sm max-w-xs mx-auto leading-relaxed">{step.desc}</p>
-                  </div>
-                </RevealSection>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* NEW: FAQ & Vorteile Split Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-          
-          {/* FAQ Column */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <RevealSection>
-              <h2 className="text-3xl font-bold text-charcoal mb-2">Häufige Fragen</h2>
-              <p className="text-gray-600 mb-8 text-lg">Was unsere Kunden rund um das Thema {data.title} oft wissen möchten.</p>
-              <FAQAccordion faq={data.faq} />
-            </RevealSection>
-          </div>
-
-          {/* Vorteile Column (Right sidebar style) */}
-          <div className="lg:col-span-5">
-            <RevealSection delay={200}>
-              <div className="bg-charcoal rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute -bottom-10 -right-10 p-8 opacity-5">
-                  <ShieldCheck size={250} />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-8 relative z-10 text-gold">Warum mit uns bauen?</h3>
-                
-                <ul className="space-y-6 relative z-10">
-                  {data.vorteile.map((v, i) => (
-                    <li key={i} className="flex items-center gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center border border-gold/30">
-                        <CheckCircle2 size={16} className="text-gold" />
-                      </div>
-                      <span className="font-semibold text-gray-100 text-lg">{v}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <hr className="border-gray-700/50 my-10 relative z-10" />
-                
-                <div className="relative z-10">
-                  <p className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider">Lassen Sie uns Ihr Vorhaben besprechen:</p>
-                  <a href={contactDetails.phoneHref} className="inline-flex items-center gap-3 text-gold hover:text-white transition-colors font-bold text-2xl group">
-                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/30 transition-colors">
-                      <Phone size={20} />
-                    </div>
-                    {contactDetails.phoneDisplay}
-                  </a>
-                </div>
-              </div>
-            </RevealSection>
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* CTA Layer - Generic or specific text */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 gold-gradient opacity-95" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <RevealSection>
-            <span className="font-bold uppercase tracking-[0.2em] text-black/60 text-sm mb-4 block">Festpreis oder Regie</span>
-            <h2 className="text-4xl md:text-5xl font-900 text-black mb-6 tracking-tight">
-              Bereit für den Baustart?
+            <h2 className="text-3xl md:text-5xl font-900 text-black mb-6 tracking-tight">
+              {data.ctaText || "Bereit für den Baustart?"}
             </h2>
-            <p className="text-black/80 text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
-              Kontaktieren Sie uns für eine kostenlose Objektbegehung vor Ort. Wir kalkulieren transparent und fair.
+            <p className="text-black/80 text-lg md:text-xl font-medium mb-10 max-w-xl mx-auto leading-relaxed">
+              {data.ctaSubText || "Kontaktieren Sie uns für eine kostenlose Objektbegehung vor Ort. Wir kalkulieren transparent und fair."}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1 shadow-2xl shadow-charcoal/20 text-lg">
-                <Phone size={20} className="mr-2" />
-                Kostenlose Beratung sichern
+                Jetzt Kontakt aufnehmen
               </Link>
             </div>
+            {data.ctaSubText && (
+              <p className="text-sm font-semibold text-black/60 mt-6 flex items-center justify-center gap-2">
+                <CheckCircle2 size={16} /> Wir melden uns innerhalb von 24 Stunden zurück.
+              </p>
+            )}
           </RevealSection>
         </div>
       </section>
