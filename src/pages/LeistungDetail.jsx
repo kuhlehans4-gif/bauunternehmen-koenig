@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2 } from 'lucide-react'
+import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 
 const iconMap = {
-  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2
+  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf
 }
 
 const serviceData = {
@@ -109,8 +109,16 @@ const serviceData = {
     lokalerHinweis: 'Vom Dachausbau in Connewitz bis zur Praxiseinrichtung im Zentrum — wir schaffen neue Räume in Leipzig.',
   },
   'fassade': {
-    title: 'Fassaden- & Putzarbeiten',
+    title: 'Professionelle Fassadengestaltung & Sanierung in Leipzig',
     eyebrow: 'Außengestaltung & Schutz',
+    subtitle: 'Energieeffiziente Wärmedämmung und langlebiger Witterungsschutz für den Werterhalt Ihrer Immobilie.',
+    showHeroCTAs: true,
+    trustSignals: [
+      { text: 'Meisterbetrieb', icon: 'ShieldCheck' },
+      { text: 'Regional in Leipzig & Umgebung', icon: 'MapPin' },
+      { text: 'Verarbeitung nach aktueller DIN-Norm', icon: 'CheckSquare' },
+      { text: 'Energieeffizient (GEG-konform)', icon: 'Leaf' }
+    ],
     heroImage: '/images/fassade.png',
     intro: 'Die Fassade ist die Visitenkarte Ihres Gebäudes — und elementar für Energieeffizienz und Werterhalt. Als Fachbetrieb sind wir spezialisiert auf professionelle Putzarbeiten, Altbausanierung und Wärmedämmverbundsysteme (WDVS) in Leipzig. Wir verleihen Ihrem Haus ein makelloses, dauerhaftes Gesicht, das Wind und Wetter trotzt.',
     details: [
@@ -208,9 +216,45 @@ export default function LeistungDetail() {
               {data.eyebrow}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight">{data.title}</h1>
+            {data.subtitle && (
+              <h2 className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mt-6 max-w-3xl">
+                {data.subtitle}
+              </h2>
+            )}
+            {data.showHeroCTAs && (
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
+                <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black font-bold rounded-xl hover:bg-white hover:text-black transition-all shadow-lg text-lg">
+                  Kostenlose Vor-Ort-Beratung anfragen
+                </Link>
+                <a href="#referenzen" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-gray-500 text-white font-medium rounded-xl hover:bg-white/10 transition-all text-lg">
+                  Unsere Referenzen ansehen
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Trust Bar conditionally rendered */}
+      {data.trustSignals && (
+        <section className="bg-white border-b border-gray-100 py-6 relative z-20 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="flex flex-wrap justify-between items-center gap-6 md:gap-4">
+              {data.trustSignals.map((signal, i) => {
+                const Icon = iconMap[signal.icon]
+                return (
+                  <div key={i} className="flex items-center gap-3 w-full sm:w-auto">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
+                      {Icon && <Icon size={20} className="text-gold" />}
+                    </div>
+                    <span className="font-semibold text-gray-800 text-sm md:text-base">{signal.text}</span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Intro & Philosophy */}
       <section className="section-padding bg-white relative">
