@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from 'lucide-react'
 import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
+import SEO from '../components/SEO'
 
 const gewerke = ['Maurer- & Betonbau', 'Sanierung & Instandsetzung', 'Innenausbau & Trockenbau', 'Fassaden- & Putzarbeiten', 'Sonstiges']
 
@@ -52,16 +53,44 @@ export default function Kontakt() {
     }
   }
 
+  const contactJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Kontakt – Bauunternehmen König Leipzig',
+    url: 'https://www.bauunternehmen-koenig.com/kontakt',
+    mainEntity: {
+      '@type': 'HomeAndConstructionBusiness',
+      name: 'Bauunternehmen König',
+      telephone: contactDetails.phoneIntl,
+      email: contactDetails.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: contactDetails.addressLine1,
+        postalCode: '04288',
+        addressLocality: 'Leipzig',
+        addressRegion: 'Sachsen',
+        addressCountry: 'DE',
+      },
+    },
+  }
+
   return (
     <>
+      <SEO
+        title="Kontakt – Kostenlose Beratung & Angebot | Bauunternehmen König Leipzig"
+        description="Kontaktieren Sie Bauunternehmen König in Leipzig: Telefon 0179 684 98 63, E-Mail oder Formular. Kostenlose Erstberatung & Festpreisangebot innerhalb von 48 Stunden."
+        keywords="Bauunternehmen Kontakt Leipzig, Maurer Leipzig anfragen, Bauunternehmen König Telefon, kostenlose Bauberatung Leipzig"
+        path="/kontakt"
+        jsonLd={contactJsonLd}
+      />
       {/* Hero */}
-      <section className="relative pt-52 pb-20 bg-charcoal">
+      <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Kostenlose Erstberatung</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6">
-            Ihr Projekt<br /><span className="gold-text-gradient">startet hier</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6 leading-tight max-w-[12ch] mx-auto sm:max-w-none">
+            Ihr Projekt<br className="hidden sm:block" /> <span className="gold-text-gradient">startet hier</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
             Bauvorhaben in Leipzig geplant? Kontaktieren Sie Maurer- und Betonbauermeister Tim König —
             wir erstellen Ihnen ein kostenloses Festpreisangebot. Rückmeldung garantiert innerhalb von 24–48 Stunden.
           </p>
@@ -70,11 +99,11 @@ export default function Kontakt() {
 
       {/* Contact Section */}
       <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Form */}
           <div className="lg:col-span-3">
             <RevealSection>
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl overflow-hidden p-6 sm:p-8 md:p-10 shadow-sm border border-gray-100">
                 <h2 className="text-2xl font-bold mb-2">Projektanfrage</h2>
                 <p className="text-gray-500 text-sm mb-8">
                   Beschreiben Sie uns Ihr Vorhaben. Wir melden uns umgehend bei Ihnen zurück.
@@ -158,7 +187,7 @@ export default function Kontakt() {
                   <button 
                     type="submit" 
                     disabled={status === 'submitting' || status === 'success'}
-                    className={`btn-primary w-full justify-center text-base !py-4 transition-all duration-300 ${
+                    className={`btn-primary w-full justify-center text-base !py-3 sm:!py-4 transition-all duration-300 ${
                       status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''
                     } ${status === 'success' ? '!bg-green-600 hover:!bg-green-700 border-green-600' : ''}`}
                   >
@@ -191,10 +220,10 @@ export default function Kontakt() {
             <RevealSection delay={200}>
               <div className="space-y-6">
                 {/* Direct contact */}
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <div className="bg-white rounded-2xl overflow-hidden p-6 sm:p-8 shadow-sm border border-gray-100">
                   <h3 className="font-bold text-lg mb-6">Direkter Kontakt</h3>
                   <div className="space-y-5">
-                    <a href={contactDetails.phoneHref} className="flex items-center gap-4 group cursor-pointer">
+                    <a href={contactDetails.phoneHref} className="flex items-start gap-4 group cursor-pointer">
                       <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                         <Phone size={20} className="text-black" />
                       </div>
@@ -203,16 +232,16 @@ export default function Kontakt() {
                         <div className="font-semibold group-hover:text-gold transition-colors">{contactDetails.phoneDisplay}</div>
                       </div>
                     </a>
-                    <a href={contactDetails.emailHref} className="flex items-center gap-4 group cursor-pointer">
+                    <a href={contactDetails.emailHref} className="flex items-start gap-4 group cursor-pointer">
                       <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                         <Mail size={20} className="text-black" />
                       </div>
                       <div>
                         <div className="text-sm text-gray-400">E-Mail</div>
-                        <div className="font-semibold group-hover:text-gold transition-colors text-sm">{contactDetails.email}</div>
+                        <div className="font-semibold group-hover:text-gold transition-colors text-sm break-all">{contactDetails.email}</div>
                       </div>
                     </a>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0">
                         <MapPin size={20} className="text-black" />
                       </div>
@@ -221,7 +250,7 @@ export default function Kontakt() {
                         <div className="font-semibold">{contactDetails.city}, {contactDetails.region}</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center flex-shrink-0">
                         <Clock size={20} className="text-black" />
                       </div>
@@ -238,7 +267,7 @@ export default function Kontakt() {
                   href={contactDetails.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-charcoal rounded-2xl p-8 text-center hover:bg-gray-800 transition-colors cursor-pointer"
+                  className="block bg-charcoal rounded-2xl overflow-hidden p-6 sm:p-8 text-center hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   <MessageCircle size={32} className="text-green-400 mx-auto mb-4" />
                   <h3 className="font-bold text-white text-lg mb-2">WhatsApp</h3>
@@ -246,7 +275,7 @@ export default function Kontakt() {
                 </a>
 
                 {/* Promise */}
-                <div className="bg-gold/10 rounded-2xl p-8 border border-gold/20 text-center">
+                <div className="bg-gold/10 rounded-2xl overflow-hidden p-6 sm:p-8 border border-gold/20 text-center">
                   <CheckCircle2 size={28} className="text-gold mx-auto mb-4" />
                   <h3 className="font-bold text-lg mb-2">Unser Versprechen</h3>
                   <p className="text-gray-500 text-sm">Wir melden uns garantiert innerhalb von <strong>24–48 Stunden</strong> bei Ihnen.</p>

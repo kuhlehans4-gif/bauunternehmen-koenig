@@ -9,6 +9,11 @@
     <meta name="keywords" content="Bauunternehmen Leipzig, Maurermeister Leipzig, Betonbauer Leipzig, Neubau Leipzig, Sanierung Leipzig, Innenausbau Leipzig, Fassade Leipzig, Handwerker Leipzig, Tim König, Maurer Leipzig, Bauarbeiten Leipzig" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Tim König, Maurer- und Betonbauermeister" />
+    <meta name="geo.region" content="DE-SN" />
+    <meta name="geo.placename" content="Leipzig" />
+    <meta name="geo.position" content="51.3397;12.3731" />
+    <meta name="ICBM" content="51.3397, 12.3731" />
+    <meta name="theme-color" content="#1a1a1a" />
     <link rel="canonical" href="https://www.bauunternehmen-koenig.com" />
 
     <!-- Open Graph / Social Media -->
@@ -33,10 +38,12 @@
     {
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
+      "@id": "https://www.bauunternehmen-koenig.com/#business",
       "name": "Bauunternehmen König",
+      "alternateName": "Bauunternehmen König Leipzig",
       "description": "Maurer- und Betonbauermeister Tim König in Leipzig. Spezialisiert auf Neubau, Sanierung, Innenausbau und Fassadenarbeiten.",
       "url": "https://www.bauunternehmen-koenig.com",
-      "telephone": "+491796849863",
+      "telephone": "+49-179-6849863",
       "email": "maurermeister.koenig@web.de",
       "founder": {
         "@type": "Person",
@@ -45,8 +52,10 @@
       },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "August-Bebel-Siedlung 45",
         "addressLocality": "Leipzig",
         "addressRegion": "Sachsen",
+        "postalCode": "04288",
         "addressCountry": "DE"
       },
       "geo": {
@@ -62,10 +71,14 @@
           "closes": "18:00"
         }
       ],
-      "areaServed": {
-        "@type": "City",
-        "name": "Leipzig"
-      },
+      "areaServed": [
+        {"@type": "City", "name": "Leipzig"},
+        {"@type": "City", "name": "Markkleeberg"},
+        {"@type": "City", "name": "Taucha"},
+        {"@type": "City", "name": "Schkeuditz"},
+        {"@type": "City", "name": "Zwenkau"},
+        {"@type": "AdministrativeArea", "name": "Landkreis Leipzig"}
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Bauleistungen",
@@ -76,16 +89,43 @@
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fassaden- & Putzarbeiten"}}
         ]
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "8",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/place/Bauunternehmen+K%C3%B6nig",
+        "https://www.handwerk.de/"
+      ],
       "image": "https://www.bauunternehmen-koenig.com/images/hero.png",
+      "logo": "https://www.bauunternehmen-koenig.com/logo.png",
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
-      "paymentAccepted": "Rechnung"
+      "paymentAccepted": "Rechnung",
+      "knowsLanguage": ["de-DE"],
+      "slogan": "Meisterqualität aus Leipzig — Festpreisgarantie & kostenlose Erstberatung"
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { RevealSection, SectionHeading } from '../components/UI'
-import { BookOpen, Clock, Filter, ArrowRight } from 'lucide-react'
+import { RevealSection } from '../components/UI'
+import { BookOpen, Clock, Filter, ArrowRight, Mail } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const articles = [
   {
@@ -95,16 +96,43 @@ export default function Ratgeber() {
     ? articles
     : articles.filter(a => a.category === activeFilter)
 
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Bau-Ratgeber | Bauunternehmen König',
+    description: 'Expertenwissen rund ums Bauen, Sanieren und Renovieren aus Leipzig.',
+    url: 'https://www.bauunternehmen-koenig.com/ratgeber',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bauunternehmen König',
+      url: 'https://www.bauunternehmen-koenig.com',
+    },
+    blogPost: articles.map(a => ({
+      '@type': 'BlogPosting',
+      headline: a.title,
+      url: `https://www.bauunternehmen-koenig.com/ratgeber/${a.slug}`,
+      image: `https://www.bauunternehmen-koenig.com${a.img}`,
+      author: { '@type': 'Person', name: 'Tim König' },
+    })),
+  }
+
   return (
     <>
+      <SEO
+        title="Bau-Ratgeber Leipzig – Experten-Tipps zu Sanierung, Bauantrag & Förderung"
+        description="Fundierter Bau-Ratgeber aus Leipzig: Förderungen 2026, Bauantrag, Fassadensanierung, Trockenbau, Schimmelbeseitigung & mehr. Meisterwissen aus der Praxis."
+        keywords="Bauratgeber Leipzig, Sanierung Tipps, Bauantrag Leipzig, KfW Förderung, Fassadensanierung Tipps, Trockenbau Ratgeber"
+        path="/ratgeber"
+        jsonLd={blogJsonLd}
+      />
       {/* Hero */}
-      <section className="relative pt-52 pb-20 bg-charcoal">
+      <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Expertenwissen & Tipps</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6">
             Der Bau-<span className="gold-text-gradient">Ratgeber</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
             Fundiertes Wissen rund ums Bauen, Sanieren und Renovieren aus Meisterhand. 
             Informieren Sie sich über aktuelle Baustandards, Materialien und Fördermöglichkeiten.
           </p>
@@ -143,7 +171,7 @@ export default function Ratgeber() {
           </div>
 
           {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filtered.map((article, i) => (
               <RevealSection key={article.slug} delay={i * 100}>
                 <Link to={`/ratgeber/${article.slug}`} className="block group h-full">
@@ -153,6 +181,8 @@ export default function Ratgeber() {
                         src={article.img}
                         alt={article.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="text-xs font-semibold text-black bg-gold px-3 py-1 rounded-full">
@@ -161,7 +191,7 @@ export default function Ratgeber() {
                       </div>
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
-                      <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 mb-3">
                         <span className="flex items-center gap-1.5">
                           <Clock size={14} className="text-gold" />
                           {article.readTime}
@@ -187,6 +217,27 @@ export default function Ratgeber() {
               </RevealSection>
             ))}
           </div>
+        </div>
+      </section>
+      {/* FINAL CTA */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 gold-gradient opacity-95" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <RevealSection>
+            <span className="font-bold uppercase tracking-[0.2em] text-black/60 text-sm mb-4 block">Festpreis oder Regie</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-900 text-black mb-6 tracking-tight">
+              Bereit für den Baustart?
+            </h2>
+            <p className="text-black/80 text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
+              Kontaktieren Sie uns für eine kostenlose Objektbegehung vor Ort. Wir kalkulieren transparent und fair.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link to="/kontakt" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1 shadow-2xl shadow-charcoal/20 text-base sm:text-lg text-center">
+                <Mail size={20} className="mr-2" />
+                Kostenlose Beratung sichern
+              </Link>
+            </div>
+          </RevealSection>
         </div>
       </section>
     </>

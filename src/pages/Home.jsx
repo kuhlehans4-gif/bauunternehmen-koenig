@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Phone, ArrowRight, ShieldCheck, Clock, Sparkles, Hammer, Building2, PaintBucket, Wrench, CheckCircle2, ChevronDown, Star, Quote } from 'lucide-react'
+import { Mail, ArrowRight, ShieldCheck, Clock, Sparkles, Hammer, Building2, PaintBucket, Wrench, CheckCircle2, ChevronDown, Star, Quote } from 'lucide-react'
 import { RevealSection, SectionHeading, ServiceCard, ProcessStep } from '../components/UI'
 import { useState } from 'react'
 import { contactDetails } from '../data/contactDetails'
+import SEO from '../components/SEO'
 
 const services = [
   {
@@ -36,7 +37,7 @@ const services = [
 ]
 
 const process = [
-  { number: '01', title: 'Anfrage', description: <>Schildern Sie uns Ihr Vorhaben — bequem telefonisch unter <span className="whitespace-nowrap">{contactDetails.phoneDisplay}</span> oder über unser Online-Formular.</> },
+  { number: '01', title: 'Anfrage', description: <>Schildern Sie uns Ihr Vorhaben — bequem telefonisch unter <span className="whitespace-normal sm:whitespace-nowrap">{contactDetails.phoneDisplay}</span> oder über unser Online-Formular.</> },
   { number: '02', title: 'Vor-Ort-Termin', description: 'Wir besichtigen Ihr Projekt kostenlos und persönlich. So erhalten Sie eine ehrliche, individuelle Beratung.' },
   { number: '03', title: 'Festpreis-Angebot', description: 'Sie erhalten innerhalb von 48 Stunden ein verbindliches Angebot — schriftlich, transparent und ohne versteckte Kosten.' },
   { number: '04', title: 'Meisterhafte Ausführung', description: 'Pünktliche Fertigstellung, täglich aufgeräumte Baustelle und Qualität nach DIN-Normen — das ist unser Versprechen.' },
@@ -44,24 +45,24 @@ const process = [
 
 const faqs = [
   {
-    question: 'In welchen Leipziger Stadtteilen sind Sie tätig?',
-    answer: 'Wir arbeiten in ganz Leipzig und Umgebung — darunter Gohlis, Südvorstadt, Lindenau, Plagwitz, Connewitz, Schleußig, Mölkau, Reudnitz und mehr. Auch Projekte im Umland (z.B. Markkleeberg, Taucha, Schkeuditz) realisieren wir gerne.',
+    question: 'In welchem Umkreis von Leipzig bieten Sie Ihre Bauleistungen an?',
+    answer: 'Als regionales Premium-Bauunternehmen konzentrieren wir uns auf Leipzig und das umliegende Umland in einem Radius von ca. 50 Kilometern. Diese regionale Nähe garantiert Ihnen kurze Wege, schnelle Reaktionszeiten und eine enge, persönliche Betreuung Ihres Bauvorhabens direkt vor Ort.',
   },
   {
-    question: 'Was kostet eine Erstberatung bei Bauunternehmen König?',
-    answer: 'Die Erstberatung und der Vor-Ort-Termin sind für Sie völlig kostenlos und unverbindlich. Erst nach klarer Leistungsvereinbarung erhalten Sie ein schriftliches Festpreisangebot.',
+    question: 'Bieten Sie alle Bauleistungen aus einer Hand als Generalunternehmer an?',
+    answer: 'Ja. Wir verstehen uns als Ihr zentraler Ansprechpartner für das gesamte Bauprojekt. Von der ersten Rohbauplanung bis hin zum schlüsselfertigen Innenausbau koordinieren wir alle Gewerke. Für Sie bedeutet das: Keine Kommunikationsverluste, feste Ansprechpartner und eine garantierte Termintreue bei höchster Qualität.',
   },
   {
-    question: 'Wie lange dauert es bis zum Projektstart?',
-    answer: 'Nach Ihrer Anfrage erhalten Sie innerhalb von 24–48 Stunden eine Rückmeldung. Je nach Auftragslage starten wir Ihr Projekt in der Regel innerhalb von 2–4 Wochen nach Angebotsannnahme.',
+    question: 'Wie läuft die erste Beratung beim Bauunternehmen König ab?',
+    answer: 'Nach Ihrer unverbindlichen Anfrage vereinbaren wir einen Vor-Ort-Termin an Ihrem Objekt oder Grundstück in Leipzig. Wir analysieren die Gegebenheiten, besprechen Ihre architektonischen Visionen und prüfen die Machbarkeit. Darauf basierend erhalten Sie ein transparentes, detailliertes Angebot ohne versteckte Kosten.',
   },
   {
-    question: 'Führen Sie auch kleine Reparaturen und Einzelgewerke durch?',
-    answer: 'Ja — von der kleinen Mauerwerkssanierung bis zur Komplettbaustelle. Kein Auftrag ist zu klein oder zu groß. Sprechen Sie uns an und wir finden die beste Lösung für Ihr Projekt.',
+    question: 'Realisieren Sie Projekte für Privatkunden oder gewerbliche Auftraggeber?',
+    answer: 'Unsere Expertise umfasst beide Segmente. Wir bauen anspruchsvolle Einfamilienhäuser und Villen für Privatkunden mit derselben Präzision und Zuverlässigkeit wie komplexe Gewerbe-, Büro- oder Industriebauten für Geschäftskunden. Höchste Bauqualität ist in jedem Maßstab unser Standard.',
   },
   {
-    question: 'Welche Qualifikationen hat Tim König?',
-    answer: 'Tim König ist staatlich geprüfter Maurer- und Betonbauermeister (HWK Leipzig). Dieser Meisterbrief garantiert Ihnen geprüfte Fachkompetenz, Ausbildungsberechtigung und die Einhaltung aller geltenden DIN-Normen.',
+    question: 'Welche Sicherheiten und Garantien geben Sie auf Ihre Leistungen?',
+    answer: 'Wir arbeiten streng nach den anerkannten Regeln der Technik (VOB/BGB) und gewähren Ihnen umfassende Gewährleistungen auf alle ausgeführten Arbeiten. Durch die ausschließliche Verwendung zertifizierter Premium-Baustoffe und den Einsatz eigener, exzellent ausgebildeter Facharbeiter sichern wir ein Höchstmaß an Langlebigkeit und Wertbeständigkeit.',
   },
 ]
 
@@ -77,8 +78,25 @@ const googleReviews = [
 ]
 
 export default function Home() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  }
+
   return (
     <>
+      <SEO
+        title="Bauunternehmen König | Maurermeister & Betonbauer in Leipzig"
+        description="Bauunternehmen König – Ihr Maurer- und Betonbauermeister in Leipzig. ✓ Neubau ✓ Sanierung ✓ Innenausbau ✓ Fassadenarbeiten. Festpreisgarantie & kostenlose Erstberatung. Jetzt Angebot anfragen!"
+        keywords="Bauunternehmen Leipzig, Maurermeister Leipzig, Betonbauer Leipzig, Neubau Leipzig, Sanierung Leipzig, Innenausbau Leipzig, Fassade Leipzig, Handwerker Leipzig, Tim König, Maurer Leipzig"
+        path="/"
+        jsonLd={faqJsonLd}
+      />
       {/* ========== HERO ========== */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
@@ -87,46 +105,49 @@ export default function Home() {
             src="/images/hero.png"
             alt="Bauunternehmen König — Baustelle in Leipzig"
             className="w-full h-full object-cover animate-[scaleInSimple_30s_infinite_alternate]"
+            fetchpriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-black/10" />
           <div className="absolute inset-0 bg-black/5" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 pb-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 sm:pt-44 md:pt-48 pb-16 sm:pb-20">
           <div className="max-w-3xl">
             <RevealSection delay={100}>
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 mb-10 shadow-2xl">
+              <div className="inline-flex flex-wrap items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 mb-8 md:mb-10 shadow-2xl">
                 <span className="w-2.5 h-2.5 rounded-full bg-gold border border-gold-light animate-pulse"></span>
                 <span className="text-white text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Meisterbetrieb in Leipzig</span>
               </div>
             </RevealSection>
             
             <RevealSection delay={200}>
-              <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] font-900 text-white leading-[0.95] tracking-tightest mb-6">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] font-900 text-white leading-[0.95] tracking-tightest mb-5 md:mb-6 max-w-[12ch] sm:max-w-none">
                 Bauen in<br />
                 <span className="gold-text-gradient">Leipzig.</span>
               </h1>
-              <p className="font-heading text-2xl md:text-3xl text-gold/80 font-semibold tracking-wide mb-10 uppercase">
+              <p className="font-heading text-base sm:text-xl md:text-3xl text-gold/80 font-semibold tracking-wide mb-8 md:mb-10 uppercase">
                 Handwerk aus Meisterhand.
               </p>
             </RevealSection>
             
             <RevealSection delay={300}>
-              <p className="text-xl md:text-2xl text-gray-200/90 mb-12 max-w-3xl leading-relaxed font-light">
-                Tim König — Maurer- und Betonbauermeister aus Leipzig.<br />
-                Ihr Partner für Mauerwerk, Sanierung, Fassade und Innenausbau.<br />
-                Kostenlose Erstberatung & Festpreisgarantie.
+              <p className="text-base sm:text-lg md:text-2xl text-gray-200/90 mb-10 md:mb-12 max-w-[300px] sm:max-w-3xl leading-relaxed font-light">
+                Tim&nbsp;König — Maurer- und Betonbauermeister aus&nbsp;Leipzig.<br className="hidden sm:block" />
+                Ihr Partner für Mauerwerk, Sanierung, Fassade und&nbsp;Innenausbau.<br />
+                Kostenlose Erstberatung<br />
+                & Festpreisgarantie.
               </p>
             </RevealSection>
             
             <RevealSection delay={400}>
-              <div className="flex flex-col sm:flex-row gap-5">
-                <Link to="/kontakt" className="btn-primary text-base">
-                  <Phone size={18} />
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+                <Link to="/kontakt" className="btn-primary text-base w-full sm:w-auto">
+                  <Mail size={18} />
                   Kostenlose Beratung sichern
                 </Link>
-                <Link to="/leistungen" className="btn-secondary text-base group">
+                <Link to="/leistungen" className="btn-secondary text-base group w-full sm:w-auto">
                   Unsere Leistungen
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -140,14 +161,14 @@ export default function Home() {
       {/* ========== TRUST BAR LAYER ========== */}
       <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <RevealSection>
-          <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap items-center justify-between gap-6 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)]">
+          <div className="bg-white rounded-3xl overflow-hidden p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)]">
             {[
               { icon: ShieldCheck, text: 'Meisterbetrieb', sub: 'HWK Leipzig' },
               { icon: Clock, text: 'Termintreue', sub: 'Pünktlich garantiert' },
               { icon: Sparkles, text: 'Saubere Arbeit', sub: 'Täglich aufgeräumt' },
               { icon: CheckCircle2, text: 'Festpreisgarantie', sub: 'Keine Überraschungen' },
             ].map((item) => (
-              <div key={item.text} className="flex items-center gap-4 flex-1 min-w-[200px]">
+              <div key={item.text} className="flex items-center gap-4 min-w-0">
                 <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 flex-shrink-0">
                   <item.icon size={22} className="text-gold" />
                 </div>
@@ -162,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* ========== SERVICES (BENTO GRID STYLE) ========== */}
-      <section className="section-padding bg-gray-50 rounded-t-[3rem] -mt-32 pt-40">
+      <section className="section-padding bg-gray-50 rounded-t-[2rem] sm:rounded-t-[3rem] -mt-24 sm:-mt-32 pt-32 sm:pt-40">
         <div className="max-w-7xl mx-auto">
           <RevealSection>
             <SectionHeading
@@ -172,14 +193,14 @@ export default function Home() {
             />
           </RevealSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10">
             {services.map((service, i) => (
               <ServiceCard key={service.title} {...service} index={i} />
             ))}
           </div>
 
           <RevealSection delay={400}>
-            <div className="text-center mt-16">
+            <div className="text-center mt-12 md:mt-16">
               <Link to="/leistungen" className="btn-primary gap-3 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                 Alle Leistungen ansehen
                 <ArrowRight size={18} />
@@ -196,7 +217,7 @@ export default function Home() {
             <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/20 text-gold font-medium rounded-full text-xs uppercase tracking-widest mb-4">
               Kundenstimmen
             </span>
-            <h2 className="font-heading text-4xl md:text-5xl font-800 tracking-tight text-white mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-800 tracking-tight text-white mb-4">
               Das sagen unsere <span className="gold-text-gradient">Bauherren</span>
             </h2>
             <div className="flex items-center justify-center gap-2 mb-2">
@@ -210,16 +231,16 @@ export default function Home() {
         </div>
 
         {/* Marquee Container */}
-        <div className="relative flex overflow-x-hidden group">
+        <div className="relative overflow-hidden group">
           {/* Gradients to fade out edges */}
           <div className="absolute top-0 left-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-charcoal to-transparent z-10 pointer-events-none"></div>
           <div className="absolute top-0 right-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-charcoal to-transparent z-10 pointer-events-none"></div>
           
-          <div className="animate-marquee hover:pause whitespace-nowrap py-4">
+          <div className="animate-marquee hover:pause whitespace-nowrap py-3 md:py-4">
             {/* Double the array to ensure smooth infinite scrolling effect */}
             {[...googleReviews, ...googleReviews].map((review, i) => (
               <div key={i} className="inline-block mx-4 whitespace-normal align-top">
-                <div className="w-[320px] md:w-[400px] h-full bg-gray-900 border border-gray-800 rounded-3xl p-8 hover:border-gold/30 transition-colors duration-300">
+                <div className="w-[280px] xs:w-[320px] md:w-[400px] h-full bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden p-6 md:p-8 hover:border-gold/30 transition-colors duration-300">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold font-bold text-lg font-heading flex-shrink-0">
@@ -251,11 +272,11 @@ export default function Home() {
       <section className="section-padding bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px] -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="lg:col-span-5">
               <RevealSection>
                 <span className="inline-block text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4">Warum König?</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-800 tracking-tight leading-tight mb-6 text-gray-900">
+                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-800 tracking-tight leading-tight mb-6 text-gray-900">
                   Schluss mit<br />Baustellen-Chaos.
                 </h2>
                 <p className="text-lg text-gray-500 leading-relaxed mb-8">
@@ -280,7 +301,7 @@ export default function Home() {
               </RevealSection>
             </div>
             
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {[
                 { icon: Clock, title: 'Termintreue', desc: 'Wir halten, was wir versprechen. Pünktlich fertig.' },
                 { icon: Sparkles, title: 'Saubere Arbeit', desc: 'Eine saubere Baustelle ist für uns selbstverständlich.' },
@@ -288,7 +309,7 @@ export default function Home() {
                 { icon: CheckCircle2, title: 'Qualität', desc: 'Meisterliche Ausführung nach geltenden DIN-Normen.' }
               ].map((item, i) => (
                 <RevealSection key={item.title} delay={i * 150}>
-                  <div className="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] hover:border-gold/20 transition-all duration-500 hover:-translate-y-1">
+                  <div className="p-6 md:p-8 rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] hover:border-gold/20 transition-all duration-500 hover:-translate-y-1">
                     <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gold flex items-center justify-center mb-6">
                       <item.icon size={24} />
                     </div>
@@ -350,13 +371,13 @@ export default function Home() {
       <section className="section-padding bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] -z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <RevealSection delay={200}>
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                <img src="/images/tim-portrait.png" alt="Tim König auf der Baustelle" className="w-full h-[500px] object-cover grayscale brightness-75" />
-                <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <h3 className="text-white text-3xl font-heading font-bold mb-1">Tim König</h3>
+                <img src="/images/tim-portrait.png" alt="Tim König auf der Baustelle" className="w-full h-[380px] sm:h-[500px] object-cover grayscale brightness-75" loading="lazy" decoding="async" />
+                <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-20">
+                  <h3 className="text-white text-2xl sm:text-3xl font-heading font-bold mb-1">Tim König</h3>
                   <p className="text-gold font-medium">Maurer- und Betonbauermeister</p>
                 </div>
               </div>
@@ -370,14 +391,14 @@ export default function Home() {
                   center={false}
                 />
                 <div className="prose prose-lg text-gray-600 mb-8 mt-2">
-                  <p className="leading-relaxed font-light text-xl italic text-gray-800 border-l-4 border-gold pl-6 mb-8">
+                  <p className="leading-relaxed font-light text-lg md:text-xl italic text-gray-800 border-l-4 border-gold pl-4 md:pl-6 mb-8">
                     "Mein Name steht für die Qualität auf Ihrer Baustelle. Keine anonymen Subunternehmer, keine versteckten Kosten — bei uns arbeitet der Chef noch selbst mit und bürgt für meisterhafte Ausführung."
                   </p>
                   <p className="leading-relaxed mb-6">
                     Mit dem Meisterbrief der Handwerkskammer Leipzig in der Tasche und jahrelanger Erfahrung auf Groß- und Kleinbaustellen habe ich das Bauunternehmen König gegründet, um das Handwerk wieder dorthin zu bringen, wo es hingehört: Verlässlichkeit, Pünktlichkeit und echte Wertarbeit.
                   </p>
-                  <div className="flex items-center gap-6 mt-10">
-                    <div className="flex items-center justify-center w-16 h-16 bg-gray-50 rounded-full border border-gray-200 shadow-sm flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mt-10">
+                    <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gray-50 rounded-full border border-gray-200 shadow-sm flex-shrink-0">
                       <ShieldCheck size={28} className="text-gold" />
                     </div>
                     <div>
@@ -400,11 +421,11 @@ export default function Home() {
       <section className="relative pt-24 pb-32 overflow-hidden bg-gray-50 border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <RevealSection>
-            <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden">
+            <div className="bg-white rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 gold-gradient"></div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mt-6 sm:mt-8">
                 <div>
-                  <h2 className="font-heading text-4xl md:text-5xl font-800 tracking-tight text-gray-900 mb-6 leading-tight">
+                  <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-800 tracking-tight text-gray-900 mb-6 leading-tight">
                     Bereit für etwas <span className="gold-text-gradient">Großes?</span>
                   </h2>
                   <p className="text-gray-500 text-lg mb-8 font-light leading-relaxed">
@@ -427,13 +448,13 @@ export default function Home() {
                   </ul>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Link to="/kontakt" className="btn-primary text-base px-8 py-5 flex-1 shadow-[0_4px_20px_rgba(212,175,55,0.4)]">
-                      <Phone size={18} />
+                    <Link to="/kontakt" className="btn-primary text-base !px-5 !py-3 sm:!px-8 sm:!py-5 w-full sm:w-auto flex-1 shadow-[0_4px_20px_rgba(212,175,55,0.4)]">
+                      <Mail size={18} />
                       Kostenlose Beratung anfragen
                     </Link>
                   </div>
                   
-                  <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-sm font-medium text-amber-700 bg-amber-50 p-4 rounded-xl border border-amber-100">
+                  <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-sm font-medium text-amber-700 bg-amber-50 p-3 sm:p-4 rounded-xl border border-amber-100">
                     <Clock size={16} className="flex-shrink-0" />
                     <p>Aufgrund hoher Nachfrage können wir aktuell nur noch <span className="font-bold underline decoration-amber-300">wenige Bauprojekte</span> annehmen.</p>
                   </div>
@@ -441,7 +462,7 @@ export default function Home() {
                 
                 <div className="hidden lg:block relative text-center">
                   <div className="absolute inset-0 bg-gold/5 rounded-full blur-[60px] transform scale-150 -z-10"></div>
-                  <img src="/images/logo-cta.png" alt="Bauunternehmen König" className="w-full max-w-[400px] h-auto mx-auto object-contain drop-shadow-xl" />
+                  <img src="/images/logo-cta.png" alt="Bauunternehmen König" className="w-full max-w-[400px] h-auto mx-auto object-contain drop-shadow-xl" loading="lazy" decoding="async" />
                   
                   <div className="absolute -top-12 -right-4 bg-white px-5 py-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce" style={{animationDuration: '4s'}}>
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
@@ -480,7 +501,7 @@ function FaqSection() {
               <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left cursor-pointer group"
+                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer group"
                   aria-expanded={openIndex === i}
                 >
                   <span className="font-semibold text-gray-900 pr-4 group-hover:text-gold transition-colors duration-200">{faq.question}</span>

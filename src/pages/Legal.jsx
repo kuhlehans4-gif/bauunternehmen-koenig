@@ -1,16 +1,23 @@
 import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
+import SEO from '../components/SEO'
 
 export function Impressum() {
   return (
     <>
-      <section className="pt-52 pb-10 bg-charcoal">
+      <SEO
+        title="Impressum | Bauunternehmen König Leipzig"
+        description="Impressum und Anbieterkennzeichnung gemäß § 5 TMG des Bauunternehmen König — Maurer- und Betonbauermeister Tim König, Leipzig."
+        path="/impressum"
+        noindex={true}
+      />
+      <section className="pt-40 sm:pt-48 md:pt-52 pb-10 bg-charcoal overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-900 text-white">Impressum</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-900 text-white">Impressum</h1>
         </div>
       </section>
       <section className="section-padding bg-white">
-        <div className="max-w-3xl mx-auto px-4 prose prose-gray">
+        <div className="max-w-3xl mx-auto px-4 prose prose-sm sm:prose-base prose-gray break-words">
           <RevealSection>
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
@@ -50,13 +57,19 @@ export function Impressum() {
 export function Datenschutz() {
   return (
     <>
-      <section className="pt-52 pb-10 bg-charcoal">
+      <SEO
+        title="Datenschutzerklärung | Bauunternehmen König Leipzig"
+        description="Datenschutzerklärung des Bauunternehmen König Leipzig gemäß DSGVO — Informationen zu Hosting, Kontaktformular, Google Fonts, Google Maps und WhatsApp."
+        path="/datenschutz"
+        noindex={true}
+      />
+      <section className="pt-40 sm:pt-48 md:pt-52 pb-10 bg-charcoal overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-900 text-white">Datenschutz</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-900 text-white">Datenschutz</h1>
         </div>
       </section>
       <section className="section-padding bg-white">
-        <div className="max-w-3xl mx-auto px-4 prose prose-gray">
+        <div className="max-w-3xl mx-auto px-4 prose prose-sm sm:prose-base prose-gray break-words">
           <RevealSection>
             <h2>1. Datenschutz auf einen Blick</h2>
             <h3>Allgemeine Hinweise</h3>

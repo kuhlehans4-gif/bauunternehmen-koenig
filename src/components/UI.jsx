@@ -19,17 +19,17 @@ export function RevealSection({ children, className = '', delay = 0 }) {
 
 export function SectionHeading({ eyebrow, title, description, light = false, center = true }) {
   return (
-    <div className={`${center ? 'text-center' : ''} max-w-2xl ${center ? 'mx-auto' : ''} mb-16 md:mb-20`}>
+    <div className={`${center ? 'text-center' : ''} max-w-2xl ${center ? 'mx-auto' : ''} mb-10 md:mb-16 lg:mb-20`}>
       {eyebrow && (
         <span className="inline-block text-gold font-semibold text-xs md:text-sm uppercase tracking-[0.25em] mb-4 md:mb-6">
           {eyebrow}
         </span>
       )}
-      <h2 className={`font-heading text-4xl md:text-5xl lg:text-6xl font-800 tracking-tight leading-[1.1] mb-6 ${light ? 'text-white' : 'text-gray-900'}`}>
+      <h2 className={`font-heading text-3xl md:text-5xl lg:text-6xl font-800 tracking-tight leading-[1.1] mb-5 md:mb-6 ${light ? 'text-white' : 'text-gray-900'}`}>
         {title}
       </h2>
       {description && (
-        <p className={`text-lg md:text-xl leading-relaxed font-light ${light ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-base sm:text-lg md:text-xl leading-relaxed font-light ${light ? 'text-gray-300' : 'text-gray-600'}`}>
           {description}
         </p>
       )}
@@ -55,17 +55,19 @@ export function ServiceCard({ icon: Icon, title, description, link, image, index
             src={image}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       )}
-      <div className="p-8 md:p-10 relative bg-white">
+      <div className="p-6 md:p-10 relative bg-white">
         {Icon && (
-          <div className="absolute -top-10 right-8 w-20 h-20 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-center transform group-hover:-translate-y-2 transition-transform duration-500 z-20">
-            <Icon size={32} className="text-gold flex-shrink-0" />
+          <div className="absolute -top-8 right-6 md:-top-10 md:right-8 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-center transform group-hover:-translate-y-2 transition-transform duration-500 z-20">
+            <Icon size={28} className="text-gold flex-shrink-0 md:w-8 md:h-8" />
           </div>
         )}
-        <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900 group-hover:text-gold transition-colors duration-300 pr-16">{title}</h3>
-        <p className="text-gray-500 text-base leading-relaxed mb-8">{description}</p>
+        <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4 text-gray-900 group-hover:text-gold transition-colors duration-300 pr-12 md:pr-16">{title}</h3>
+        <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 md:mb-8">{description}</p>
         {link && (
           <Link to={link} className="inline-flex items-center gap-2 text-black font-semibold text-sm uppercase tracking-wide group/link">
             Details ansehen
@@ -85,12 +87,12 @@ export function ProcessStep({ number, title, description, index = 0 }) {
   return (
     <div
       ref={ref}
-      className={`relative p-8 rounded-3xl transition-all duration-700 ease-out glass-card-dark border border-white/5 hover:border-gold/30 hover:-translate-y-2 ${
+      className={`relative p-6 md:p-8 rounded-3xl overflow-hidden transition-all duration-700 ease-out glass-card-dark border border-white/5 hover:border-gold/30 hover:-translate-y-2 ${
         isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-12 blur-sm'
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="text-5xl font-heading font-900 text-white/5 mb-6 absolute top-4 right-6 pointer-events-none select-none">
+      <div className="text-4xl md:text-5xl font-heading font-900 text-white/5 mb-6 absolute top-4 right-5 md:right-6 pointer-events-none select-none">
         {number}
       </div>
       <div className="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center mb-6 text-black text-xl font-bold shadow-lg shadow-gold/20">

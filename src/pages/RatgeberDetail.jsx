@@ -1,13 +1,18 @@
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, BookOpen, Clock, Calendar, ChevronRight, User, ShieldCheck, Sparkles, CheckCircle2, Phone } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, User, ShieldCheck, Sparkles, CheckCircle2, Mail, RefreshCw } from 'lucide-react'
 import { RevealSection } from '../components/UI'
+import SEO from '../components/SEO'
 
 const articlesData = {
   'fassadensanierung-leipzig-kosten-foerderung': {
     title: 'Fassaden sanieren in Leipzig: Kosten & Förderungen 2026',
+    metaDescription: 'Fassadensanierung in Leipzig 2026: Kosten pro m², BAFA-Förderung, Schichtaufbau & Putzsysteme. Praxisleitfaden vom Leipziger Meisterbetrieb mit Fördertipps.',
     category: 'Sanierung',
     readTime: '6 Min.',
     date: '10. April 2026',
+    dateISO: '2026-04-10',
+    updated: '10. April 2026',
+    updatedISO: '2026-04-10',
     author: 'Tim König',
     img: '/images/article_fassade.png',
     content: `
@@ -30,9 +35,13 @@ const articlesData = {
   },
   'risse-fassade-mauerwerk-leipzig': {
     title: 'Risse in Fassade & Mauerwerk richtig sanieren',
+    metaDescription: 'Risse in Fassade und Mauerwerk in Leipzig richtig beurteilen: Haarrisse, Setz- & Treppenrisse erkennen, fachgerecht sanieren & Statik bewerten. Meister-Tipps.',
     category: 'Materialkunde',
     readTime: '5 Min.',
     date: '02. April 2026',
+    dateISO: '2026-04-02',
+    updated: '02. April 2026',
+    updatedISO: '2026-04-02',
     author: 'Tim König',
     img: '/images/article_risse.png',
     content: `
@@ -55,9 +64,13 @@ const articlesData = {
   },
   'trockenbau-altbauwohnungen-leipzig': {
     title: 'Trockenbau in Altbauwohnungen Leipzig',
+    metaDescription: 'Trockenbau in Leipziger Altbau- & Gründerzeitwohnungen: Schallschutz, Brandschutz & schneller Raumgewinn ohne Baufeuchte. Praxis-Tipps vom Meister aus Leipzig.',
     category: 'Innenausbau',
     readTime: '6 Min.',
     date: '25. März 2026',
+    dateISO: '2026-03-25',
+    updated: '25. März 2026',
+    updatedISO: '2026-03-25',
     author: 'Tim König',
     img: '/images/article_trockenbau.png',
     content: `
@@ -80,9 +93,13 @@ const articlesData = {
   },
   'feuchtigkeit-schimmel-sanieren-leipzig': {
     title: 'Feuchtigkeit & Schimmel dauerhaft und fachgerecht sanieren',
+    metaDescription: 'Schimmel & Feuchtigkeit in Leipziger Wohnungen dauerhaft beseitigen: die 7 häufigsten Ursachen und echte Sanierungsmaßnahmen mit Sanierputz vom Meisterbetrieb.',
     category: 'Sanierung',
     readTime: '6 Min.',
     date: '18. März 2026',
+    dateISO: '2026-03-18',
+    updated: '18. März 2026',
+    updatedISO: '2026-03-18',
     author: 'Tim König',
     img: '/images/article_schimmel.png',
     content: `
@@ -109,9 +126,13 @@ const articlesData = {
   },
   'sanierungskosten-leipzig-2026': {
     title: 'Sanierungskosten Leipzig 2026: Ein Praxischeck',
+    metaDescription: 'Aktuelle Sanierungskosten Leipzig 2026: realistische Preise pro m² für Fassade, WDVS, Trockenbau, Q2-Spachtelung und Rissinjektion — transparent vom Meisterbetrieb.',
     category: 'Kosten',
     readTime: '7 Min.',
     date: '10. März 2026',
+    dateISO: '2026-03-10',
+    updated: '10. März 2026',
+    updatedISO: '2026-03-10',
     author: 'Tim König',
     img: '/images/article_kosten.png',
     content: `
@@ -138,9 +159,13 @@ const articlesData = {
   },
   'denkmalgeschuetzte-haeuser-sanieren-leipzig': {
     title: 'Denkmalgeschützte Häuser sanieren',
+    metaDescription: 'Denkmalsanierung in Leipzig: Was das Denkmalamt erlaubt, welche Putze & Fenster zulässig sind und wie die Denkmal-AfA bis 90 % der Kosten steuerlich rettet.',
     category: 'Baugenehmigung',
     readTime: '7 Min.',
     date: '02. März 2026',
+    dateISO: '2026-03-02',
+    updated: '02. März 2026',
+    updatedISO: '2026-03-02',
     author: 'Tim König',
     img: '/images/article_denkmal.png',
     content: `
@@ -163,9 +188,13 @@ const articlesData = {
   },
   'innenwaende-modernisieren-trockenbau-massivbau': {
     title: 'Innenwände modernisieren ohne Baustaub-Chaos',
+    metaDescription: 'Trockenbau vs. Massivbau im direkten Vergleich: Welche Methode passt für Innenwände in Leipziger Wohnungen? Zeit, Kosten & Sauberkeit im Praxistest.',
     category: 'Innenausbau',
     readTime: '5 Min.',
     date: '25. Februar 2026',
+    dateISO: '2026-02-25',
+    updated: '25. Februar 2026',
+    updatedISO: '2026-02-25',
     author: 'Tim König',
     img: '/images/article_innenwand.png',
     content: `
@@ -188,9 +217,13 @@ const articlesData = {
   },
   'betonreparatur-spachteln-statiker-leipzig': {
     title: 'Betonreparatur Leipzig: Spachteln oder Statiker?',
+    metaDescription: 'Betonreparatur in Leipzig: Karbonatisierung, Rost im Stahl & fachgerechte Sanierung von Balkonen, Treppen und Stützen mit PCC-Mörtel vom Meisterbetrieb.',
     category: 'Materialkunde',
     readTime: '5 Min.',
     date: '18. Februar 2026',
+    dateISO: '2026-02-18',
+    updated: '18. Februar 2026',
+    updatedISO: '2026-02-18',
     author: 'Tim König',
     img: '/images/article_beton.png',
     content: `
@@ -219,9 +252,13 @@ const articlesData = {
   },
   'energieeffiziente-fassadendaemmung-leipzig': {
     title: 'Energieeffiziente Fassadendämmung: Was bringt sie 2026?',
+    metaDescription: 'Fassadendämmung in Leipzig 2026: GEG-Pflicht ab 10 %, WDVS-Aufbau, bis zu 40 % Heizkosten sparen und BEG-Förderung bis 20 %. Meisterwissen klar erklärt.',
     category: 'Sanierung',
     readTime: '6 Min.',
     date: '10. Februar 2026',
+    dateISO: '2026-02-10',
+    updated: '10. Februar 2026',
+    updatedISO: '2026-02-10',
     author: 'Tim König',
     img: '/images/article_daemmung.png',
     content: `
@@ -244,9 +281,13 @@ const articlesData = {
   },
   'die-8-teuersten-fehler-sanierung-leipzig': {
     title: 'Die 8 teuersten Fehler bei der Sanierung in Leipzig',
+    metaDescription: 'Die 8 teuersten Fehler bei der Sanierung in Leipzig: verpasste Förderungen, Asbest-Fallen & fehlende Leistungsverzeichnisse — wie Sie Planungsdesaster vermeiden.',
     category: 'Tipps',
     readTime: '8 Min.',
     date: '02. Februar 2026',
+    dateISO: '2026-02-02',
+    updated: '02. Februar 2026',
+    updatedISO: '2026-02-02',
     author: 'Tim König',
     img: '/images/article_fehler.png',
     content: `
@@ -279,42 +320,70 @@ const articlesData = {
     content: `
       <h2>Wissenswertes rund ums Bauen in Leipzig</h2>
       <p>Bitte wählen Sie einen spezifischen Beitrag aus unserer Experten-Übersicht aus, um geballtes Fachwissen zu Bau und Sanierung abzurufen.</p>
-      <p>Wenn Sie konkrete Fragen zu einem Projekt haben, rufen Sie uns gerne an – wir beraten Sie unverbindlich!</p>
+      <p>Wenn Sie konkrete Fragen zu einem Projekt haben, kontaktieren Sie uns gerne – wir beraten Sie unverbindlich!</p>
     `
   }
 };
 
 export default function RatgeberDetail() {
   const { slug } = useParams()
+  const isKnown = Boolean(articlesData[slug])
   const article = articlesData[slug] || articlesData['default']
+  const siteUrl = 'https://www.bauunternehmen-koenig.com'
+  const pagePath = isKnown ? `/ratgeber/${slug}` : '/ratgeber'
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": article.title,
-    "author": {
-      "@type": "Person",
-      "name": article.author
-    },
-    "datePublished": "2026-01-01",
-    "image": `https://bauunternehmen-koenig-leipzig.de${article.img}`,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Bauunternehmen König",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://bauunternehmen-koenig-leipzig.de/logo.png"
-      }
-    }
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: article.title,
+        description: article.metaDescription || article.title,
+        image: `${siteUrl}${article.img}`,
+        author: { '@type': 'Person', name: article.author, url: `${siteUrl}/ueber-uns` },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Bauunternehmen König',
+          logo: { '@type': 'ImageObject', url: `${siteUrl}/logo.png` },
+        },
+        datePublished: article.dateISO || '2026-01-01',
+        dateModified: article.updatedISO || article.dateISO || '2026-01-01',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}${pagePath}` },
+        inLanguage: 'de-DE',
+        articleSection: article.category,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${siteUrl}/` },
+          { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${siteUrl}/ratgeber` },
+          { '@type': 'ListItem', position: 3, name: article.title, item: `${siteUrl}${pagePath}` },
+        ],
+      },
+    ],
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+      <SEO
+        title={`${article.title} | Bauunternehmen König Leipzig`}
+        description={article.metaDescription || article.title}
+        path={pagePath}
+        image={`${siteUrl}${article.img}`}
+        type="article"
+        noindex={!isKnown}
+        article={{
+          publishedTime: article.dateISO,
+          modifiedTime: article.updatedISO || article.dateISO,
+          author: article.author,
+          section: article.category,
+        }}
+        jsonLd={articleJsonLd}
+      />
       {/* Dark Hero */}
-      <section className="relative pt-40 pb-20 bg-charcoal overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src={article.img} alt="" className="w-full h-full object-cover" />
+          <img src={article.img} alt="" className="w-full h-full object-cover" fetchpriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,7 +394,7 @@ export default function RatgeberDetail() {
           <span className="inline-block px-3 py-1 bg-gold/20 text-gold font-bold text-xs uppercase tracking-widest rounded-full mb-6">
             {article.category}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight mb-6 md:mb-8">
             {article.title}
           </h1>
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
@@ -337,6 +406,12 @@ export default function RatgeberDetail() {
               <Calendar size={16} className="text-gold" />
               {article.date}
             </span>
+            {article.updated && article.updated !== article.date && (
+              <span className="flex items-center gap-2">
+                <RefreshCw size={16} className="text-gold" />
+                Aktualisiert: {article.updated}
+              </span>
+            )}
             <span className="flex items-center gap-2">
               <Clock size={16} className="text-gold" />
               {article.readTime}
@@ -350,27 +425,27 @@ export default function RatgeberDetail() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealSection>
             {/* Hero Image */}
-            <div className="my-12 rounded-3xl overflow-hidden shadow-xl h-[400px] md:h-[500px]">
-              <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
+            <div className="my-10 md:my-12 rounded-3xl overflow-hidden shadow-xl h-[280px] sm:h-[360px] md:h-[500px]">
+              <img src={article.img} alt={article.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
             </div>
 
             {/* Content Body */}
             <div
-              className="prose prose-lg md:prose-xl max-w-none text-gray-600 prose-headings:text-charcoal prose-headings:font-bold prose-h2:text-4xl md:prose-h2:text-5xl prose-h2:mt-20 prose-h2:mb-10 prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:mt-12 prose-h3:mb-6 prose-p:leading-relaxed prose-p:mb-10 prose-p:text-gray-500 prose-p:font-light prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-gold prose-blockquote:bg-gray-50 prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:italic prose-blockquote:text-gray-800 prose-blockquote:my-12 prose-li:marker:text-gold prose-li:mb-6"
+              className="prose prose-base sm:prose-lg md:prose-xl max-w-none text-gray-600 prose-headings:text-charcoal prose-headings:font-bold prose-h2:text-3xl sm:prose-h2:text-4xl md:prose-h2:text-5xl prose-h2:mt-16 md:prose-h2:mt-20 prose-h2:mb-8 md:prose-h2:mb-10 prose-h3:text-xl sm:prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:mt-10 md:prose-h3:mt-12 prose-h3:mb-5 md:prose-h3:mb-6 prose-p:leading-relaxed prose-p:mb-8 md:prose-p:mb-10 prose-p:text-gray-500 prose-p:font-light prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-gold prose-blockquote:bg-gray-50 prose-blockquote:p-6 md:prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:italic prose-blockquote:text-gray-800 prose-blockquote:my-10 md:prose-blockquote:my-12 prose-li:marker:text-gold prose-li:mb-4 md:prose-li:mb-6"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
             
             {/* Inline Footer CTA (Trust Bar + Contact) */}
-            <div className="mt-16 bg-white rounded-3xl p-8 md:p-10 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)] relative overflow-hidden">
+            <div className="mt-16 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[80px] z-0 translate-x-1/3 -translate-y-1/3" />
               
               <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-800 text-gray-900 mb-8">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-800 text-gray-900 mb-8">
                   Haben Sie Fragen zu Ihrem <span className="gold-text-gradient">Projekt?</span>
                 </h3>
                 
-                <div className="flex flex-col md:flex-row gap-10 items-center">
-                  <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                <div className="flex flex-col lg:flex-row gap-8 md:gap-10 items-center">
+                  <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full">
                     {[
                       { icon: ShieldCheck, text: 'Meisterbetrieb', sub: 'HWK Leipzig' },
                       { icon: Clock, text: 'Termintreue', sub: 'Pünktlich garantiert' },
@@ -389,12 +464,12 @@ export default function RatgeberDetail() {
                     ))}
                   </div>
                   
-                  <div className="w-full md:w-auto flex flex-col items-center justify-center gap-4 border-t md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-10">
+                  <div className="w-full lg:w-auto flex flex-col items-center justify-center gap-4 border-t lg:border-t-0 lg:border-l border-gray-100 pt-8 lg:pt-0 lg:pl-10">
                     <p className="text-sm text-gray-500 text-center">
                       Beratung & Festpreis-<br />Angebot in 48 Stunden.
                     </p>
-                    <Link to="/kontakt" className="btn-primary w-full shadow-[0_4px_20px_rgba(212,175,55,0.3)] whitespace-nowrap">
-                      <Phone size={18} />
+                    <Link to="/kontakt" className="btn-primary w-full shadow-[0_4px_20px_rgba(212,175,55,0.3)]">
+                      <Mail size={18} />
                       Unverbindlich anfragen
                     </Link>
                   </div>

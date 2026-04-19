@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Phone, Award, Heart, Shield, Users } from 'lucide-react'
+import { Mail, Award, Heart, Shield, Users } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
+import SEO from '../components/SEO'
 
 const values = [
   { icon: Shield, title: 'Qualität nach DIN', desc: 'Jede Arbeit wird nach den aktuellen DIN-Normen und Höchststandards ausgeführt — keine Abkürzungen.' },
@@ -11,35 +12,62 @@ const values = [
 ]
 
 export default function UeberUns() {
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Tim König',
+    jobTitle: 'Maurer- und Betonbauermeister',
+    worksFor: {
+      '@type': 'HomeAndConstructionBusiness',
+      name: 'Bauunternehmen König',
+      url: 'https://www.bauunternehmen-koenig.com',
+    },
+    image: 'https://www.bauunternehmen-koenig.com/images/tim-portrait.png',
+    url: 'https://www.bauunternehmen-koenig.com/ueber-uns',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Leipzig',
+      addressRegion: 'Sachsen',
+      addressCountry: 'DE',
+    },
+  }
+
   return (
     <>
+      <SEO
+        title="Über uns – Tim König, Maurermeister aus Leipzig"
+        description="Lernen Sie Tim König kennen — Maurer- und Betonbauermeister (HWK Leipzig) und Gründer des Bauunternehmens König. Handwerkliche Präzision, Zuverlässigkeit und Leidenschaft für Qualität."
+        keywords="Tim König Leipzig, Maurermeister Leipzig, Bauunternehmen König Inhaber, Meisterbetrieb Leipzig, HWK Leipzig Maurer"
+        path="/ueber-uns"
+        jsonLd={personJsonLd}
+      />
       {/* Hero */}
-      <section className="relative pt-52 pb-20 bg-charcoal overflow-hidden">
+      <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/images/tim-portrait.png" alt="" className="w-full h-full object-cover opacity-10" />
+          <img src="/images/tim-portrait.png" alt="" className="w-full h-full object-cover opacity-10" fetchpriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Über uns</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6">
-            Die Person hinter<br /><span className="gold-text-gradient">der Marke</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-6 leading-tight max-w-[12ch] mx-auto sm:max-w-none">
+            Die Person hinter<br className="hidden sm:block" /> <span className="gold-text-gradient">der Marke</span>
           </h1>
         </div>
       </section>
 
       {/* About Tim */}
       <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <RevealSection>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/images/tim-portrait.png" alt="Tim König — Maurer- und Betonbauermeister" className="w-full h-[500px] object-cover" />
+              <img src="/images/tim-portrait.png" alt="Tim König — Maurer- und Betonbauermeister" className="w-full h-[360px] sm:h-[500px] object-cover" loading="lazy" decoding="async" />
             </div>
           </RevealSection>
           <RevealSection delay={200}>
             <div>
               <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">Maurer- und Betonbauermeister Leipzig</span>
-              <h2 className="text-3xl md:text-4xl font-800 mb-6">
-                Bauen, Sanieren und<br />Gestalten mit Leidenschaft
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-800 mb-6 leading-tight max-w-[18ch] sm:max-w-none">
+                Bauen, Sanieren und<br className="hidden sm:block" /> Gestalten mit Leidenschaft
               </h2>
               <div className="space-y-4 text-gray-500 leading-relaxed">
                 <p>
@@ -92,7 +120,7 @@ export default function UeberUns() {
             />
           </RevealSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((v, i) => (
               <RevealSection key={v.title} delay={i * 100} className="h-full">
                 <div className="text-center p-8 bg-white rounded-2xl border border-gray-100 card-hover h-full flex flex-col">
@@ -113,14 +141,14 @@ export default function UeberUns() {
         <div className="absolute inset-0 gold-gradient opacity-95" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <RevealSection>
-            <h2 className="text-3xl md:text-4xl font-800 text-black mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-800 text-black mb-6">
               Lernen Sie uns kennen
             </h2>
             <p className="text-black/70 text-lg mb-8">
               Vereinbaren Sie einen unverbindlichen Kennenlern-Termin. Wir freuen uns auf Ihr Projekt.
             </p>
-            <Link to="/kontakt" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1">
-              <Phone size={20} />
+            <Link to="/kontakt" className="btn-primary flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-black text-white font-semibold rounded-xl hover:bg-charcoal transition-all duration-300 hover:-translate-y-1 mx-auto">
+              <Mail size={20} />
               Kostenlose Beratung sichern
             </Link>
           </RevealSection>

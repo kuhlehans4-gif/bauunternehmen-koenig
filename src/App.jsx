@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import FloatingActions from './components/FloatingActions'
 import Home from './pages/Home'
 import Leistungen from './pages/Leistungen'
 import LeistungDetail from './pages/LeistungDetail'
@@ -22,10 +23,10 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leistungen" element={<Leistungen />} />
@@ -40,6 +41,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   )
 }
