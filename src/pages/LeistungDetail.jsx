@@ -1,17 +1,25 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf } from 'lucide-react'
+import { Phone, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Sparkles } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 
 const iconMap = {
-  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf
+  Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Sparkles
 }
 
 const serviceData = {
   'maurer-betonbau': {
-    title: 'Maurer- & Betonbau',
+    title: 'Präziser Maurer- & Betonbau für Ihr Fundament in Leipzig',
     eyebrow: 'Kernkompetenz Maurermeister',
+    subtitle: 'Massive Bauweise, meisterhafte Ausführung und höchste Standfestigkeit für private und gewerbliche Bauprojekte.',
+    showHeroCTAs: true,
+    trustSignals: [
+      { text: 'Meisterbetrieb', sub: 'HWK Leipzig', icon: 'ShieldCheck' },
+      { text: 'Regional in Leipzig', sub: '& Umgebung', icon: 'MapPin' },
+      { text: 'Meisterqualität', sub: 'Nach DIN-Norm', icon: 'CheckSquare' },
+      { text: 'Festpreisgarantie', sub: 'Ohne Überraschungen', icon: 'CheckCircle2' }
+    ],
     heroImage: '/images/maurer.png',
     intro: 'Als staatlich geprüfter Maurer- und Betonbauermeister (HWK Leipzig) ist Tim König Ihr Spezialist für präzise und DIN-gerechte Maurer- und Betonarbeiten in Leipzig und Umgebung. Ob Fundamente, tragendes Mauerwerk oder Betondecken — jede Arbeit wird mit höchster Sorgfalt, den richtigen Materialien und dem nötigen Fachwissen ausgeführt. Wir bauen auf Qualität, die Jahrzehnte hält.',
     details: [
@@ -43,8 +51,16 @@ const serviceData = {
     lokalerHinweis: 'Wir führen Maurer- und Betonarbeiten in ganz Leipzig durch — von Gohlis bis Connewitz, von Plagwitz bis Reudnitz.',
   },
   'sanierung': {
-    title: 'Sanierung & Instandsetzung',
+    title: 'Ganzheitliche Sanierung & Modernisierung in Leipzig',
     eyebrow: 'Erhalt & Wertsteigerung im Bestand',
+    subtitle: 'Werte erhalten, Wohnkomfort steigern: Wir sanieren Ihre Bestandsimmobilie fachgerecht und termintreu aus einer Hand.',
+    showHeroCTAs: true,
+    trustSignals: [
+      { text: 'Meisterbetrieb', sub: 'HWK Leipzig', icon: 'ShieldCheck' },
+      { text: 'Regional in Leipzig', sub: '& Umgebung', icon: 'MapPin' },
+      { text: 'Alles aus einer Hand', sub: 'Gewerke-Koordination', icon: 'LayoutGrid' },
+      { text: 'Termintreue', sub: 'Pünktlich garantiert', icon: 'Clock' }
+    ],
     heroImage: '/images/sanierung.png',
     intro: 'Ob Sie eine Bestandsimmobilie in Leipzig modernisieren oder eine denkmalgerechte Sanierung planen — wir stehen Ihnen mit Fachwissen zur Seite. Vom kontrollierten Rückbau bis zur Instandsetzung koordinieren wir alle Gewerke. Wir sanieren Altbauten und Mehrfamilienhäuser mit dem nötigen Respekt vor der Bausubstanz und dem Blick für Langlebigkeit.',
     details: [
@@ -76,8 +92,16 @@ const serviceData = {
     lokalerHinweis: 'Sanierungen in Leipzig-Südvorstadt, Schleußig, Gohlis und weiteren Altbau-Zentren sind unser Spezialgebiet.',
   },
   'innenausbau': {
-    title: 'Innenausbau & Trockenbau',
+    title: 'Moderner Innenausbau & Trockenbau in Leipzig',
     eyebrow: 'Moderne Raumgestaltung',
+    subtitle: 'Flexible Raumkonzepte, perfekte Q4-Oberflächen und ganzheitliche Lösungen für Ihre Innenräume.',
+    showHeroCTAs: true,
+    trustSignals: [
+      { text: 'Meisterbetrieb', sub: 'HWK Leipzig', icon: 'ShieldCheck' },
+      { text: 'Regional in Leipzig', sub: '& Umgebung', icon: 'MapPin' },
+      { text: 'Q4-Oberflächen', sub: 'Perfektes Finish', icon: 'PaintRoller' },
+      { text: 'Saubere Arbeit', sub: 'Täglich aufgeräumt', icon: 'Sparkles' }
+    ],
     heroImage: '/images/innenausbau.png',
     intro: 'Der professionelle Innenausbau verwandelt Rohbauten in Wohnträume. Bauunternehmen König realisiert in Leipzig hochwertigen Trockenbau, perfekte Spachtelarbeiten (Q2 bis Q4) und durchdachte Raumgestaltung. Schnelle Bauzeit, keine zusätzliche Baufeuchte und hervorragende Dämmeigenschaften — das sind die Vorteile unseres modernen Trockenbaus.',
     details: [
