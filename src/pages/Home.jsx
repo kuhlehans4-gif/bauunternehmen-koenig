@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'Bieten Sie alle Bauleistungen aus einer Hand als Generalunternehmer an?',
-    answer: 'Ja. Wir verstehen uns als Ihr zentraler Ansprechpartner für das gesamte Bauprojekt. Von der ersten Rohbauplanung bis hin zum schlüsselfertigen Innenausbau koordinieren wir alle Gewerke. Für Sie bedeutet das: Keine Kommunikationsverluste, feste Ansprechpartner und eine garantierte Termintreue bei höchster Qualität.',
+    answer: 'Ja. Wir sind Ihr fester Ansprechpartner für Maurer- und Betonbauarbeiten, Sanierung, Innenausbau und Fassadenarbeiten — alles aus einer Hand. Benötigen Sie darüber hinaus weitere Gewerke, greifen wir auf unser bewährtes Netzwerk qualifizierter Partnerfirmen zurück und koordinieren den Ablauf für Sie. Keine Kommunikationsverluste, keine Schnittstellenprobleme.',
   },
   {
     question: 'Wie läuft die erste Beratung beim Bauunternehmen König ab?',
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     question: 'Realisieren Sie Projekte für Privatkunden oder gewerbliche Auftraggeber?',
-    answer: 'Unsere Expertise umfasst beide Segmente. Wir bauen anspruchsvolle Einfamilienhäuser und Villen für Privatkunden mit derselben Präzision und Zuverlässigkeit wie komplexe Gewerbe-, Büro- oder Industriebauten für Geschäftskunden. Höchste Bauqualität ist in jedem Maßstab unser Standard.',
+    answer: 'Unsere Expertise umfasst beide Bereiche. Für Privatkunden führen wir Sanierungen, Umbauten, Innenausbauten und Fassadenarbeiten an Wohnhäusern und Eigentumswohnungen durch. Gewerbliche Auftraggeber unterstützen wir bei der Instandsetzung und Modernisierung von Büros, Praxen und Gewerbeimmobilien. Höchste Qualität ist dabei in jedem Projekt unser Standard.',
   },
   {
     question: 'Welche Sicherheiten und Garantien geben Sie auf Ihre Leistungen?',
@@ -92,8 +92,8 @@ export default function Home() {
     <>
       <SEO
         title="Bauunternehmen König | Maurermeister & Betonbauer in Leipzig"
-        description="Bauunternehmen König – Ihr Maurer- und Betonbauermeister in Leipzig. ✓ Neubau ✓ Sanierung ✓ Innenausbau ✓ Fassadenarbeiten. Festpreisgarantie & kostenlose Erstberatung. Jetzt Angebot anfragen!"
-        keywords="Bauunternehmen Leipzig, Maurermeister Leipzig, Betonbauer Leipzig, Neubau Leipzig, Sanierung Leipzig, Innenausbau Leipzig, Fassade Leipzig, Handwerker Leipzig, Tim König, Maurer Leipzig"
+        description="Bauunternehmen König – Ihr Maurer- und Betonbauermeister in Leipzig. ✓ Mauerwerk ✓ Sanierung ✓ Innenausbau ✓ Fassadenarbeiten. Festpreisgarantie & kostenlose Erstberatung. Jetzt Angebot anfragen!"
+        keywords="Bauunternehmen Leipzig, Maurermeister Leipzig, Betonbauer Leipzig, Sanierung Leipzig, Innenausbau Leipzig, Fassade Leipzig, Handwerker Leipzig, Tim König, Maurer Leipzig, Umbau Leipzig"
         path="/"
         jsonLd={faqJsonLd}
       />
