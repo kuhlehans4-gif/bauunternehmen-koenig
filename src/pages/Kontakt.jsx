@@ -3,6 +3,8 @@ import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from 'l
 import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 import SEO from '../components/SEO'
+import MapSafe from '../components/MapSafe'
+
 
 const gewerke = ['Maurer- & Betonbau', 'Sanierung & Instandsetzung', 'Innenausbau & Trockenbau', 'Fassaden- & Putzarbeiten', 'Sonstiges']
 
@@ -286,20 +288,14 @@ export default function Kontakt() {
         </div>
       </section>
 
+
+
+
       {/* Map */}
-      <section className="h-80 md:h-96 bg-gray-200 relative">
-        <iframe
-          title="Bauunternehmen König — Standort Leipzig"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.35438797045!2d12.237358326037966!3d51.34010055893394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f818200f2c73%3A0x93fb48b39b4a4f7!2sLeipzig!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0"
-        />
+      <section className="h-[400px] md:h-[500px] bg-gray-200 relative">
+        <MapSafe />
       </section>
     </>
   )
 }
+

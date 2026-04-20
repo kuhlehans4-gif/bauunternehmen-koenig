@@ -159,7 +159,7 @@ export default function Home() {
         </section>
 
       {/* ========== TRUST BAR LAYER ========== */}
-      <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="relative -mt-8 sm:-mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <RevealSection>
           <div className="bg-white rounded-3xl overflow-hidden p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 border border-gold/40 shadow-[0_8px_40px_rgba(0,0,0,0.18),0_0_0_1px_rgba(180,144,60,0.15)]">
             {[

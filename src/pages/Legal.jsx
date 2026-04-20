@@ -76,21 +76,40 @@ export function Datenschutz() {
             <p>
               Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten
               passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie
-              persönlich identifiziert werden können.
+              persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen
+              Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
             </p>
 
             <h3>Datenerfassung auf dieser Website</h3>
             <p>
               <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br />
               Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten
-              können Sie dem Impressum dieser Website entnehmen.
+              können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.
+            </p>
+            <p>
+              <strong>Wie erfassen wir Ihre Daten?</strong><br />
+              Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+              Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+            </p>
+            <p>
+              <strong>Wofür nutzen wir Ihre Daten?</strong><br />
+              Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
             </p>
 
             <h2>2. Hosting</h2>
             <p>
-              Diese Website wird bei einem externen Dienstleister gehostet (Vercel Inc.).
-              Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern
-              des Hosters gespeichert.
+              Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+            </p>
+            <h3>Vercel</h3>
+            <p>
+              Anbieter ist die Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA (nachfolgend Vercel).
+              Vercel ist eine Plattform zum Hosting und zur Bereitstellung von Websites. Wenn Sie unsere Website besuchen, werden Daten auf den Servern von Vercel verarbeitet. Hierbei kann es sich auch um die Übermittlung von personenbezogenen Daten in die USA handeln.
+            </p>
+            <p>
+              Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit widerrufbar.
+            </p>
+            <p>
+              Details entnehmen Sie der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy" target="_blank" rel="noopener noreferrer">https://vercel.com/legal/privacy</a>.
             </p>
 
             <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
@@ -100,34 +119,100 @@ export function Datenschutz() {
               Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften
               sowie dieser Datenschutzerklärung.
             </p>
+            <p>
+              Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Diese Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
+            </p>
+
+            <h3>Hinweis zur verantwortlichen Stelle</h3>
+            <p>
+              Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+            </p>
+            <p>
+              {contactDetails.businessName}<br />
+              {contactDetails.ownerName}<br />
+              {contactDetails.addressLine1}<br />
+              {contactDetails.addressLine2}
+            </p>
+            <p>
+              Telefon: {contactDetails.phoneDisplay}<br />
+              E-Mail: {contactDetails.email}
+            </p>
+            <p>
+              Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
+            </p>
+
+            <h3>Speicherdauer</h3>
+            <p>
+              Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+            </p>
+
+            <h3>Ihre Rechte als betroffene Person</h3>
+            <p>
+              Sie haben jederzeit das Recht:
+            </p>
+            <ul>
+              <li>Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten (Art. 15 DSGVO).</li>
+              <li>Die Berichtigung unrichtiger oder Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen (Art. 16 DSGVO).</li>
+              <li>Die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen (Art. 17 DSGVO).</li>
+              <li>Die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen (Art. 18 DSGVO).</li>
+              <li>Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten (Art. 20 DSGVO).</li>
+              <li>Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einzulegen (Art. 21 DSGVO).</li>
+            </ul>
+
+            <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+            <p>
+              Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. In Sachsen ist dies der:
+            </p>
+            <p>
+              <strong>Sächsische Datenschutz- und Transparenzbeauftragte</strong><br />
+              Devrientstraße 5, 01067 Dresden<br />
+              Website: <a href="https://www.saechsptb.sachsen.de" target="_blank" rel="noopener noreferrer">www.saechsptb.sachsen.de</a>
+            </p>
 
             <h2>4. Datenerfassung auf dieser Website</h2>
+            <h3>Server-Log-Dateien</h3>
+            <p>
+              Der Hoster der Seiten (Vercel) erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            </p>
+            <ul>
+              <li>Browsertyp und Browserversion</li>
+              <li>verwendetes Betriebssystem</li>
+              <li>Referrer URL</li>
+              <li>Hostname des zugreifenden Rechners</li>
+              <li>Uhrzeit der Serveranfrage</li>
+              <li>IP-Adresse</li>
+            </ul>
+            <p>
+              Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet sowie unser berechtigtes Interesse an der technischen Optimierung der Website.
+            </p>
+
             <h3>Kontaktformular</h3>
             <p>
-              Das Kontaktformular ist derzeit noch nicht an einen Versanddienst oder ein Backend
-              angebunden. Beim Absenden werden daher aktuell keine Daten an uns übermittelt oder bei
-              uns gespeichert.
+              Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+            </p>
+            <p>
+              Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) falls diese abgefragt wurde.
+            </p>
+            <p>
+              <strong>FormSubmit.co</strong><br />
+              Für den Versand der Formulardaten nutzen wir den Dienst FormSubmit.co (Anbieter: FormSubmit, USA). Ihre Daten werden dabei sicher verschlüsselt an diesen Dienst übertragen, der die E-Mail an uns zustellt. FormSubmit speichert Ihre Daten nicht dauerhaft über den Versandzeitpunkt hinaus.
             </p>
 
-            <h3>Google Fonts</h3>
+            <h3>Google Fonts (Lokales Hosting)</h3>
             <p>
-              Diese Website bindet Schriftarten von Google Fonts ein. Beim Aufruf der Website kann
-              Ihre IP-Adresse an Server der Google Ireland Limited übertragen werden, damit die
-              Schriftarten im Browser dargestellt werden können.
+              Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts. Diese werden lokal auf unserem Server gehostet. Eine Verbindung zu Servern von Google findet nicht statt. Somit werden keine IP-Adressen an Google übertragen.
             </p>
 
-            <h3>Google Maps</h3>
+            <h3>Google Maps (2-Klick-Lösung)</h3>
             <p>
-              Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited.
-              Durch die Nutzung von Google Maps können Informationen über Ihre Benutzung dieser Website
-              an Google in den USA übertragen werden.
+              Wir nutzen auf dieser Website Google Maps. Erst wenn Sie die Karte aktiv durch Klick auf den Platzhalter laden, wird eine Verbindung zu den Servern von Google hergestellt. Dabei wird Ihre IP-Adresse an Google übertragen. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
             </p>
 
             <h3>WhatsApp</h3>
             <p>
               Wenn Sie den WhatsApp-Link auf dieser Website nutzen, werden Sie zu einem Angebot der
               WhatsApp Ireland Limited weitergeleitet. Dabei können personenbezogene Daten wie Ihre
-              IP-Adresse oder Meta-Daten der Verbindung verarbeitet werden.
+              IP-Adresse oder Meta-Daten der Verbindung verarbeitet werden. Die Nutzung erfolgt auf Grundlage Ihrer freiwilligen Entscheidung, uns über diesen Kanal zu kontaktieren (Art. 6 Abs. 1 lit. a DSGVO).
             </p>
           </RevealSection>
         </div>
@@ -135,3 +220,4 @@ export function Datenschutz() {
     </>
   )
 }
+
