@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Phone, Mail, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Sparkles } from 'lucide-react'
+import { Phone, Mail, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react'
 import { RevealSection, SectionHeading } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 import SEO from '../components/SEO'
@@ -11,6 +11,13 @@ const iconMap = {
 
 const serviceData = {
   'maurer-betonbau': {
+    beforeAfter: {
+      beforeSrc: '/images/before-maurer.png',
+      afterSrc: '/images/after-maurer.png',
+      beforeAlt: 'Beschädigtes, verwittertes Mauerwerk vor der Sanierung',
+      afterAlt: 'Frisch errichtetes, sauberes Mauerwerk nach der Arbeit',
+      caption: 'Mauerwerkssanierung – vorher & nachher',
+    },
     metaTitle: 'Maurer & Betonbauer Leipzig – Fundament & Mauerwerk vom Meister',
     metaDescription: 'Maurer- & Betonbauarbeiten in Leipzig vom Meisterbetrieb: Fundamente, tragendes Mauerwerk, Betondecken, Keller & Abdichtung. DIN-gerecht und mit Festpreisgarantie.',
     keywords: 'Maurer Leipzig, Betonbauer Leipzig, Fundament Leipzig, Mauerwerk Leipzig, Betonarbeiten Leipzig, Bodenplatte, Maurerarbeiten Sachsen',
@@ -58,6 +65,13 @@ const serviceData = {
     lokalerHinweis: 'Wir führen Maurer- und Betonarbeiten in ganz Leipzig durch — von Gohlis bis Connewitz, von Plagwitz bis Reudnitz.',
   },
   'sanierung': {
+    beforeAfter: {
+      beforeSrc: '/images/before-sanierung.png',
+      afterSrc: '/images/after-sanierung.png',
+      beforeAlt: 'Veralteter, renovierungsbedürftiger Raum vor der Sanierung',
+      afterAlt: 'Modern sanierter, heller Raum nach der Komplettsanierung',
+      caption: 'Altbausanierung – vorher & nachher',
+    },
     metaTitle: 'Sanierung Leipzig – Altbau, Energetisch & Komplett aus einer Hand',
     metaDescription: 'Sanierung & Modernisierung in Leipzig: Altbausanierung, energetische Sanierung, Grundrissoptimierung & Feuchtigkeitssanierung. Meisterbetrieb mit Gewerke-Koordination.',
     keywords: 'Sanierung Leipzig, Altbausanierung Leipzig, Modernisierung Leipzig, energetische Sanierung Leipzig, Komplettsanierung Leipzig, Denkmalsanierung',
@@ -105,6 +119,13 @@ const serviceData = {
     lokalerHinweis: 'Sanierungen in Leipzig-Südvorstadt, Schleußig, Gohlis und weiteren Altbau-Zentren sind unser Spezialgebiet.',
   },
   'innenausbau': {
+    beforeAfter: {
+      beforeSrc: '/images/before-innenausbau.png',
+      afterSrc: '/images/after-innenausbau.png',
+      beforeAlt: 'Rohbauzustand mit unverputzten Wänden vor dem Innenausbau',
+      afterAlt: 'Fertig ausgebauter Raum mit perfekter Q4-Oberfläche',
+      caption: 'Innenausbau & Trockenbau – vorher & nachher',
+    },
     metaTitle: 'Innenausbau & Trockenbau Leipzig – Q2 bis Q4 Spachtelarbeiten',
     metaDescription: 'Professioneller Innenausbau & Trockenbau in Leipzig: Trennwände, abgehängte Decken, Dachgeschossausbau, Spachtelarbeiten Q2–Q4 und Trockenestrich vom Meisterbetrieb.',
     keywords: 'Innenausbau Leipzig, Trockenbau Leipzig, Spachtelarbeiten Leipzig, Q4 Spachtelung, Dachgeschossausbau Leipzig, Trockenestrich, Gipskarton Leipzig',
@@ -152,6 +173,13 @@ const serviceData = {
     lokalerHinweis: 'Vom Dachausbau in Connewitz bis zur Praxiseinrichtung im Zentrum — wir schaffen neue Räume in Leipzig.',
   },
   'fassade': {
+    beforeAfter: {
+      beforeSrc: '/images/before-fassade.png',
+      afterSrc: '/images/after-fassade.png',
+      beforeAlt: 'Verwitterte, rissige Fassade vor der Sanierung',
+      afterAlt: 'Frisch gedämmte und verputzte Fassade nach der Sanierung',
+      caption: 'Fassadensanierung – vorher & nachher',
+    },
     metaTitle: 'Fassade & Putzarbeiten Leipzig – WDVS & Fassadensanierung',
     metaDescription: 'Fassaden- & Putzarbeiten in Leipzig: Wärmedämmverbundsysteme (WDVS), Fassadensanierung, Außenputz, Struktur- & Edelputze. GEG-konform vom Meisterbetrieb.',
     keywords: 'Fassade Leipzig, Fassadensanierung Leipzig, WDVS Leipzig, Wärmedämmung Leipzig, Putzarbeiten Leipzig, Außenputz Leipzig, Fassadendämmung',
@@ -198,6 +226,70 @@ const serviceData = {
     qualityTitle: 'Schön von außen, stark für Jahrzehnte',
     lokalerHinweis: 'Hochwertige Fassaden für Einfamilienhäuser und Villen in Leutzsch, Markkleeberg und ganz Leipzig.',
   },
+}
+
+function BeforeAfterSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }) {
+  const containerRef = useRef(null)
+  const clipperRef = useRef(null)
+  const dividerRef = useRef(null)
+  const isDragging = useRef(false)
+
+  const updatePos = useCallback((clientX) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
+    const pct = Math.max(2, Math.min(98, ((clientX - rect.left) / rect.width) * 100))
+    if (clipperRef.current) clipperRef.current.style.clipPath = `inset(0 ${100 - pct}% 0 0)`
+    if (dividerRef.current) dividerRef.current.style.left = `${pct}%`
+  }, [])
+
+  const handlePointerDown = useCallback((e) => {
+    isDragging.current = true
+    e.currentTarget.setPointerCapture(e.pointerId)
+    updatePos(e.clientX)
+  }, [updatePos])
+
+  const handlePointerMove = useCallback((e) => {
+    if (!isDragging.current) return
+    updatePos(e.clientX)
+  }, [updatePos])
+
+  const handlePointerUp = useCallback(() => { isDragging.current = false }, [])
+
+  return (
+    <div className="space-y-4">
+      <div
+        ref={containerRef}
+        className="relative overflow-hidden rounded-2xl select-none shadow-xl cursor-col-resize"
+        style={{ aspectRatio: '16/9', touchAction: 'none' }}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
+        onDragStart={(e) => e.preventDefault()}
+      >
+        {/* After image — full width underneath */}
+        <img src={afterSrc} alt={afterAlt} draggable={false} className="absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy" decoding="async" />
+
+        {/* Before image — clipped, updated directly via ref (no React re-render) */}
+        <div ref={clipperRef} className="absolute inset-0 pointer-events-none" style={{ clipPath: 'inset(0 50% 0 0)', willChange: 'clip-path' }}>
+          <img src={beforeSrc} alt={beforeAlt} draggable={false} className="absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy" decoding="async" />
+        </div>
+
+        {/* Divider line + handle — updated directly via ref */}
+        <div ref={dividerRef} className="absolute top-0 bottom-0 w-px bg-white/80 pointer-events-none" style={{ left: '50%', willChange: 'left' }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-2xl flex items-center justify-center gap-0.5 ring-2 ring-white/50">
+            <ChevronLeft size={13} className="text-gray-700" />
+            <ChevronRight size={13} className="text-gray-700" />
+          </div>
+        </div>
+
+        {/* Labels */}
+        <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-lg pointer-events-none">Vorher</div>
+        <div className="absolute bottom-4 right-4 bg-gold/90 backdrop-blur-sm text-black text-xs font-bold px-3 py-1.5 rounded-lg pointer-events-none">Nachher</div>
+      </div>
+      {caption && <p className="text-center text-sm text-gray-400 font-medium">{caption}</p>}
+    </div>
+  )
 }
 
 // Accordion Component für FAQs
@@ -415,8 +507,26 @@ export default function LeistungDetail() {
         </div>
       </section>
 
+      {/* Before / After */}
+      {data.beforeAfter && (
+        <section className="section-padding bg-gray-50 border-t border-gray-100">
+          <div className="max-w-5xl mx-auto">
+            <RevealSection>
+              <SectionHeading
+                eyebrow="Transformation"
+                title="Vorher & Nachher"
+                description="Sehen Sie selbst, was professionelles Handwerk aus Ihrem Objekt machen kann."
+              />
+            </RevealSection>
+            <RevealSection delay={200}>
+              <BeforeAfterSlider {...data.beforeAfter} />
+            </RevealSection>
+          </div>
+        </section>
+      )}
+
       {/* Bento Grid: Im Detail */}
-      <section className="section-padding bg-gray-50 border-t border-gray-100">
+      <section className="section-padding bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <RevealSection>
             <SectionHeading
