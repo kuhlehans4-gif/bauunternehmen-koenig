@@ -7,7 +7,7 @@ export function Impressum() {
     <>
       <SEO
         title="Impressum | Bauunternehmen König Leipzig"
-        description="Impressum und Anbieterkennzeichnung gemäß § 5 TMG des Bauunternehmen König — Maurer- und Betonbauermeister Tim König, Leipzig."
+        description="Impressum und Anbieterkennzeichnung gemäß § 5 DDG des Bauunternehmen König — Maurer- und Betonbauermeister Tim König, Leipzig."
         path="/impressum"
         noindex={true}
       />
@@ -19,7 +19,7 @@ export function Impressum() {
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 prose prose-sm sm:prose-base prose-gray break-words">
           <RevealSection>
-            <h2>Angaben gemäß § 5 TMG</h2>
+            <h2>Angaben gemäß § 5 DDG</h2>
             <p>
               {contactDetails.businessName}<br />
               Inh. {contactDetails.ownerName}<br />
@@ -41,10 +41,16 @@ export function Impressum() {
               Zuständige Handwerkskammer: HWK zu Leipzig
             </p>
 
+            <h2>Berufsrechtliche Regelungen</h2>
+            <p>
+              Handwerksordnung (HwO), abrufbar unter{' '}
+              <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer">
+                gesetze-im-internet.de/hwo
+              </a>.
+            </p>
+
             <h2>Streitschlichtung</h2>
             <p>
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-              <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer"> https://ec.europa.eu/consumers/odr/</a>.
               Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </p>
           </RevealSection>
@@ -220,4 +226,3 @@ export function Datenschutz() {
     </>
   )
 }
-

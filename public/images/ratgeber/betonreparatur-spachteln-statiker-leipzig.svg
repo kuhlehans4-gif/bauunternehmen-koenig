@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title-betonreparatur-spachteln">
+  <title id="title-betonreparatur-spachteln">betonreparatur-spachteln</title>
+  <defs>
+    <linearGradient id="bg-betonreparatur-spachteln" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f0"/>
+      <stop offset="0.58" stop-color="#f0eadf"/>
+      <stop offset="1" stop-color="#e5ded1"/>
+    </linearGradient>
+    <linearGradient id="gold-betonreparatur-spachteln" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a68725"/>
+      <stop offset="0.55" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#f0d06b"/>
+    </linearGradient>
+    <filter id="shadow-betonreparatur-spachteln" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#151515" flood-opacity="0.16"/>
+    </filter>
+    <pattern id="grid-betonreparatur-spachteln" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0v46" fill="none" stroke="#d9d0bf" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg-betonreparatur-spachteln)"/>
+  <rect x="60" y="58" width="1080" height="644" rx="34" fill="#fffaf0" opacity="0.58"/>
+  <rect x="60" y="58" width="1080" height="644" rx="34" fill="url(#grid-betonreparatur-spachteln)" opacity="0.18"/>
+  <circle cx="1035" cy="116" r="78" fill="#b9b4aa" opacity="0.14"/>
+  <circle cx="158" cy="646" r="118" fill="#151515" opacity="0.05"/>
+  
+      <g filter="url(#shadow-betonreparatur-spachteln)">
+        <path d="M244 268h566l112 120v160H322L244 468z" fill="#b9b4aa" stroke="#8f897e" stroke-width="7"/>
+        <path d="M244 268l78 200h600" fill="none" stroke="#8f897e" stroke-width="7"/>
+        <path d="M454 312c78 18 90 74 30 116 86-14 126 28 104 90" fill="none" stroke="#303030" stroke-width="12" stroke-linecap="round"/>
+        <g stroke="#8f3d2a" stroke-width="12" stroke-linecap="round">
+          <path d="M612 352h206M628 394h218M646 438h214"/>
+        </g>
+        <path d="M606 320c80 66 128 76 256 60v68c-86 26-178 14-274-36z" fill="url(#gold-betonreparatur-spachteln)" opacity="0.92"/>
+      </g>
+      <g transform="translate(746 182) rotate(26)" filter="url(#shadow-betonreparatur-spachteln)">
+        <rect x="0" y="72" width="268" height="30" rx="15" fill="#222"/>
+        <path d="M220 0l92 76-28 34-102-56z" fill="url(#gold-betonreparatur-spachteln)"/>
+      </g>
+</svg>

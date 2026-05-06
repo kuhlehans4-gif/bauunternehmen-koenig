@@ -1,4 +1,73 @@
 {
+  "redirects": [
+    {
+      "source": "/services-7-1",
+      "destination": "/ratgeber/feuchtigkeit-schimmel-sanieren-leipzig",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-2",
+      "destination": "/ratgeber/die-8-teuersten-fehler-sanierung-leipzig",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-4",
+      "destination": "/leistungen/maurer-betonbau",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-7",
+      "destination": "/ratgeber/energieeffiziente-fassadendaemmung-leipzig",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-8",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-10",
+      "destination": "/ratgeber/sanierungskosten-leipzig-2026",
+      "permanent": true
+    },
+    {
+      "source": "/services-7-:path*",
+      "destination": "/ratgeber",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

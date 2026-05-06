@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RevealSection } from '../components/UI'
-import { BookOpen, Clock, Filter, ArrowRight, Mail } from 'lucide-react'
+import { BookOpen, Clock, Filter, ArrowRight, Mail, MapPin } from 'lucide-react'
 import SEO from '../components/SEO'
+import { resolvePublicImage } from '../utils/imageFallbacks'
 
 const articles = [
   {
@@ -10,7 +11,7 @@ const articles = [
     title: 'Fassaden sanieren in Leipzig: Kosten & Förderungen 2026',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/article_fassade.png',
+    img: '/images/ratgeber/fassadensanierung-leipzig-kosten-foerderung.svg',
     excerpt: 'Wann eine Komplettsanierung sinnvoll ist, welche Förderungen es gibt und woran man erkennt, dass Putz und Fassade Probleme machen.'
   },
   {
@@ -18,7 +19,7 @@ const articles = [
     title: 'Risse in Fassade & Mauerwerk richtig sanieren',
     category: 'Materialkunde',
     readTime: '5 Min.',
-    img: '/images/article_risse.png',
+    img: '/images/ratgeber/risse-fassade-mauerwerk-leipzig.svg',
     excerpt: 'Setzungen oder Feuchtigkeit? Ursachen für Risse in Leipziger Altbauten erkennen und wann zur Sicherheit der Profi ran muss.'
   },
   {
@@ -26,7 +27,7 @@ const articles = [
     title: 'Trockenbau in Altbauwohnungen Leipzig',
     category: 'Innenausbau',
     readTime: '6 Min.',
-    img: '/images/article_trockenbau.png',
+    img: '/images/ratgeber/trockenbau-altbauwohnungen-leipzig.svg',
     excerpt: 'Schallschutz, Brandschutz und schneller Raumgewinn: Was man bei Leipziger Plattenbauten oder Gründerzeit-Häusern beachten muss.'
   },
   {
@@ -34,7 +35,7 @@ const articles = [
     title: 'Feuchtigkeit & Schimmel dauerhaft beheben',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/article_schimmel.png',
+    img: '/images/ratgeber/feuchtigkeit-schimmel-sanieren-leipzig.svg',
     excerpt: 'Die 7 häufigsten Ursachen, warum einfach Putz drüberstreichen rein gar nichts bringt und welche echten Sanierungsmaßnahmen wirklich helfen.'
   },
   {
@@ -42,7 +43,7 @@ const articles = [
     title: 'Sanierungskosten Leipzig 2026: Ein Praxischeck',
     category: 'Kosten',
     readTime: '7 Min.',
-    img: '/images/article_kosten.png',
+    img: '/images/ratgeber/sanierungskosten-leipzig-2026.svg',
     excerpt: 'Realistische Preisspannen pro m² für kleinere bis mittlere Aufträge wie Fassadenputz, Trockenbau oder nachhaltige Rissverpressung.'
   },
   {
@@ -50,7 +51,7 @@ const articles = [
     title: 'Denkmalgeschützte Häuser sanieren',
     category: 'Baugenehmigung',
     readTime: '7 Min.',
-    img: '/images/article_denkmal.png',
+    img: '/images/ratgeber/denkmalgeschuetzte-haeuser-sanieren-leipzig.svg',
     excerpt: 'Denkmalsanierung in Leipzig: Was bei Fassade, Putz und Innenwänden genehmigt wird und wie der Umbau ohne teure Überraschungen gelingt.'
   },
   {
@@ -58,7 +59,7 @@ const articles = [
     title: 'Innenwände modernisieren ohne Baustaub-Chaos',
     category: 'Innenausbau',
     readTime: '5 Min.',
-    img: '/images/article_innenwand.png',
+    img: '/images/ratgeber/innenwaende-modernisieren-trockenbau-massivbau.svg',
     excerpt: 'Zeitaufwand, Kosten und der direkte Vergleich: Wann schlanker Trockenbau in der Wohnung die weitaus bessere Alternative zum Massivbau ist.'
   },
   {
@@ -66,7 +67,7 @@ const articles = [
     title: 'Betonreparatur Leipzig: Spachteln oder Statiker?',
     category: 'Materialkunde',
     readTime: '5 Min.',
-    img: '/images/article_beton.png',
+    img: '/images/ratgeber/betonreparatur-spachteln-statiker-leipzig.svg',
     excerpt: 'Risse im Beton an alten Treppen, Balkonen und Garagen beurteilen und typische Leipziger Schadstellen nachhaltig abdichten.'
   },
   {
@@ -74,7 +75,7 @@ const articles = [
     title: 'Energieeffiziente Fassadendämmung: Was bringt sie?',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/article_daemmung.png',
+    img: '/images/ratgeber/energieeffiziente-fassadendaemmung-leipzig.svg',
     excerpt: 'Fassade dämmen in Leipzig: GEG-Vorgaben, was bei Altbauten überhaupt möglich ist und wie man Putz mit intelligenter Dämmung kombiniert.'
   },
   {
@@ -82,12 +83,28 @@ const articles = [
     title: 'Die 8 teuersten Fehler bei der Sanierung',
     category: 'Tipps',
     readTime: '8 Min.',
-    img: '/images/article_fehler.png',
+    img: '/images/ratgeber/die-8-teuersten-fehler-sanierung-leipzig.svg',
     excerpt: 'Falscher Putz, fehlende Abnahmen, Förderungen verpasst. Wir zeigen, wie Sie diese Planungsdesaster beim Hausumbau von Anfang an vermeiden.'
+  },
+  {
+    slug: 'keller-abdichten-feuchtigkeit-leipzig',
+    title: 'Keller abdichten in Leipzig: Innen oder außen?',
+    category: 'Sanierung',
+    readTime: '7 Min.',
+    img: '/images/ratgeber/keller-abdichten-feuchtigkeit-leipzig.svg',
+    excerpt: 'Feuchte Kellerwände, Salzausblühungen und muffige Räume richtig einordnen: Wann Innenabdichtung reicht und wann von außen freigelegt werden muss.'
+  },
+  {
+    slug: 'wanddurchbruch-tragende-wand-leipzig',
+    title: 'Wanddurchbruch: Kosten, Statik & Ablauf',
+    category: 'Maurer',
+    readTime: '7 Min.',
+    img: '/images/ratgeber/wanddurchbruch-tragende-wand-leipzig.svg',
+    excerpt: 'Eine tragende Wand öffnen ohne Risiko: Statiker, Stahlträger, Staubschutz und realistische Kosten für Durchbrüche in Leipziger Wohnungen und Häusern.'
   }
 ]
 
-const filterOptions = ['Alle', 'Sanierung', 'Innenausbau', 'Kosten', 'Baugenehmigung', 'Materialkunde', 'Tipps']
+const filterOptions = ['Alle', 'Sanierung', 'Innenausbau', 'Kosten', 'Baugenehmigung', 'Materialkunde', 'Maurer', 'Tipps']
 
 export default function Ratgeber() {
   const [activeFilter, setActiveFilter] = useState('Alle')
@@ -111,7 +128,7 @@ export default function Ratgeber() {
       '@type': 'BlogPosting',
       headline: a.title,
       url: `https://www.bauunternehmen-koenig.com/ratgeber/${a.slug}`,
-      image: `https://www.bauunternehmen-koenig.com${a.img}`,
+      image: `https://www.bauunternehmen-koenig.com${resolvePublicImage(a.img)}`,
       author: { '@type': 'Person', name: 'Tim König' },
     })),
   }
@@ -119,9 +136,9 @@ export default function Ratgeber() {
   return (
     <>
       <SEO
-        title="Bau-Ratgeber Leipzig – Experten-Tipps zu Sanierung, Bauantrag & Förderung"
-        description="Fundierter Bau-Ratgeber aus Leipzig: Förderungen 2026, Bauantrag, Fassadensanierung, Trockenbau, Schimmelbeseitigung & mehr. Meisterwissen aus der Praxis."
-        keywords="Bauratgeber Leipzig, Sanierung Tipps, Bauantrag Leipzig, KfW Förderung, Fassadensanierung Tipps, Trockenbau Ratgeber"
+        title="Bau-Ratgeber Leipzig – Experten-Tipps zu Sanierung, Kosten & Förderung"
+        description="Fundierter Bau-Ratgeber aus Leipzig: Fassadensanierung, Trockenbau, Kellerabdichtung, Wanddurchbruch, Schimmelbeseitigung, Kosten & Förderungen. Meisterwissen aus der Praxis."
+        keywords="Bauratgeber Leipzig, Sanierung Tipps, Baukosten Leipzig, Fassadensanierung Tipps, Trockenbau Ratgeber, Keller abdichten Leipzig, Wanddurchbruch Leipzig"
         path="/ratgeber"
         jsonLd={blogJsonLd}
       />
@@ -147,7 +164,7 @@ export default function Ratgeber() {
           <RevealSection>
             <div className="max-w-3xl mx-auto text-center mb-12">
               <p className="text-gray-500 leading-relaxed">
-                Willkommen im Ratgeber des <strong className="text-gray-700">Bauunternehmen König</strong>. Hier teilen wir unsere Erfahrung als Leipziger Handwerksbetrieb mit Ihnen. Egal ob Sie Unterstützung bei der Baugenehmigung brauchen oder sich über geeignete Baumaterialien informieren möchten – hier werden Sie fündig.
+                Willkommen im Ratgeber des <strong className="text-gray-700">Bauunternehmen König</strong>. Die Themen sind nach echten Fragen aus Leipziger Bau- und Sanierungsprojekten sortiert: Was kostet es, woran erkenne ich ein Risiko und welcher nächste Schritt ist sinnvoll?
               </p>
             </div>
           </RevealSection>
@@ -178,7 +195,7 @@ export default function Ratgeber() {
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover h-full flex flex-col">
                     <div className="h-56 overflow-hidden relative flex-shrink-0">
                       <img
-                        src={article.img}
+                        src={resolvePublicImage(article.img)}
                         alt={article.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -199,6 +216,10 @@ export default function Ratgeber() {
                         <span className="flex items-center gap-1.5">
                           <BookOpen size={14} className="text-gold" />
                           Meister-Tipp
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <MapPin size={14} className="text-gold" />
+                          Leipzig-Fokus
                         </span>
                       </div>
                       <h3 className="font-bold text-xl mb-3 group-hover:text-gold transition-colors duration-300">

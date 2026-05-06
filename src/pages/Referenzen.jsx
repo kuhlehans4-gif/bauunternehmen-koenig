@@ -1,16 +1,100 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RevealSection } from '../components/UI'
-import { MapPin, Clock, Filter, Star, Quote, Mail } from 'lucide-react'
+import { MapPin, Filter, Star, Quote, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
 import SEO from '../components/SEO'
+import { resolvePublicImage } from '../utils/imageFallbacks'
 
 const projects = [
-  { title: 'Komplettsanierung Altbau', location: 'Leipzig-Gohlis', type: 'Sanierung', duration: '6 Wochen', img: '/images/sanierung.png', desc: 'Umfassende Sanierung eines Gründerzeithauses inkl. neuer Fassade, Innenausbau und energetischer Modernisierung.' },
-  { title: 'Kernsanierung Einfamilienhaus', location: 'Leipzig-Südvorstadt', type: 'Sanierung', duration: '14 Wochen', img: '/images/hero.png', desc: 'Umfassende Kernsanierung eines Einfamilienhauses inkl. Mauerwerk, Innenausbau und energetischer Modernisierung.' },
-  { title: 'Fassadensanierung Mehrfamilienhaus', location: 'Leipzig-Connewitz', type: 'Fassade', duration: '4 Wochen', img: '/images/fassade.png', desc: 'Kompletterneuerung der Fassade inkl. WDVS und Strukturputz an einem 6-Parteien-Haus.' },
-  { title: 'Innenausbau Dachgeschoss', location: 'Leipzig-Plagwitz', type: 'Innenausbau', duration: '5 Wochen', img: '/images/innenausbau.png', desc: 'Ausbau des Dachgeschosses zu 2 Wohneinheiten mit Trockenbau, Spachtelung Q3 und Trockenestrich.' },
-  { title: 'Mauerwerksanierung', location: 'Leipzig-Lindenau', type: 'Maurer', duration: '3 Wochen', img: '/images/maurer.png', desc: 'Sanierung und Teilerneuerung des tragenden Mauerwerks an einer Gewerbeimmobilie.' },
-  { title: 'Anbau Wintergarten', location: 'Leipzig-Mölkau', type: 'Maurer', duration: '8 Wochen', img: '/images/hero.png', desc: 'Errichtung eines massiven Wintergartens mit Fundamentarbeiten, Mauerwerk und Putzarbeiten.' },
+  {
+    title: 'Klinkertreppe neu aufmauern',
+    location: 'Leipzig & Umgebung',
+    type: 'Maurer',
+    img: '/images/arbeiten/klinkertreppe-nachher.jpg',
+    desc: 'Abgenutzte Außentreppe zurückgebaut und als saubere Klinkertreppe neu aufgemauert.',
+    images: [
+      { src: '/images/arbeiten/klinkertreppe-nachher.jpg', alt: 'Neu aufgemauerte Klinkertreppe', label: 'Nachher' },
+      { src: '/images/arbeiten/klinkertreppe-vorher.jpg', alt: 'Klinkertreppe vor dem Neuaufmauern', label: 'Vorher' },
+    ],
+  },
+  {
+    title: 'Abdichtungsmaßnahmen am Sockel',
+    location: 'Leipzig & Umgebung',
+    type: 'Maurer',
+    img: '/images/arbeiten/sockel-abdichtung-fertig.jpg',
+    desc: 'Sockelbereich freigelegt, vorbereitet und dauerhaft gegen Feuchtigkeit geschützt.',
+    images: [
+      { src: '/images/arbeiten/sockel-abdichtung-fertig.jpg', alt: 'Fertig abgedichteter Sockelbereich', label: 'Fertig' },
+      { src: '/images/arbeiten/sockel-abdichtung-bestand.jpg', alt: 'Sockelbereich vor den Abdichtungsmaßnahmen', label: 'Bestand' },
+      { src: '/images/arbeiten/sockel-abdichtung-aufgraben.jpg', alt: 'Freigelegter Sockelbereich während der Abdichtung', label: 'Freilegen' },
+    ],
+  },
+  {
+    title: 'Kompletter Aufbau einer Salzgrotte',
+    location: 'Leipzig & Umgebung',
+    type: 'Innenausbau',
+    img: '/images/arbeiten/salzgrotte-fertig.jpg',
+    desc: 'Innenausbau mit vorbereiteten Wandflächen, Salzstein-Elementen und stimmungsvoller Beleuchtung.',
+    images: [
+      { src: '/images/arbeiten/salzgrotte-fertig.jpg', alt: 'Fertiggestellte Salzgrotte mit warmer Beleuchtung', label: 'Fertig' },
+      { src: '/images/arbeiten/salzgrotte-rohraum.jpg', alt: 'Rohraum vor dem Aufbau der Salzgrotte', label: 'Rohraum' },
+      { src: '/images/arbeiten/salzgrotte-salzsteine.jpg', alt: 'Salzsteine während des Aufbaus der Salzgrotte', label: 'Aufbau' },
+      { src: '/images/arbeiten/salzgrotte-licht.jpg', alt: 'Beleuchtete Wandfläche in der Salzgrotte', label: 'Licht' },
+      { src: '/images/arbeiten/salzgrotte-eingang.jpg', alt: 'Eingangsbereich der fertiggestellten Salzgrotte', label: 'Eingang' },
+      { src: '/images/arbeiten/salzgrotte-wand.jpg', alt: 'Strukturierte Salzsteinwand in der Salzgrotte', label: 'Wand' },
+    ],
+  },
+  {
+    title: 'Trockenbau während einer Haussanierung',
+    location: 'Leipzig & Umgebung',
+    type: 'Innenausbau',
+    img: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg',
+    desc: 'Treppenhaus vom Rohzustand bis zu hellen, sauberen Wand- und Deckenflächen ausgebaut.',
+    images: [
+      { src: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg', alt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen', label: 'Fertig' },
+      { src: '/images/arbeiten/trockenbau-treppe-vorher.jpg', alt: 'Treppenhaus vor dem Ausbau', label: 'Start' },
+      { src: '/images/arbeiten/trockenbau-treppe-rohbau.jpg', alt: 'Treppenhaus während des Rohbaus', label: 'Rohbau' },
+      { src: '/images/arbeiten/trockenbau-treppe-nachher-1.jpg', alt: 'Ausgebautes Treppenhaus nach den Trockenbauarbeiten', label: 'Ausbau' },
+      { src: '/images/arbeiten/trockenbau-treppe-nachher-3.jpg', alt: 'Fertiggestellter Treppenbereich nach der Sanierung', label: 'Fertig' },
+    ],
+  },
+  {
+    title: 'Erneuerung eines Terrassenbelags',
+    location: 'Leipzig & Umgebung',
+    type: 'Sanierung',
+    img: '/images/arbeiten/terrassenbelag-nachher.jpg',
+    desc: 'Abgenutzten Belag erneuert und die Terrasse wieder sauber, belastbar und gepflegt hergestellt.',
+    images: [
+      { src: '/images/arbeiten/terrassenbelag-nachher.jpg', alt: 'Neu verlegter Terrassenbelag', label: 'Nachher' },
+      { src: '/images/arbeiten/terrassenbelag-vorher.jpg', alt: 'Terrassenbelag vor der Erneuerung', label: 'Vorher' },
+    ],
+  },
+  {
+    title: 'Fassadensanierung nach Horizontalabdichtung',
+    location: 'Leipzig & Umgebung',
+    type: 'Fassade',
+    img: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg',
+    desc: 'Sockelbereich freigelegt, instandgesetzt und nach der Abdichtung wieder sauber aufgebaut.',
+    images: [
+      { src: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg', alt: 'Fertig instandgesetzter Fassadensockel', label: 'Fertig' },
+      { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.jpg', alt: 'Beschädigter Fassadensockel vor der Instandsetzung', label: 'Bestand' },
+      { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-2.jpg', alt: 'Freigelegter Sockelbereich am Gebäude', label: 'Freilegen' },
+      { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-1.jpg', alt: 'Neu aufgebauter Sockelbereich während der Sanierung', label: 'Aufbau' },
+      { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-2.jpg', alt: 'Fassadensockel während der Abdichtungsarbeiten', label: 'Abdichtung' },
+    ],
+  },
+  {
+    title: 'Sanierung einer Klinkerfassade',
+    location: 'Leipzig & Umgebung',
+    type: 'Fassade',
+    img: '/images/arbeiten/klinkerfassade-sanierung-3.jpg',
+    desc: 'Mehrgeschossige Klinkerfassade mit Gerüststellung und schrittweiser Bearbeitung der Fassadenflächen.',
+    images: [
+      { src: '/images/arbeiten/klinkerfassade-sanierung-3.jpg', alt: 'Klinkerfassade im fortgeschrittenen Sanierungszustand', label: 'Fortschritt' },
+      { src: '/images/arbeiten/klinkerfassade-sanierung-1.jpg', alt: 'Klinkerfassade mit Gerüst zu Beginn der Sanierung', label: 'Start' },
+      { src: '/images/arbeiten/klinkerfassade-sanierung-2.jpg', alt: 'Klinkerfassade während der Sanierungsarbeiten', label: 'Bearbeitung' },
+    ],
+  },
 ]
 
 const filterOptions = ['Alle', 'Sanierung', 'Fassade', 'Innenausbau', 'Maurer']
@@ -25,6 +109,89 @@ const googleReviews = [
   { author: 'Johann U.', text: 'Exzellente Planung und Umsetzung! Keine Mängel und äußerst zuverlässig, werde mich definitiv bei meinem nächsten Anliegen wieder hier melden!', rating: 5, time: 'vor einem Jahr' },
   { author: 'Cathleen W.', text: 'Sehr gute Arbeit, tolles Ergebnis. Absolut empfehlenswert.', rating: 5, time: 'vor 3 Monaten' }
 ]
+
+function ProjectCard({ project }) {
+  const finishedIndex = project.images.findIndex((image) => image.src === project.img)
+  const [activeIndex, setActiveIndex] = useState(finishedIndex >= 0 ? finishedIndex : 0)
+  const activeImage = project.images[activeIndex]
+  const activeImageSrc = resolvePublicImage(activeImage.src)
+  const hasMultipleImages = project.images.length > 1
+
+  const showPrevious = () => {
+    setActiveIndex((current) => (current === 0 ? project.images.length - 1 : current - 1))
+  }
+
+  const showNext = () => {
+    setActiveIndex((current) => (current + 1) % project.images.length)
+  }
+
+  return (
+    <div className="group flex h-full min-h-[520px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm card-hover">
+      <div className="relative h-64 flex-shrink-0 overflow-hidden bg-gray-100">
+        <img
+          src={activeImageSrc}
+          alt={activeImage.alt}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute top-4 left-4">
+          <span className="rounded-full bg-gold px-3 py-1 text-xs font-semibold text-black">
+            {project.type}
+          </span>
+        </div>
+        {activeImage.label && (
+          <div className="absolute bottom-4 left-4 rounded-lg bg-black/65 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-sm">
+            {activeImage.label}
+          </div>
+        )}
+        {hasMultipleImages && (
+          <>
+            <button
+              type="button"
+              onClick={showPrevious}
+              className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-lg transition-colors hover:bg-gold focus:outline-none focus:ring-2 focus:ring-gold"
+              aria-label={`Vorheriges Bild von ${project.title}`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={showNext}
+              className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-lg transition-colors hover:bg-gold focus:outline-none focus:ring-2 focus:ring-gold"
+              aria-label={`Nächstes Bild von ${project.title}`}
+            >
+              <ChevronRight size={20} />
+            </button>
+            <div className="absolute right-4 bottom-4 flex gap-1.5">
+              {project.images.map((image, index) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-1.5 rounded-full shadow-sm transition-all ${
+                    activeIndex === index ? 'w-5 bg-gold' : 'w-1.5 bg-white/80'
+                  }`}
+                  aria-label={`Bild ${index + 1} von ${project.title} anzeigen`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="mb-2 min-h-[3.25rem] text-lg font-bold leading-snug transition-colors duration-300 group-hover:text-gold">
+          {project.title}
+        </h3>
+        <p className="mb-5 flex-1 text-sm leading-relaxed text-gray-500">{project.desc}</p>
+        <div className="mt-auto flex items-center gap-1.5 text-xs text-gray-400">
+          <MapPin size={14} className="text-gold" />
+          {project.location}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Referenzen() {
   const [activeFilter, setActiveFilter] = useState('Alle')
@@ -47,7 +214,7 @@ export default function Referenzen() {
             name: p.title,
             description: p.desc,
             locationCreated: { '@type': 'Place', name: p.location },
-            image: `https://www.bauunternehmen-koenig.com${p.img}`,
+            image: `https://www.bauunternehmen-koenig.com${resolvePublicImage(p.img)}`,
           },
         })),
       },
@@ -129,39 +296,8 @@ export default function Referenzen() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filtered.map((project, i) => (
-              <RevealSection key={project.title} delay={i * 100}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
-                  <div className="h-56 overflow-hidden relative">
-                    <img
-                      src={project.img}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="text-xs font-semibold text-black bg-gold px-3 py-1 rounded-full">
-                        {project.type}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-gold transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4">{project.desc}</p>
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
-                      <span className="flex items-center gap-1.5">
-                        <MapPin size={14} className="text-gold" />
-                        {project.location}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Clock size={14} className="text-gold" />
-                        {project.duration}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <RevealSection key={project.title} delay={i * 100} className="h-full">
+                <ProjectCard project={project} />
               </RevealSection>
             ))}
           </div>

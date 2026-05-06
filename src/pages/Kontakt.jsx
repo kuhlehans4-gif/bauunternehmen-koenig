@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from 'lucide-react'
 import { RevealSection } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
@@ -23,7 +24,7 @@ export default function Kontakt() {
     setStatus('submitting')
     
     try {
-      const response = await fetch('https://formsubmit.co/ajax/maurermeister.koenig@web.de', {
+      const response = await fetch(`https://formsubmit.co/ajax/${contactDetails.email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,6 +38,7 @@ export default function Kontakt() {
           Ortsteil: formData.ortsteil || 'Nicht angegeben',
           Zeitraum: formData.zeitraum || 'Nicht angegeben',
           Nachricht: formData.nachricht,
+          _replyto: formData.email,
           _subject: `Neue Projektanfrage über Website: ${formData.name}`,
           _template: 'box'
         })
@@ -186,6 +188,11 @@ export default function Kontakt() {
                     />
                   </div>
 
+                  <p className="text-xs leading-relaxed text-gray-400">
+                    Mit dem Absenden erklären Sie sich einverstanden, dass wir Ihre Angaben zur Bearbeitung der Anfrage verwenden. Hinweise finden Sie in der{' '}
+                    <Link to="/datenschutz" className="text-gold hover:underline">Datenschutzerklärung</Link>.
+                  </p>
+
                   <button 
                     type="submit" 
                     disabled={status === 'submitting' || status === 'success'}
@@ -298,4 +305,3 @@ export default function Kontakt() {
     </>
   )
 }
-

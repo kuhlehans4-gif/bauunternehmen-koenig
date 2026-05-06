@@ -4,6 +4,7 @@ import { Phone, Mail, ArrowLeft, Plus, Minus, Wrench, Ruler, ShieldCheck, PaintR
 import { RevealSection, SectionHeading } from '../components/UI'
 import { contactDetails } from '../data/contactDetails'
 import SEO from '../components/SEO'
+import { resolvePublicImage } from '../utils/imageFallbacks'
 
 const iconMap = {
   Wrench, Ruler, ShieldCheck, PaintRoller, Frame, CheckSquare, HardHat, Home, FileText, Clock, ThumbsUp, Zap, Droplet, LayoutGrid, CheckCircle2, MapPin, Leaf, Sparkles
@@ -12,11 +13,12 @@ const iconMap = {
 const serviceData = {
   'maurer-betonbau': {
     beforeAfter: {
-      beforeSrc: '/images/before-maurer.png',
-      afterSrc: '/images/after-maurer.png',
-      beforeAlt: 'Beschädigtes, verwittertes Mauerwerk vor der Sanierung',
-      afterAlt: 'Frisch errichtetes, sauberes Mauerwerk nach der Arbeit',
-      caption: 'Mauerwerkssanierung – vorher & nachher',
+      beforeSrc: '/images/arbeiten/klinkertreppe-vorher.jpg',
+      afterSrc: '/images/arbeiten/klinkertreppe-nachher.jpg',
+      beforeAlt: 'Verwitterte Klinkertreppe vor dem Neuaufmauern',
+      afterAlt: 'Neu aufgemauerte Klinkertreppe mit sauberem Fugenbild',
+      caption: 'Klinkertreppe neu aufgemauert – vorher & nachher',
+      aspectRatio: '3/4',
     },
     metaTitle: 'Maurer & Betonbauer Leipzig – Fundament & Mauerwerk vom Meister',
     metaDescription: 'Maurer- & Betonbauarbeiten in Leipzig vom Meisterbetrieb: Fundamente, tragendes Mauerwerk, Betondecken, Keller & Abdichtung. DIN-gerecht und mit Festpreisgarantie.',
@@ -31,7 +33,7 @@ const serviceData = {
       { text: 'Meisterqualität', sub: 'Nach DIN-Norm', icon: 'CheckSquare' },
       { text: 'Festpreisgarantie', sub: 'Ohne Überraschungen', icon: 'CheckCircle2' }
     ],
-    heroImage: '/images/maurer.png',
+    heroImage: '/images/hero-maurer-stock.png',
     intro: 'Als staatlich geprüfter Maurer- und Betonbauermeister (HWK Leipzig) ist Tim König Ihr Spezialist für präzise und DIN-gerechte Maurer- und Betonarbeiten in Leipzig und Umgebung. Ob Fundamente, tragendes Mauerwerk oder Betondecken — jede Arbeit wird mit höchster Sorgfalt, den richtigen Materialien und dem nötigen Fachwissen ausgeführt. Wir bauen auf Qualität, die Jahrzehnte hält.',
     details: [
       { title: 'Fundamente & Bodenplatten', desc: 'Zuverlässige und DIN-gerechte Basis für Ihr Bauwerk – ob für Garage, Anbau oder Einfamilienhaus.', icon: 'LayoutGrid' },
@@ -61,16 +63,28 @@ const serviceData = {
       'Millimeterpräzise Arbeit',
       'Transparente Kalkulation'
     ],
+    workExamples: [
+      {
+        title: 'Abdichtungsmaßnahmen am Sockel',
+        description: 'Vom freigelegten Sockelbereich bis zur geschützten Oberfläche: sauber vorbereitet, fachgerecht abgedichtet und dauerhaft gegen Feuchtigkeit gesichert.',
+        images: [
+          { src: '/images/arbeiten/sockel-abdichtung-bestand.jpg', alt: 'Sockelbereich vor den Abdichtungsmaßnahmen', label: 'Bestand' },
+          { src: '/images/arbeiten/sockel-abdichtung-aufgraben.jpg', alt: 'Freigelegter Sockelbereich während der Abdichtung', label: 'Freilegen' },
+          { src: '/images/arbeiten/sockel-abdichtung-fertig.jpg', alt: 'Fertig abgedichteter Sockelbereich', label: 'Fertigstellung' },
+        ],
+      },
+    ],
     qualityTitle: 'Massiv, solide & dauerhaft gebaut',
     lokalerHinweis: 'Wir führen Maurer- und Betonarbeiten in ganz Leipzig durch — von Gohlis bis Connewitz, von Plagwitz bis Reudnitz.',
   },
   'sanierung': {
     beforeAfter: {
-      beforeSrc: '/images/before-sanierung.png',
-      afterSrc: '/images/after-sanierung.png',
-      beforeAlt: 'Veralteter, renovierungsbedürftiger Raum vor der Sanierung',
-      afterAlt: 'Modern sanierter, heller Raum nach der Komplettsanierung',
-      caption: 'Altbausanierung – vorher & nachher',
+      beforeSrc: '/images/arbeiten/terrassenbelag-vorher.jpg',
+      afterSrc: '/images/arbeiten/terrassenbelag-nachher.jpg',
+      beforeAlt: 'Abgenutzter Terrassenbelag vor der Erneuerung',
+      afterAlt: 'Neu verlegter Terrassenbelag nach der Sanierung',
+      caption: 'Erneuerung eines Terrassenbelags – vorher & nachher',
+      aspectRatio: '3/4',
     },
     metaTitle: 'Sanierung Leipzig – Altbau, Energetisch & Komplett aus einer Hand',
     metaDescription: 'Sanierung & Modernisierung in Leipzig: Altbausanierung, energetische Sanierung, Grundrissoptimierung & Feuchtigkeitssanierung. Meisterbetrieb mit Gewerke-Koordination.',
@@ -85,7 +99,7 @@ const serviceData = {
       { text: 'Alles aus einer Hand', sub: 'Gewerke-Koordination', icon: 'LayoutGrid' },
       { text: 'Termintreue', sub: 'Pünktlich garantiert', icon: 'Clock' }
     ],
-    heroImage: '/images/sanierung.png',
+    heroImage: '/images/hero-sanierung-stock.png',
     intro: 'Ob Sie eine Bestandsimmobilie in Leipzig modernisieren oder eine denkmalgerechte Sanierung planen — wir stehen Ihnen mit Fachwissen zur Seite. Vom kontrollierten Rückbau bis zur Instandsetzung koordinieren wir alle Gewerke. Wir sanieren Altbauten und Mehrfamilienhäuser mit dem nötigen Respekt vor der Bausubstanz und dem Blick für Langlebigkeit.',
     details: [
       { title: 'Altbausanierung', desc: 'Umfassende Modernisierung von Gründerzeithäusern und historischen Gebäuden unter Berücksichtigung der Substanz.', icon: 'Home' },
@@ -115,16 +129,27 @@ const serviceData = {
       'Fester Ansprechpartner',
       'Termintreue Übergabe'
     ],
+    workExamples: [
+      {
+        title: 'Erneuerung eines Terrassenbelags',
+        description: 'Abgenutzter Terrassenbelag wurde zurückgebaut und mit sauberem neuen Belag wieder hergestellt.',
+        images: [
+          { src: '/images/arbeiten/terrassenbelag-vorher.jpg', alt: 'Terrassenbelag vor der Erneuerung', label: 'Vorher' },
+          { src: '/images/arbeiten/terrassenbelag-nachher.jpg', alt: 'Neu verlegter Terrassenbelag nach der Sanierung', label: 'Nachher' },
+        ],
+      },
+    ],
     qualityTitle: 'Substanz erhalten, Zukunft sichern',
     lokalerHinweis: 'Sanierungen in Leipzig-Südvorstadt, Schleußig, Gohlis und weiteren Altbau-Zentren sind unser Spezialgebiet.',
   },
   'innenausbau': {
     beforeAfter: {
-      beforeSrc: '/images/before-innenausbau.png',
-      afterSrc: '/images/after-innenausbau.png',
-      beforeAlt: 'Rohbauzustand mit unverputzten Wänden vor dem Innenausbau',
-      afterAlt: 'Fertig ausgebauter Raum mit perfekter Q4-Oberfläche',
-      caption: 'Innenausbau & Trockenbau – vorher & nachher',
+      beforeSrc: '/images/arbeiten/trockenbau-treppe-rohbau.jpg',
+      afterSrc: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg',
+      beforeAlt: 'Treppenhaus im Rohzustand während der Trockenbauarbeiten',
+      afterAlt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen',
+      caption: 'Trockenbauarbeiten während einer Haussanierung – vorher & nachher',
+      aspectRatio: '3/4',
     },
     metaTitle: 'Innenausbau & Trockenbau Leipzig – Q2 bis Q4 Spachtelarbeiten',
     metaDescription: 'Professioneller Innenausbau & Trockenbau in Leipzig: Trennwände, abgehängte Decken, Dachgeschossausbau, Spachtelarbeiten Q2–Q4 und Trockenestrich vom Meisterbetrieb.',
@@ -139,7 +164,7 @@ const serviceData = {
       { text: 'Q4-Oberflächen', sub: 'Perfektes Finish', icon: 'PaintRoller' },
       { text: 'Saubere Arbeit', sub: 'Täglich aufgeräumt', icon: 'Sparkles' }
     ],
-    heroImage: '/images/innenausbau.png',
+    heroImage: '/images/hero-innenausbau-stock.png',
     intro: 'Der professionelle Innenausbau verwandelt Rohbauten in Wohnträume. Bauunternehmen König realisiert in Leipzig hochwertigen Trockenbau, perfekte Spachtelarbeiten (Q2 bis Q4) und durchdachte Raumgestaltung. Schnelle Bauzeit, keine zusätzliche Baufeuchte und hervorragende Dämmeigenschaften — das sind die Vorteile unseres modernen Trockenbaus.',
     details: [
       { title: 'Wände & Trennsysteme', desc: 'Flexible und stabile Trockenbauwände für eine individuelle Neugestaltung des Grundrisses.', icon: 'LayoutGrid' },
@@ -169,16 +194,42 @@ const serviceData = {
       'Indirekte Beleuchtung',
       'Brandschutz geprüft'
     ],
+    workExamples: [
+      {
+        title: 'Kompletter Aufbau einer Salzgrotte',
+        description: 'Ein besonderer Innenausbau mit vorbereiteten Flächen, Salzstein-Elementen, Beleuchtung und atmosphärischem Finish.',
+        images: [
+          { src: '/images/arbeiten/salzgrotte-rohraum.jpg', alt: 'Rohraum vor dem Aufbau der Salzgrotte', label: 'Rohraum' },
+          { src: '/images/arbeiten/salzgrotte-salzsteine.jpg', alt: 'Salzsteine während des Aufbaus der Salzgrotte', label: 'Aufbau' },
+          { src: '/images/arbeiten/salzgrotte-licht.jpg', alt: 'Beleuchtete Wandfläche in der Salzgrotte', label: 'Lichtkonzept' },
+          { src: '/images/arbeiten/salzgrotte-eingang.jpg', alt: 'Eingangsbereich der fertiggestellten Salzgrotte', label: 'Eingang' },
+          { src: '/images/arbeiten/salzgrotte-wand.jpg', alt: 'Strukturierte Salzsteinwand in der Salzgrotte', label: 'Wandgestaltung' },
+          { src: '/images/arbeiten/salzgrotte-fertig.jpg', alt: 'Fertiggestellte Salzgrotte mit warmer Beleuchtung', label: 'Fertig' },
+        ],
+      },
+      {
+        title: 'Treppenhaus im Zuge einer Haussanierung',
+        description: 'Vom offenen Rohzustand über den Trockenbau bis zu sauberen Wand- und Deckenflächen mit fertiger Treppe.',
+        images: [
+          { src: '/images/arbeiten/trockenbau-treppe-vorher.jpg', alt: 'Treppenhaus vor dem Ausbau', label: 'Vorbereitung' },
+          { src: '/images/arbeiten/trockenbau-treppe-rohbau.jpg', alt: 'Treppenhaus während des Rohbaus', label: 'Rohbau' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-1.jpg', alt: 'Ausgebautes Treppenhaus nach den Trockenbauarbeiten', label: 'Ausbau' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg', alt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen', label: 'Fertig' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-3.jpg', alt: 'Fertiggestellter Treppenbereich nach der Sanierung', label: 'Fertig' },
+        ],
+      },
+    ],
     qualityTitle: 'Raum für neue Möglichkeiten',
     lokalerHinweis: 'Vom Dachausbau in Connewitz bis zur Praxiseinrichtung im Zentrum — wir schaffen neue Räume in Leipzig.',
   },
   'fassade': {
     beforeAfter: {
-      beforeSrc: '/images/before-fassade.png',
-      afterSrc: '/images/after-fassade.png',
-      beforeAlt: 'Verwitterte, rissige Fassade vor der Sanierung',
-      afterAlt: 'Frisch gedämmte und verputzte Fassade nach der Sanierung',
-      caption: 'Fassadensanierung – vorher & nachher',
+      beforeSrc: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.jpg',
+      afterSrc: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg',
+      beforeAlt: 'Freigelegter Sockelbereich einer Fassade vor der Sanierung',
+      afterAlt: 'Fassade nach Sockelinstandsetzung und Abdichtungsarbeiten',
+      caption: 'Fassadensanierung nach Horizontalabdichtung – vorher & nachher',
+      aspectRatio: '4/3',
     },
     metaTitle: 'Fassade & Putzarbeiten Leipzig – WDVS & Fassadensanierung',
     metaDescription: 'Fassaden- & Putzarbeiten in Leipzig: Wärmedämmverbundsysteme (WDVS), Fassadensanierung, Außenputz, Struktur- & Edelputze. GEG-konform vom Meisterbetrieb.',
@@ -193,7 +244,7 @@ const serviceData = {
       { text: 'Nach DIN-Norm', sub: 'Aktuelle Verarbeitung', icon: 'CheckSquare' },
       { text: 'Energieeffizient', sub: 'GEG-konform', icon: 'Leaf' }
     ],
-    heroImage: '/images/fassade.png',
+    heroImage: '/images/hero-fassade-stock.png',
     intro: 'Die Fassade ist die Visitenkarte Ihres Gebäudes — und elementar für Energieeffizienz und Werterhalt. Als Fachbetrieb sind wir spezialisiert auf professionelle Putzarbeiten, Altbausanierung und Wärmedämmverbundsysteme (WDVS) in Leipzig. Wir verleihen Ihrem Haus ein makelloses, dauerhaftes Gesicht, das Wind und Wetter trotzt.',
     details: [
       { title: 'Wärmedämmung (WDVS)', desc: 'Erhebliche Heizkosteneinsparung durch fachgerecht angebrachte Dämmsysteme nach GEG-Standards.', icon: 'Zap' },
@@ -223,12 +274,34 @@ const serviceData = {
       'Wertsteigerung',
       'Inklusive Gerüstkoordination'
     ],
+    workExamples: [
+      {
+        title: 'Sockel- und Fassadeninstandsetzung',
+        description: 'Nach der Horizontalabdichtung wurde der betroffene Sockelbereich freigelegt, instandgesetzt und wieder sauber aufgebaut.',
+        images: [
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.jpg', alt: 'Beschädigter Fassadensockel vor der Instandsetzung', label: 'Bestand' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-2.jpg', alt: 'Freigelegter Sockelbereich am Gebäude', label: 'Freilegen' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-1.jpg', alt: 'Neu aufgebauter Sockelbereich während der Sanierung', label: 'Aufbau' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-2.jpg', alt: 'Fassadensockel während der Abdichtungsarbeiten', label: 'Abdichtung' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg', alt: 'Fertig instandgesetzter Fassadensockel', label: 'Fertigstellung' },
+        ],
+      },
+      {
+        title: 'Sanierung einer Klinkerfassade',
+        description: 'Mehrgeschossige Klinkerfassade mit Gerüststellung und schrittweiser Bearbeitung der Fassadenflächen.',
+        images: [
+          { src: '/images/arbeiten/klinkerfassade-sanierung-1.jpg', alt: 'Klinkerfassade mit Gerüst zu Beginn der Sanierung', label: 'Start' },
+          { src: '/images/arbeiten/klinkerfassade-sanierung-2.jpg', alt: 'Klinkerfassade während der Sanierungsarbeiten', label: 'Bearbeitung' },
+          { src: '/images/arbeiten/klinkerfassade-sanierung-3.jpg', alt: 'Klinkerfassade im fortgeschrittenen Sanierungszustand', label: 'Fortschritt' },
+        ],
+      },
+    ],
     qualityTitle: 'Schön von außen, stark für Jahrzehnte',
     lokalerHinweis: 'Hochwertige Fassaden für Einfamilienhäuser und Villen in Leutzsch, Markkleeberg und ganz Leipzig.',
   },
 }
 
-function BeforeAfterSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }) {
+function BeforeAfterSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption, aspectRatio = '16/9' }) {
   const containerRef = useRef(null)
   const clipperRef = useRef(null)
   const dividerRef = useRef(null)
@@ -260,7 +333,7 @@ function BeforeAfterSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }
       <div
         ref={containerRef}
         className="relative overflow-hidden rounded-2xl select-none shadow-xl cursor-col-resize"
-        style={{ aspectRatio: '16/9', touchAction: 'none' }}
+        style={{ aspectRatio, touchAction: 'none' }}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -289,6 +362,70 @@ function BeforeAfterSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }
       </div>
       {caption && <p className="text-center text-sm text-gray-400 font-medium">{caption}</p>}
     </div>
+  )
+}
+
+function WorkImageGrid({ images, projectTitle }) {
+  return (
+    <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] sm:-mx-6 sm:px-6 md:gap-5 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
+      {images.map((image, index) => {
+        const src = `${image.src}?v=docx-gallery-20260506`
+
+        return (
+          <figure key={`${projectTitle}-${image.src}-${index}`} className="relative aspect-[4/3] min-w-[82%] snap-start overflow-hidden rounded-2xl bg-gray-100 shadow-sm group sm:min-w-[48%] lg:min-w-0">
+            <img
+              src={src}
+              alt={image.alt}
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="lazy"
+              decoding="async"
+            />
+            {image.label && (
+              <figcaption className="absolute left-3 bottom-3 bg-black/65 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-lg">
+                {image.label}
+              </figcaption>
+            )}
+          </figure>
+        )
+      })}
+    </div>
+  )
+}
+
+function WorkExamples({ examples }) {
+  if (!examples || examples.length === 0) return null
+
+  return (
+    <section className="section-padding bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto">
+        <RevealSection>
+          <SectionHeading
+            eyebrow="Ausgeführt"
+            title="Arbeiten aus der Praxis"
+            description="Echte Projektbilder, passend zur jeweiligen Leistung ausgewählt."
+          />
+        </RevealSection>
+
+        <div className="space-y-14 md:space-y-20 mt-12">
+          {examples.map((example, index) => (
+            <RevealSection key={example.title} delay={index * 100}>
+              <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-start">
+                <div className="lg:col-span-4">
+                  <span className="text-gold font-bold text-xs uppercase tracking-[0.18em] mb-4 block">
+                    Projekt {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-900 text-charcoal mb-4 leading-tight">{example.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{example.description}</p>
+                </div>
+                <div className="lg:col-span-8">
+                  <WorkImageGrid images={example.images} projectTitle={example.title} />
+                </div>
+              </article>
+            </RevealSection>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -348,6 +485,20 @@ export default function LeistungDetail() {
 
   const pagePath = `/leistungen/${slug}`
   const siteUrl = 'https://www.bauunternehmen-koenig.com'
+  const heroImageSrc = resolvePublicImage(data.heroImage)
+  const beforeAfter = data.beforeAfter ? {
+    ...data.beforeAfter,
+    beforeSrc: resolvePublicImage(data.beforeAfter.beforeSrc),
+    afterSrc: resolvePublicImage(data.beforeAfter.afterSrc),
+  } : null
+  const workExamples = data.workExamples?.map((example) => ({
+    ...example,
+    images: example.images.map((image) => ({
+      ...image,
+      src: resolvePublicImage(image.src),
+    })),
+  }))
+  const beforeAfterMaxWidth = beforeAfter?.aspectRatio === '3/4' ? '560px' : '820px'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -371,7 +522,7 @@ export default function LeistungDetail() {
           },
         },
         areaServed: { '@type': 'City', name: 'Leipzig' },
-        image: `${siteUrl}${data.heroImage}`,
+        image: `${siteUrl}${heroImageSrc}`,
         url: `${siteUrl}${pagePath}`,
       },
       {
@@ -402,13 +553,13 @@ export default function LeistungDetail() {
         description={data.metaDescription || data.subtitle}
         keywords={data.keywords}
         path={pagePath}
-        image={`${siteUrl}${data.heroImage}`}
+        image={`${siteUrl}${heroImageSrc}`}
         jsonLd={jsonLd}
       />
       {/* Hero Section */}
       <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
         <div className="absolute inset-0 opacity-[0.25]">
-          <img src={data.heroImage} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" fetchpriority="high" decoding="async" />
+          <img src={heroImageSrc} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" fetchpriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/90 to-charcoal" />
         
@@ -501,14 +652,14 @@ export default function LeistungDetail() {
           <RevealSection delay={200}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gold/10 group-hover:bg-gold/0 transition-colors z-10 duration-500"></div>
-              <img src={data.heroImage} alt={data.title} className="w-full h-[320px] sm:h-[400px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+              <img src={heroImageSrc} alt={data.title} className="w-full h-[320px] sm:h-[400px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
             </div>
           </RevealSection>
         </div>
       </section>
 
       {/* Before / After */}
-      {data.beforeAfter && (
+      {beforeAfter && (
         <section className="section-padding bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto">
             <RevealSection>
@@ -519,11 +670,15 @@ export default function LeistungDetail() {
               />
             </RevealSection>
             <RevealSection delay={200}>
-              <BeforeAfterSlider {...data.beforeAfter} />
+              <div className="mx-auto" style={{ maxWidth: beforeAfterMaxWidth }}>
+                <BeforeAfterSlider {...beforeAfter} />
+              </div>
             </RevealSection>
           </div>
         </section>
       )}
+
+      <WorkExamples examples={workExamples} />
 
       {/* Bento Grid: Im Detail */}
       <section className="section-padding bg-white border-t border-gray-100">
