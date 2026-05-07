@@ -11,28 +11,28 @@ const services = [
     title: 'Maurer- & Betonbau',
     description: 'Präzise Maurer- und Betonarbeiten nach DIN-Normen. Vom Fundament bis zur Mauerkrone — meisterliche Qualität.',
     link: '/leistungen/maurer-betonbau',
-    image: '/images/maurer.png',
+    image: '/images/service-card-maurer-betonbau-ai.png',
   },
   {
     icon: Building2,
     title: 'Sanierung & Instandsetzung',
     description: 'Komplettsanierung, Altbaumodernisierung und Instandsetzung von Bestandsimmobilien — fachgerecht und termintreu aus einer Hand.',
     link: '/leistungen/sanierung',
-    image: '/images/sanierung.png',
+    image: '/images/service-card-sanierung-ai.png',
   },
   {
     icon: Wrench,
     title: 'Innenausbau & Trockenbau',
     description: 'Professioneller Innenausbau: Trockenbau, Spachtelarbeiten und moderne Raumgestaltung für Ihr Zuhause.',
     link: '/leistungen/innenausbau',
-    image: '/images/innenausbau.png',
+    image: '/images/service-card-innenausbau-trockenbau-ai.png',
   },
   {
     icon: PaintBucket,
     title: 'Fassaden- & Putzarbeiten',
     description: 'Neue Fassaden, fachgerechte Putzarbeiten und Wärmedämmung. Wir geben Ihrem Gebäude ein neues Gesicht.',
     link: '/leistungen/fassade',
-    image: '/images/fassade.png',
+    image: '/images/service-card-fassade-putz-ai.png',
   },
 ]
 
