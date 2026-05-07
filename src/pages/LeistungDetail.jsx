@@ -380,11 +380,6 @@ function WorkImageGrid({ images, projectTitle }) {
               loading="lazy"
               decoding="async"
             />
-            {image.label && (
-              <figcaption className="absolute left-3 bottom-3 bg-black/65 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-lg">
-                {image.label}
-              </figcaption>
-            )}
           </figure>
         )
       })}

@@ -140,11 +140,6 @@ function ProjectCard({ project }) {
             {project.type}
           </span>
         </div>
-        {activeImage.label && (
-          <div className="absolute bottom-4 left-4 rounded-lg bg-black/65 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-sm">
-            {activeImage.label}
-          </div>
-        )}
         {hasMultipleImages && (
           <>
             <button
