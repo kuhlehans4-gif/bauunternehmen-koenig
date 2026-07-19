@@ -78,3 +78,29 @@ for (const route of routes) {
 // noindex, bewusst ohne Canonical (die angefragte URL existiert nicht).
 await writeFile(join(dist, '404.html'), buildPage('/404-not-found'))
 console.log(`prerendered /404.html — ${routes.length + 1} Seiten insgesamt`)
+
+// Sitemap automatisch aus den Routen generieren (noindex-Seiten ausgenommen)
+const SITE_URL = 'https://www.bauunternehmen-koenig.com'
+const NOINDEX_ROUTES = new Set(['/impressum', '/datenschutz'])
+const today = new Date().toISOString().slice(0, 10)
+const priorityFor = (route) => {
+  if (route === '/') return '1.0'
+  if (route.startsWith('/leistungen') || route === '/kontakt') return '0.9'
+  if (route.startsWith('/standorte')) return '0.8'
+  return '0.7'
+}
+const sitemapEntries = routes
+  .filter((r) => !NOINDEX_ROUTES.has(r))
+  .map((r) => `  <url>
+    <loc>${SITE_URL}${r === '/' ? '/' : r}</loc>
+    <lastmod>${today}</lastmod>
+    <priority>${priorityFor(r)}</priority>
+  </url>`)
+  .join('\n')
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries}
+</urlset>
+`
+await writeFile(join(dist, 'sitemap.xml'), sitemap)
+console.log(`sitemap.xml generiert (${routes.length - NOINDEX_ROUTES.size} URLs)`)
