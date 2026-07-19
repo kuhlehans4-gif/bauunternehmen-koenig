@@ -40,3 +40,4 @@ Wireframe.md
 *.sw?
 .claude/
 .gemini/
+dist-server
