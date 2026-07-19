@@ -578,9 +578,10 @@ export default function LeistungDetail() {
                 <Link to="/kontakt" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-gold text-black font-bold rounded-xl hover:bg-white hover:text-black transition-all shadow-lg text-base sm:text-lg text-center">
                   Kostenlose Vor-Ort-Beratung anfragen
                 </Link>
-                <Link to="/referenzen" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-transparent border border-gray-500 text-white font-medium rounded-xl hover:bg-white/10 transition-all text-base sm:text-lg text-center">
-                  Unsere Referenzen ansehen
-                </Link>
+                <a href={contactDetails.phoneHref} className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 bg-transparent border border-gray-500 text-white font-medium rounded-xl hover:bg-white/10 transition-all text-base sm:text-lg text-center">
+                  <Phone size={20} className="text-gold" />
+                  {contactDetails.phoneDisplay}
+                </a>
               </div>
             )}
           </div>

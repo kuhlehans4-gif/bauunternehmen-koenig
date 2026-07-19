@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "bauunternehmen-koenig.com" }],
+      "destination": "https://www.bauunternehmen-koenig.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/maurer-betonbauarbeiten",
       "destination": "/leistungen/maurer-betonbau",
       "permanent": true

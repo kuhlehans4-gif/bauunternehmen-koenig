@@ -1,4 +1,6 @@
 // Prerendert alle Routen zu statischem HTML (SEO: Crawler bekommen fertiges HTML statt leerer SPA-Hülle).
+// React 19 rendert Helmet-Metatags in den Body-Stream — dieses Skript verschiebt sie in den <head>
+// und bricht den Build ab, wenn eine Seite ohne Title/Description/Canonical herauskäme.
 // Läuft nach "vite build" + "vite build --ssr". Aufruf: node scripts/prerender.mjs
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
@@ -28,20 +30,40 @@ const routes = [
 
 const template = await readFile(join(dist, 'index.html'), 'utf-8')
 const SEO_BLOCK = /<!--seo-start-->[\s\S]*?<!--seo-end-->/
+const ROOT_DIV = '<div id="root"></div>'
+
+if (!SEO_BLOCK.test(template)) throw new Error('index.html: <!--seo-start-->…<!--seo-end--> Marker fehlt')
+if (!template.includes(ROOT_DIV)) throw new Error('index.html: <div id="root"></div> fehlt')
+
+// SEO-relevante Tags, die die <SEO>-Komponente in den Body rendert und die in den <head> gehören
+const HEAD_TAG_PATTERNS = [
+  /<title>[\s\S]*?<\/title>/g,
+  /<meta\s[^>]*?(?:name|property)="(?:description|keywords|robots|og:[^"]*|twitter:[^"]*|article:[^"]*)"[^>]*?\/?>/g,
+  /<link\s[^>]*?rel="canonical"[^>]*?\/?>/g,
+  /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+]
 
 function buildPage(url) {
-  const { html, helmet } = render(url)
-  const head = [
-    helmet?.title?.toString() ?? '',
-    helmet?.meta?.toString() ?? '',
-    helmet?.link?.toString() ?? '',
-    helmet?.script?.toString() ?? '',
-  ]
-    .filter(Boolean)
-    .join('\n    ')
-  return template
-    .replace(SEO_BLOCK, head)
-    .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+  const { html } = render(url)
+
+  let body = html
+  const headTags = []
+  for (const pattern of HEAD_TAG_PATTERNS) {
+    body = body.replace(pattern, (tag) => {
+      headTags.push(tag)
+      return ''
+    })
+  }
+
+  const head = headTags.join('\n    ')
+  if (!/<title>.+<\/title>/.test(head)) throw new Error(`${url}: kein <title> gerendert`)
+  if (!head.includes('name="description"')) throw new Error(`${url}: keine Meta-Description gerendert`)
+  // Canonical ist Pflicht auf indexierbaren Seiten; noindex-Seiten (404, Impressum, Datenschutz) haben bewusst keinen
+  const isIndexable = head.includes('content="index, follow"')
+  if (isIndexable && !head.includes('rel="canonical"')) throw new Error(`${url}: kein Canonical gerendert`)
+  if (!body.trim()) throw new Error(`${url}: leeres SSR-Markup`)
+
+  return template.replace(SEO_BLOCK, head).replace(ROOT_DIV, `<div id="root">${body}</div>`)
 }
 
 for (const route of routes) {
@@ -52,6 +74,7 @@ for (const route of routes) {
   console.log(`prerendered ${route}`)
 }
 
-// 404-Seite: wird von Vercel für unbekannte URLs mit Status 404 ausgeliefert
-await writeFile(join(dist, '404.html'), buildPage('/diese-seite-existiert-nicht'))
+// 404-Seite: wird von Vercel für unbekannte URLs mit Status 404 ausgeliefert.
+// noindex, bewusst ohne Canonical (die angefragte URL existiert nicht).
+await writeFile(join(dist, '404.html'), buildPage('/404-not-found'))
 console.log(`prerendered /404.html — ${routes.length + 1} Seiten insgesamt`)

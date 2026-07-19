@@ -23,12 +23,12 @@ export default function SEO({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
-      <link rel="canonical" href={canonical} />
+      {!noindex && <link rel="canonical" href={canonical} />}
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={canonical} />
+      {!noindex && <meta property="og:url" content={canonical} />}
       <meta property="og:image" content={image} />
       <meta property="og:locale" content="de_DE" />
       <meta property="og:site_name" content="Bauunternehmen König" />
