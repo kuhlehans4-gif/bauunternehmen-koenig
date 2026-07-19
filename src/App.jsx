@@ -11,6 +11,7 @@ import UeberUns from './pages/UeberUns'
 import Kontakt from './pages/Kontakt'
 import Ratgeber from './pages/Ratgeber'
 import RatgeberDetail from './pages/RatgeberDetail'
+import StandortDetail from './pages/StandortDetail'
 import { Impressum, Datenschutz } from './pages/Legal'
 import SEO from './components/SEO'
 
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/ueber-uns" element={<UeberUns />} />
           <Route path="/ratgeber" element={<Ratgeber />} />
           <Route path="/ratgeber/:slug" element={<RatgeberDetail />} />
+          <Route path="/standorte/:slug" element={<StandortDetail />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />

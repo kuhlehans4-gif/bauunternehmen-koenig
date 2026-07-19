@@ -127,6 +127,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bauunternehmen-koenig.com/standorte/markkleeberg</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bauunternehmen-koenig.com/standorte/taucha</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bauunternehmen-koenig.com/standorte/schkeuditz</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bauunternehmen-koenig.com/kontakt</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>

@@ -38,6 +38,9 @@ export default function Footer() {
                 { name: 'Sanierung & Modernisierung', path: '/leistungen/sanierung' },
                 { name: 'Innenausbau & Trockenbau', path: '/leistungen/innenausbau' },
                 { name: 'Fassaden- & Putzarbeiten', path: '/leistungen/fassade' },
+                { name: 'Maurer in Markkleeberg', path: '/standorte/markkleeberg' },
+                { name: 'Maurer in Taucha', path: '/standorte/taucha' },
+                { name: 'Maurer in Schkeuditz', path: '/standorte/schkeuditz' },
               ].map((item) => (
                 <li key={item.path}>
                   <Link to={item.path} className="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">

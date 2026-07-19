@@ -364,10 +364,23 @@ export default function Home() {
           </RevealSection>
           <RevealSection delay={200}>
             <div className="flex flex-wrap gap-3 justify-center mt-8">
-              {['Gohlis', 'Südvorstadt', 'Lindenau', 'Plagwitz', 'Connewitz', 'Schleußig', 'Reudnitz', 'Mölkau', 'Möckern', 'Leutzsch', 'Grünau', 'Paunsdorf', 'Markkleeberg', 'Taucha', 'Schkeuditz'].map((ort) => (
+              {['Gohlis', 'Südvorstadt', 'Lindenau', 'Plagwitz', 'Connewitz', 'Schleußig', 'Reudnitz', 'Mölkau', 'Möckern', 'Leutzsch', 'Grünau', 'Paunsdorf'].map((ort) => (
                 <span key={ort} className="px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-sm font-medium text-gray-700 hover:border-gold/40 hover:bg-gold/5 transition-all duration-300">
                   {ort}
                 </span>
+              ))}
+              {[
+                { name: 'Markkleeberg', slug: 'markkleeberg' },
+                { name: 'Taucha', slug: 'taucha' },
+                { name: 'Schkeuditz', slug: 'schkeuditz' },
+              ].map((ort) => (
+                <Link
+                  key={ort.slug}
+                  to={`/standorte/${ort.slug}`}
+                  className="px-4 py-2 bg-gold/5 border border-gold/30 rounded-full text-sm font-semibold text-charcoal hover:bg-gold/15 hover:border-gold/60 transition-all duration-300"
+                >
+                  {ort.name} →
+                </Link>
               ))}
             </div>
             <p className="text-center text-sm text-gray-400 mt-6">Nicht dabei? <Link to="/kontakt" className="text-gold hover:underline font-medium">Einfach anfragen</Link> — wir fahren auch in die Umgebung.</p>
