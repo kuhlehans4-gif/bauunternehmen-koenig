@@ -376,6 +376,112 @@ const articlesData = {
       </blockquote>
     `
   },
+  'anbau-garage-leipzig-kosten-genehmigung': {
+    title: 'Anbau & Garage in Leipzig: Genehmigung, Fundament & Kosten',
+    metaDescription: 'Anbau oder Garage in Leipzig bauen: Wann in Sachsen eine Baugenehmigung nötig ist, welches Fundament passt und realistische Kosten 2026. Leitfaden vom Maurermeister.',
+    category: 'Baugenehmigung',
+    readTime: '7 Min.',
+    date: '19. Juli 2026',
+    dateISO: '2026-07-19',
+    updated: '19. Juli 2026',
+    updatedISO: '2026-07-19',
+    author: 'Tim König',
+    img: '/images/article_anbau.webp',
+    content: `
+      <h2>Mehr Platz ohne Umzug: der Anbau als Alternative</h2>
+      <p>Wohnraum in Leipzig ist knapp und teuer geworden. Wer ein eigenes Grundstück hat, kann mit einem Anbau, einer Aufstockung des Nebengebäudes oder einer massiven Garage oft günstiger Platz schaffen als durch einen Umzug — und steigert gleichzeitig den Wert der Immobilie.</p>
+      <p>Bevor geplant wird, müssen aber zwei Fragen geklärt sein: Was erlaubt das Baurecht auf Ihrem Grundstück? Und was trägt der Baugrund?</p>
+
+      <h3>Brauche ich in Sachsen eine Baugenehmigung?</h3>
+      <p>Die Sächsische Bauordnung (SächsBO) stellt einige Vorhaben verfahrensfrei — unter anderem Garagen und überdachte Stellplätze <strong>bis 50 m² Grundfläche</strong> und ohne Aufenthaltsräume, sofern sie die Abstandsflächen einhalten. Verfahrensfrei heißt aber nicht regelfrei: Bebauungsplan, Grenzabstände und Nachbarrecht gelten trotzdem.</p>
+      <p>Ein Wohnraum-Anbau ist dagegen praktisch immer genehmigungspflichtig. Hier braucht es einen bauvorlageberechtigten Planer, einen Standsicherheitsnachweis und je nach Lage eine Abstimmung mit dem Amt für Bauordnung und Denkmalpflege der Stadt Leipzig.</p>
+
+      <h2>Das Fundament entscheidet über die Lebensdauer</h2>
+      <p>Der häufigste Baufehler bei Anbauten und Garagen ist ein unterschätzter Baugrund. In Leipzig wechseln die Bodenverhältnisse kleinräumig — vom tragfähigen Geschiebelehm bis zu aufgefüllten Flächen in ehemaligen Industriequartieren.</p>
+      <ul>
+        <li><strong>Bodenplatte:</strong> wirtschaftlich für Garagen und leichte Anbauten auf tragfähigem, frostsicherem Grund</li>
+        <li><strong>Streifenfundament:</strong> Standard für massives Mauerwerk, frostfrei gegründet mindestens 80 cm tief</li>
+        <li><strong>Punktfundamente:</strong> für Carports und leichte Konstruktionen</li>
+      </ul>
+      <p>Beim Anbau ans bestehende Haus kommt ein kritischer Punkt hinzu: Der Neubau setzt sich in den ersten Jahren, das Bestandsgebäude nicht mehr. Ohne saubere Fugentrennung und durchdachten Anschluss entstehen genau dort die Risse, die wir später sanieren müssen.</p>
+
+      <h3>Realistische Kosten 2026</h3>
+      <p>Eine massive Einzelgarage beginnt je nach Ausstattung bei etwa 20.000–35.000 €. Ein gemauerter Wohnanbau liegt mit Gründung, Rohbau, Dach und Anschluss an die Haustechnik realistisch bei 2.500–4.000 € pro m² Wohnfläche — abhängig von Baugrund, Zugänglichkeit und Ausbaustandard.</p>
+
+      <blockquote>
+        <strong>Tipp vom Meister:</strong> Lassen Sie Baugrund und Anschlussdetail ans Bestandsgebäude vor der Angebotsphase prüfen. Diese zwei Punkte entscheiden über Nachträge — nicht der Mauerwerkspreis.
+      </blockquote>
+    `
+  },
+  'klinkerfassade-sanieren-leipzig': {
+    title: 'Klinkerfassade sanieren: Fugen, Reinigung & Reparatur',
+    metaDescription: 'Klinkerfassade sanieren in Leipzig: Fugen erneuern, Ausblühungen entfernen, beschädigte Klinker austauschen. Was fachgerechte Sanierung kostet — vom Maurermeister.',
+    category: 'Maurer',
+    readTime: '6 Min.',
+    date: '19. Juli 2026',
+    dateISO: '2026-07-19',
+    updated: '19. Juli 2026',
+    updatedISO: '2026-07-19',
+    author: 'Tim König',
+    img: '/images/arbeiten/klinkerfassade-sanierung-3.webp',
+    content: `
+      <h2>Klinker hält Jahrzehnte — die Fugen nicht</h2>
+      <p>Klinkerfassaden gehören zu den langlebigsten Fassaden überhaupt und prägen viele Leipziger Straßenzüge, von Gründerzeithäusern bis zu Siedlungsbauten der 1930er Jahre. Der Klinker selbst übersteht oft hundert Jahre. Das Verschleißteil ist der Mörtel: Verwitterte, ausgewaschene oder abgesandete Fugen lassen Wasser ins Mauerwerk — und dann beginnen Frostschäden, Ausblühungen und abplatzende Steine.</p>
+
+      <h3>Typische Schadensbilder</h3>
+      <ul>
+        <li><strong>Ausgewitterte Fugen:</strong> Mörtel liegt tiefer als der Stein oder bröselt beim Kratzen</li>
+        <li><strong>Weiße Ausblühungen:</strong> Salze wandern mit Feuchtigkeit an die Oberfläche — ein Feuchtewarnsignal</li>
+        <li><strong>Abplatzungen:</strong> Frost sprengt durchfeuchtete Klinker, oft zuerst an Sockel und Fensterbänken</li>
+        <li><strong>Grünbelag:</strong> Algen an wetterseitigen und beschatteten Flächen</li>
+      </ul>
+
+      <h2>So läuft eine fachgerechte Klinkersanierung</h2>
+      <p>Zuerst wird geklärt, woher die Feuchtigkeit kommt — defekte Fugen, kaputte Abdeckungen, fehlende Horizontalsperre oder Spritzwasser am Sockel. Dann werden schadhafte Fugen 2–3 cm tief ausgeräumt und mit einem auf den Stein abgestimmten Fugenmörtel neu verfugt. Einzelne zerstörte Klinker lassen sich ausbohren und passend ersetzen.</p>
+      <p>Bei der Reinigung ist Zurückhaltung gefragt: Hochdruck und Sandstrahlen zerstören die gebrannte Schutzschicht des Klinkers und machen die Fassade erst recht saugfähig. Wir arbeiten mit schonenden Verfahren und prüfen an einer Musterfläche, was der Stein verträgt.</p>
+
+      <blockquote>
+        <strong>Aus der Praxis:</strong> Eine unserer Referenzen ist die Sanierung einer mehrgeschossigen Klinkerfassade in Leipzig mit Gerüststellung und abschnittsweiser Neuverfugung — die Bilder dazu finden Sie unter Referenzen.
+      </blockquote>
+
+      <h3>Was kostet die Sanierung?</h3>
+      <p>Reine Neuverfugung liegt je nach Zustand und Gerüstbedarf meist bei 90–160 € pro m². Kommen Steinaustausch, Reinigung und Hydrophobierung dazu, kalkulieren wir objektbezogen nach Aufmaß — mit schriftlichem Festpreis.</p>
+    `
+  },
+  'terrasse-sanieren-leipzig': {
+    title: 'Terrasse sanieren: Belag, Gefälle & Abdichtung',
+    metaDescription: 'Terrasse sanieren in Leipzig: lose Platten, stehendes Wasser, Frostschäden. Wann ein neuer Belag reicht und wann der Unterbau erneuert werden muss — mit Kosten.',
+    category: 'Sanierung',
+    readTime: '6 Min.',
+    date: '19. Juli 2026',
+    dateISO: '2026-07-19',
+    updated: '19. Juli 2026',
+    updatedISO: '2026-07-19',
+    author: 'Tim König',
+    img: '/images/arbeiten/terrassenbelag-nachher.webp',
+    content: `
+      <h2>Wenn die Terrasse zum Sanierungsfall wird</h2>
+      <p>Lose oder kippelnde Platten, Fugen voller Moos, Pfützen nach jedem Regen oder hochgefrorene Ecken im Frühjahr: Terrassenschäden entstehen fast immer im Unterbau — nicht im Belag. Wer nur die Platten tauscht, hat die gleichen Probleme nach zwei Wintern wieder.</p>
+
+      <h3>Die drei häufigsten Ursachen</h3>
+      <ul>
+        <li><strong>Fehlendes Gefälle:</strong> Wasser muss mit mindestens 2 % vom Haus weglaufen. Steht es auf der Fläche, wandert es in Unterbau und Sockel.</li>
+        <li><strong>Ungeeigneter Unterbau:</strong> Ohne verdichtete, frostsichere Tragschicht sacken Platten ab und frieren hoch.</li>
+        <li><strong>Defekte Anschlüsse:</strong> Der Übergang zur Hauswand ist die kritischste Stelle — hier drohen Feuchteschäden am Gebäude selbst.</li>
+      </ul>
+
+      <h2>Neuer Belag oder kompletter Neuaufbau?</h2>
+      <p>Ist der Unterbau tragfähig und das Gefälle korrekt, kann der Belag — Betonplatten, Naturstein oder Feinsteinzeug — wirtschaftlich erneuert werden. Zeigt die Fläche aber Setzungen, Staunässe oder Frostschäden, wird bis auf den tragfähigen Grund zurückgebaut: neue Tragschicht aus Schotter, Ausgleichsschicht, sauberes Gefälle, Randeinfassung und erst dann der neue Belag.</p>
+      <p>Liegt die Terrasse über einem Wohnraum oder Keller, kommt Abdichtung nach Flachdachrichtlinie dazu — hier arbeiten wir mit geprüften Systemaufbauten statt mit Dichtschlämme-Improvisation.</p>
+
+      <blockquote>
+        <strong>Tipp vom Meister:</strong> Prüfen Sie nach dem Winter die Fugen am Hausanschluss. Ein 30-Minuten-Check im Frühjahr ist billiger als ein durchfeuchteter Sockel im Herbst.
+      </blockquote>
+
+      <h3>Kostenrahmen</h3>
+      <p>Eine Belagserneuerung auf intaktem Unterbau beginnt bei etwa 80–120 € pro m². Ein kompletter Neuaufbau mit Erdarbeiten, Tragschicht und neuem Belag liegt je nach Material meist bei 150–250 € pro m² — nach Besichtigung erhalten Sie ein verbindliches Festpreisangebot.</p>
+    `
+  },
   'default': {
     title: 'Expertenwissen für Ihr Bauvorhaben',
     category: 'Tipps',
@@ -655,6 +761,72 @@ const topicGuides = {
       { q: 'Braucht man eine Genehmigung?', a: 'Bei statischen Eingriffen, Eigentumswohnungen oder Nutzungsänderungen sollte das vorab geprüft werden.' }
     ],
     related: ['innenwaende-modernisieren-trockenbau-massivbau', 'betonreparatur-spachteln-statiker-leipzig', 'sanierungskosten-leipzig-2026']
+  },
+  'anbau-garage-leipzig-kosten-genehmigung': {
+    value: 'Starkes Lead-Thema, weil Anbau- und Garagenprojekte fast immer mit einer konkreten Bauabsicht verbunden sind.',
+    bestFor: 'Grundstückseigentümer in Leipzig und Umgebung, die Wohnraum oder einen Stellplatz schaffen wollen',
+    summary: [
+      'In Sachsen sind Garagen bis 50 m² ohne Aufenthaltsräume oft verfahrensfrei — Bebauungsplan und Abstandsflächen gelten trotzdem.',
+      'Der Baugrund und der Anschluss an das Bestandsgebäude entscheiden über Rissfreiheit und Folgekosten.',
+      'Ein Wohnanbau braucht Planer, Statik und Genehmigung — dafür schafft er dauerhaften Wert.'
+    ],
+    check: [
+      { label: 'Sofort prüfen', text: 'Bebauungsplan, Grenzabstände und vorhandene Leitungen auf dem Grundstück.' },
+      { label: 'Nicht vergessen', text: 'Setzungsfuge zwischen Neubau und Bestand sowie die Entwässerung der neuen Dachfläche.' },
+      { label: 'Nächster Schritt', text: 'Vor-Ort-Termin für Baugrundeinschätzung und Machbarkeit vereinbaren.' }
+    ],
+    steps: ['Baurecht und Grundstück prüfen', 'Fundamentart nach Baugrund festlegen', 'Genehmigung bzw. Verfahrensfreiheit klären', 'Gründung, Rohbau, Dach und Anschlüsse ausführen'],
+    costDrivers: ['Baugrund und Gründungstiefe', 'Größe und Ausbaustandard', 'Anschluss an Bestandsgebäude und Haustechnik', 'Zufahrt und Baustellenlogistik'],
+    faq: [
+      { q: 'Ist eine Garage in Sachsen genehmigungsfrei?', a: 'Bis 50 m² Grundfläche ohne Aufenthaltsräume häufig ja (verfahrensfrei nach SächsBO). Bebauungsplan, Abstandsflächen und Nachbarrecht müssen trotzdem eingehalten werden — wir prüfen das vorab.' },
+      { q: 'Was kostet ein Anbau pro Quadratmeter?', a: 'Mit Gründung, Rohbau, Dach und Technik-Anschluss realistisch 2.500–4.000 € pro m² Wohnfläche, je nach Baugrund und Standard.' },
+      { q: 'Warum reißt der Übergang zwischen Anbau und Haus?', a: 'Weil sich der Neubau anfangs setzt, das Bestandsgebäude aber nicht mehr. Eine geplante Trennfuge und ein sauberes Anschlussdetail verhindern das.' }
+    ],
+    related: ['wanddurchbruch-tragende-wand-leipzig', 'sanierungskosten-leipzig-2026', 'die-8-teuersten-fehler-sanierung-leipzig']
+  },
+  'klinkerfassade-sanieren-leipzig': {
+    value: 'Sehr glaubwürdiges Thema, weil es direkt mit echten Referenzfotos einer sanierten Leipziger Klinkerfassade belegt ist.',
+    bestFor: 'Eigentümer von Klinker- und Ziegelfassaden mit verwitterten Fugen, Ausblühungen oder Frostschäden',
+    summary: [
+      'Der Klinker hält oft hundert Jahre — sanierungsbedürftig sind meist Fugen und Anschlüsse.',
+      'Weiße Ausblühungen und Abplatzungen sind Feuchtewarnsignale, keine Schönheitsfehler.',
+      'Falsche Reinigung (Hochdruck, Sandstrahlen) zerstört die Schutzschicht des Steins dauerhaft.'
+    ],
+    check: [
+      { label: 'Sofort prüfen', text: 'Fugentiefe, Ausblühungen, Abplatzungen an Sockel und Fensterbänken.' },
+      { label: 'Nicht vergessen', text: 'Mauerabdeckungen, Fensterbleche und Spritzwasserzone als Feuchtequellen.' },
+      { label: 'Nächster Schritt', text: 'Musterfläche anlegen lassen, bevor großflächig gereinigt oder verfugt wird.' }
+    ],
+    steps: ['Schadens- und Feuchteanalyse', 'Fugen ausräumen und Mörtel abstimmen', 'Schadhafte Klinker austauschen', 'Neuverfugung und ggf. schonende Reinigung'],
+    costDrivers: ['Gerüstbedarf und Fassadenhöhe', 'Anteil schadhafter Fugen und Steine', 'Mörtelsystem und Farbabstimmung', 'Reinigung und Hydrophobierung'],
+    faq: [
+      { q: 'Kann man einzelne Klinker austauschen?', a: 'Ja. Beschädigte Steine werden ausgebohrt und durch farblich passende ersetzt — das ist Standard bei fachgerechter Sanierung.' },
+      { q: 'Darf man Klinker mit Hochdruck reinigen?', a: 'Davon raten wir ab: Der Druck zerstört die gebrannte Oberfläche und macht den Stein saugfähig. Schonende Verfahren mit Musterfläche sind der richtige Weg.' },
+      { q: 'Was kostet eine Neuverfugung?', a: 'Je nach Zustand und Gerüstbedarf meist 90–160 € pro m². Nach Besichtigung erhalten Sie ein verbindliches Festpreisangebot.' }
+    ],
+    related: ['risse-fassade-mauerwerk-leipzig', 'fassadensanierung-leipzig-kosten-foerderung', 'feuchtigkeit-schimmel-sanieren-leipzig']
+  },
+  'terrasse-sanieren-leipzig': {
+    value: 'Praktisches Saisonthema mit Referenzfotos, das häufige Eigentümerprobleme direkt mit einer Leistung des Betriebs verbindet.',
+    bestFor: 'Haus- und Wohnungseigentümer mit losen Platten, Staunässe oder Frostschäden auf der Terrasse',
+    summary: [
+      'Terrassenschäden entstehen fast immer im Unterbau, nicht im Belag.',
+      'Ohne 2 % Gefälle vom Haus weg wandert Wasser in Unterbau und Sockel.',
+      'Terrassen über Wohnräumen brauchen eine Abdichtung nach Flachdachrichtlinie.'
+    ],
+    check: [
+      { label: 'Sofort prüfen', text: 'Kippelnde Platten, Pfützenbildung und den Anschluss an die Hauswand.' },
+      { label: 'Nicht vergessen', text: 'Entwässerung, Randeinfassung und die Sockelzone des Gebäudes.' },
+      { label: 'Nächster Schritt', text: 'Unterbau punktuell öffnen lassen, um Tragschicht und Gefälle zu beurteilen.' }
+    ],
+    steps: ['Schadensbild und Ursache klären', 'Entscheidung Belag oder Komplettaufbau', 'Tragschicht, Gefälle und Abdichtung herstellen', 'Belag verlegen und Anschlüsse ausbilden'],
+    costDrivers: ['Fläche und Zugänglichkeit', 'Zustand des Unterbaus', 'Belagsmaterial', 'Abdichtungsanforderung über Wohnräumen'],
+    faq: [
+      { q: 'Reicht es, nur die Platten neu zu verlegen?', a: 'Nur wenn Unterbau und Gefälle intakt sind. Bei Setzungen oder Staunässe kommen die Schäden sonst nach kurzer Zeit zurück.' },
+      { q: 'Was kostet eine Terrassensanierung?', a: 'Belagserneuerung ab etwa 80–120 € pro m², ein kompletter Neuaufbau je nach Material meist 150–250 € pro m².' },
+      { q: 'Wann ist die beste Jahreszeit dafür?', a: 'Frühjahr bis Herbst bei frostfreier Witterung. Gut geplant ist eine normale Terrasse in wenigen Tagen fertig.' }
+    ],
+    related: ['keller-abdichten-feuchtigkeit-leipzig', 'betonreparatur-spachteln-statiker-leipzig', 'sanierungskosten-leipzig-2026']
   }
 }
 

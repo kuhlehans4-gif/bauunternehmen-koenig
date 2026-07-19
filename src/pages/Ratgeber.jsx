@@ -101,6 +101,30 @@ const articles = [
     readTime: '7 Min.',
     img: '/images/maurer.webp',
     excerpt: 'Eine tragende Wand öffnen ohne Risiko: Statiker, Stahlträger, Staubschutz und realistische Kosten für Durchbrüche in Leipziger Wohnungen und Häusern.'
+  },
+  {
+    slug: 'anbau-garage-leipzig-kosten-genehmigung',
+    title: 'Anbau & Garage in Leipzig: Genehmigung, Fundament & Kosten',
+    category: 'Baugenehmigung',
+    readTime: '7 Min.',
+    img: '/images/article_anbau.webp',
+    excerpt: 'Mehr Platz ohne Umzug: Wann ein Anbau oder eine Garage in Sachsen genehmigungsfrei ist, welches Fundament nötig wird und mit welchen Kosten Sie rechnen sollten.'
+  },
+  {
+    slug: 'klinkerfassade-sanieren-leipzig',
+    title: 'Klinkerfassade sanieren: Fugen, Reinigung & Reparatur',
+    category: 'Maurer',
+    readTime: '6 Min.',
+    img: '/images/arbeiten/klinkerfassade-sanierung-3.webp',
+    excerpt: 'Verwitterte Fugen, Ausblühungen oder beschädigte Klinker: Wie eine Klinkerfassade fachgerecht saniert wird — und warum falsche Reinigung teuren Schaden anrichtet.'
+  },
+  {
+    slug: 'terrasse-sanieren-leipzig',
+    title: 'Terrasse sanieren: Belag, Gefälle & Abdichtung',
+    category: 'Sanierung',
+    readTime: '6 Min.',
+    img: '/images/arbeiten/terrassenbelag-nachher.webp',
+    excerpt: 'Lose Platten, stehendes Wasser oder Frostschäden: Woran Sie erkennen, ob Ihr Terrassenbelag nur neu verlegt oder der Unterbau komplett erneuert werden muss.'
   }
 ]
 
