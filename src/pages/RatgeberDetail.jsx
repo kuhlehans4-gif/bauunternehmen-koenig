@@ -676,6 +676,9 @@ const fallbackGuide = {
   faq: []
 }
 
+// Für das Prerendering (scripts/prerender.mjs): alle indexierbaren Artikel-Slugs
+export const articleSlugs = Object.keys(articlesData).filter((key) => key !== 'default')
+
 export default function RatgeberDetail() {
   const { slug } = useParams()
   const isKnown = Boolean(articlesData[slug])

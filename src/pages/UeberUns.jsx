@@ -44,7 +44,7 @@ export default function UeberUns() {
       {/* Hero */}
       <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/images/tim-portrait.webp" alt="" className="w-full h-full object-cover opacity-10" fetchpriority="high" decoding="async" />
+          <img src="/images/tim-portrait.webp" alt="" className="w-full h-full object-cover opacity-10" fetchPriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

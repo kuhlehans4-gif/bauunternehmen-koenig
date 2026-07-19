@@ -554,7 +554,7 @@ export default function LeistungDetail() {
       {/* Hero Section */}
       <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
         <div className="absolute inset-0 opacity-[0.25]">
-          <img src={heroImageSrc} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" fetchpriority="high" decoding="async" />
+          <img src={heroImageSrc} alt={data.title} className="w-full h-full object-cover grayscale brightness-50" fetchPriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/90 to-charcoal" />
         

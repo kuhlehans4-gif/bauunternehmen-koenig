@@ -105,7 +105,7 @@ export default function Home() {
             src="/images/hero.webp"
             alt="Bauunternehmen König — Baustelle in Leipzig"
             className="w-full h-full object-cover animate-[scaleInSimple_30s_infinite_alternate]"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-black/10" />

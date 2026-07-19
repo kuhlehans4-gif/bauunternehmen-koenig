@@ -75,7 +75,7 @@ export default function Navbar() {
                 src={logoWhite}
                 alt="Bauunternehmen König"
                 className="absolute inset-0 w-full h-full object-contain -ml-[4%] sm:-ml-[10%] md:-ml-[15%] lg:-ml-[20%] scale-[1.08] sm:scale-[1.2] md:scale-[1.3] lg:scale-[1.35] origin-center drop-shadow-2xl group-hover:scale-[1.11] sm:group-hover:scale-[1.23] md:group-hover:scale-[1.33] lg:group-hover:scale-[1.38] transition-all duration-500"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
             </div>
