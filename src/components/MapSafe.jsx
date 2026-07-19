@@ -28,7 +28,7 @@ export default function MapSafe() {
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-gray-100 group">
       {/* Dynamic Placeholder Image (Visual representation of a map) */}
       <img
-        src="/images/map-placeholder.png"
+        src="/images/map-placeholder.webp"
         alt="Map Placeholder"
         className="absolute inset-0 w-full h-full object-cover blur-[2px] opacity-60 group-hover:scale-105 transition-transform duration-700"
       />

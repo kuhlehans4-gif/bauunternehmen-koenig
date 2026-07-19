@@ -13,8 +13,8 @@ const iconMap = {
 const serviceData = {
   'maurer-betonbau': {
     beforeAfter: {
-      beforeSrc: '/images/arbeiten/klinkertreppe-vorher.jpg',
-      afterSrc: '/images/arbeiten/klinkertreppe-nachher.jpg',
+      beforeSrc: '/images/arbeiten/klinkertreppe-vorher.webp',
+      afterSrc: '/images/arbeiten/klinkertreppe-nachher.webp',
       beforeAlt: 'Verwitterte Klinkertreppe vor dem Neuaufmauern',
       afterAlt: 'Neu aufgemauerte Klinkertreppe mit sauberem Fugenbild',
       caption: 'Klinkertreppe neu aufgemauert – vorher & nachher',
@@ -33,7 +33,7 @@ const serviceData = {
       { text: 'Meisterqualität', sub: 'Nach DIN-Norm', icon: 'CheckSquare' },
       { text: 'Festpreisgarantie', sub: 'Ohne Überraschungen', icon: 'CheckCircle2' }
     ],
-    heroImage: '/images/hero-maurer-stock.png',
+    heroImage: '/images/hero-maurer-stock.webp',
     intro: 'Als staatlich geprüfter Maurer- und Betonbauermeister (HWK Leipzig) ist Tim König Ihr Spezialist für präzise und DIN-gerechte Maurer- und Betonarbeiten in Leipzig und Umgebung. Ob Fundamente, tragendes Mauerwerk oder Betondecken — jede Arbeit wird mit höchster Sorgfalt, den richtigen Materialien und dem nötigen Fachwissen ausgeführt. Wir bauen auf Qualität, die Jahrzehnte hält.',
     details: [
       { title: 'Fundamente & Bodenplatten', desc: 'Zuverlässige und DIN-gerechte Basis für Ihr Bauwerk – ob für Garage, Anbau oder Einfamilienhaus.', icon: 'LayoutGrid' },
@@ -68,9 +68,9 @@ const serviceData = {
         title: 'Abdichtungsmaßnahmen am Sockel',
         description: 'Vom freigelegten Sockelbereich bis zur geschützten Oberfläche: sauber vorbereitet, fachgerecht abgedichtet und dauerhaft gegen Feuchtigkeit gesichert.',
         images: [
-          { src: '/images/arbeiten/sockel-abdichtung-bestand.jpg', alt: 'Sockelbereich vor den Abdichtungsmaßnahmen', label: 'Bestand' },
-          { src: '/images/arbeiten/sockel-abdichtung-aufgraben.jpg', alt: 'Freigelegter Sockelbereich während der Abdichtung', label: 'Freilegen' },
-          { src: '/images/arbeiten/sockel-abdichtung-fertig.jpg', alt: 'Fertig abgedichteter Sockelbereich', label: 'Fertigstellung' },
+          { src: '/images/arbeiten/sockel-abdichtung-bestand.webp', alt: 'Sockelbereich vor den Abdichtungsmaßnahmen', label: 'Bestand' },
+          { src: '/images/arbeiten/sockel-abdichtung-aufgraben.webp', alt: 'Freigelegter Sockelbereich während der Abdichtung', label: 'Freilegen' },
+          { src: '/images/arbeiten/sockel-abdichtung-fertig.webp', alt: 'Fertig abgedichteter Sockelbereich', label: 'Fertigstellung' },
         ],
       },
     ],
@@ -79,8 +79,8 @@ const serviceData = {
   },
   'sanierung': {
     beforeAfter: {
-      beforeSrc: '/images/arbeiten/terrassenbelag-vorher.jpg',
-      afterSrc: '/images/arbeiten/terrassenbelag-nachher.jpg',
+      beforeSrc: '/images/arbeiten/terrassenbelag-vorher.webp',
+      afterSrc: '/images/arbeiten/terrassenbelag-nachher.webp',
       beforeAlt: 'Abgenutzter Terrassenbelag vor der Erneuerung',
       afterAlt: 'Neu verlegter Terrassenbelag nach der Sanierung',
       caption: 'Erneuerung eines Terrassenbelags – vorher & nachher',
@@ -99,7 +99,7 @@ const serviceData = {
       { text: 'Alles aus einer Hand', sub: 'Gewerke-Koordination', icon: 'LayoutGrid' },
       { text: 'Termintreue', sub: 'Pünktlich garantiert', icon: 'Clock' }
     ],
-    heroImage: '/images/hero-sanierung-stock.png',
+    heroImage: '/images/hero-sanierung-stock.webp',
     intro: 'Ob Sie eine Bestandsimmobilie in Leipzig modernisieren oder eine denkmalgerechte Sanierung planen — wir stehen Ihnen mit Fachwissen zur Seite. Vom kontrollierten Rückbau bis zur Instandsetzung koordinieren wir alle Gewerke. Wir sanieren Altbauten und Mehrfamilienhäuser mit dem nötigen Respekt vor der Bausubstanz und dem Blick für Langlebigkeit.',
     details: [
       { title: 'Altbausanierung', desc: 'Umfassende Modernisierung von Gründerzeithäusern und historischen Gebäuden unter Berücksichtigung der Substanz.', icon: 'Home' },
@@ -134,8 +134,8 @@ const serviceData = {
         title: 'Erneuerung eines Terrassenbelags',
         description: 'Abgenutzter Terrassenbelag wurde zurückgebaut und mit sauberem neuen Belag wieder hergestellt.',
         images: [
-          { src: '/images/arbeiten/terrassenbelag-vorher.jpg', alt: 'Terrassenbelag vor der Erneuerung', label: 'Vorher' },
-          { src: '/images/arbeiten/terrassenbelag-nachher.jpg', alt: 'Neu verlegter Terrassenbelag nach der Sanierung', label: 'Nachher' },
+          { src: '/images/arbeiten/terrassenbelag-vorher.webp', alt: 'Terrassenbelag vor der Erneuerung', label: 'Vorher' },
+          { src: '/images/arbeiten/terrassenbelag-nachher.webp', alt: 'Neu verlegter Terrassenbelag nach der Sanierung', label: 'Nachher' },
         ],
       },
     ],
@@ -144,8 +144,8 @@ const serviceData = {
   },
   'innenausbau': {
     beforeAfter: {
-      beforeSrc: '/images/arbeiten/trockenbau-treppe-rohbau.jpg',
-      afterSrc: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg',
+      beforeSrc: '/images/arbeiten/trockenbau-treppe-rohbau.webp',
+      afterSrc: '/images/arbeiten/trockenbau-treppe-nachher-2.webp',
       beforeAlt: 'Treppenhaus im Rohzustand während der Trockenbauarbeiten',
       afterAlt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen',
       caption: 'Trockenbauarbeiten während einer Haussanierung – vorher & nachher',
@@ -164,7 +164,7 @@ const serviceData = {
       { text: 'Q4-Oberflächen', sub: 'Perfektes Finish', icon: 'PaintRoller' },
       { text: 'Saubere Arbeit', sub: 'Täglich aufgeräumt', icon: 'Sparkles' }
     ],
-    heroImage: '/images/hero-innenausbau-stock.png',
+    heroImage: '/images/hero-innenausbau-stock.webp',
     intro: 'Der professionelle Innenausbau verwandelt Rohbauten in Wohnträume. Bauunternehmen König realisiert in Leipzig hochwertigen Trockenbau, perfekte Spachtelarbeiten (Q2 bis Q4) und durchdachte Raumgestaltung. Schnelle Bauzeit, keine zusätzliche Baufeuchte und hervorragende Dämmeigenschaften — das sind die Vorteile unseres modernen Trockenbaus.',
     details: [
       { title: 'Wände & Trennsysteme', desc: 'Flexible und stabile Trockenbauwände für eine individuelle Neugestaltung des Grundrisses.', icon: 'LayoutGrid' },
@@ -199,23 +199,23 @@ const serviceData = {
         title: 'Kompletter Aufbau einer Salzgrotte',
         description: 'Ein besonderer Innenausbau mit vorbereiteten Flächen, Salzstein-Elementen, Beleuchtung und atmosphärischem Finish.',
         images: [
-          { src: '/images/arbeiten/salzgrotte-rohraum.jpg', alt: 'Rohraum vor dem Aufbau der Salzgrotte', label: 'Rohraum' },
-          { src: '/images/arbeiten/salzgrotte-salzsteine.jpg', alt: 'Salzsteine während des Aufbaus der Salzgrotte', label: 'Aufbau' },
-          { src: '/images/arbeiten/salzgrotte-licht.jpg', alt: 'Beleuchtete Wandfläche in der Salzgrotte', label: 'Lichtkonzept' },
-          { src: '/images/arbeiten/salzgrotte-eingang.jpg', alt: 'Eingangsbereich der fertiggestellten Salzgrotte', label: 'Eingang' },
-          { src: '/images/arbeiten/salzgrotte-wand.jpg', alt: 'Strukturierte Salzsteinwand in der Salzgrotte', label: 'Wandgestaltung' },
-          { src: '/images/arbeiten/salzgrotte-fertig.jpg', alt: 'Fertiggestellte Salzgrotte mit warmer Beleuchtung', label: 'Fertig' },
+          { src: '/images/arbeiten/salzgrotte-rohraum.webp', alt: 'Rohraum vor dem Aufbau der Salzgrotte', label: 'Rohraum' },
+          { src: '/images/arbeiten/salzgrotte-salzsteine.webp', alt: 'Salzsteine während des Aufbaus der Salzgrotte', label: 'Aufbau' },
+          { src: '/images/arbeiten/salzgrotte-licht.webp', alt: 'Beleuchtete Wandfläche in der Salzgrotte', label: 'Lichtkonzept' },
+          { src: '/images/arbeiten/salzgrotte-eingang.webp', alt: 'Eingangsbereich der fertiggestellten Salzgrotte', label: 'Eingang' },
+          { src: '/images/arbeiten/salzgrotte-wand.webp', alt: 'Strukturierte Salzsteinwand in der Salzgrotte', label: 'Wandgestaltung' },
+          { src: '/images/arbeiten/salzgrotte-fertig.webp', alt: 'Fertiggestellte Salzgrotte mit warmer Beleuchtung', label: 'Fertig' },
         ],
       },
       {
         title: 'Treppenhaus im Zuge einer Haussanierung',
         description: 'Vom offenen Rohzustand über den Trockenbau bis zu sauberen Wand- und Deckenflächen mit fertiger Treppe.',
         images: [
-          { src: '/images/arbeiten/trockenbau-treppe-vorher.jpg', alt: 'Treppenhaus vor dem Ausbau', label: 'Vorbereitung' },
-          { src: '/images/arbeiten/trockenbau-treppe-rohbau.jpg', alt: 'Treppenhaus während des Rohbaus', label: 'Rohbau' },
-          { src: '/images/arbeiten/trockenbau-treppe-nachher-1.jpg', alt: 'Ausgebautes Treppenhaus nach den Trockenbauarbeiten', label: 'Ausbau' },
-          { src: '/images/arbeiten/trockenbau-treppe-nachher-2.jpg', alt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen', label: 'Fertig' },
-          { src: '/images/arbeiten/trockenbau-treppe-nachher-3.jpg', alt: 'Fertiggestellter Treppenbereich nach der Sanierung', label: 'Fertig' },
+          { src: '/images/arbeiten/trockenbau-treppe-vorher.webp', alt: 'Treppenhaus vor dem Ausbau', label: 'Vorbereitung' },
+          { src: '/images/arbeiten/trockenbau-treppe-rohbau.webp', alt: 'Treppenhaus während des Rohbaus', label: 'Rohbau' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-1.webp', alt: 'Ausgebautes Treppenhaus nach den Trockenbauarbeiten', label: 'Ausbau' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-2.webp', alt: 'Fertig ausgebautes Treppenhaus mit hellen Oberflächen', label: 'Fertig' },
+          { src: '/images/arbeiten/trockenbau-treppe-nachher-3.webp', alt: 'Fertiggestellter Treppenbereich nach der Sanierung', label: 'Fertig' },
         ],
       },
     ],
@@ -224,8 +224,8 @@ const serviceData = {
   },
   'fassade': {
     beforeAfter: {
-      beforeSrc: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.jpg',
-      afterSrc: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg',
+      beforeSrc: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.webp',
+      afterSrc: '/images/arbeiten/fassade-horizontalabdichtung-fertig.webp',
       beforeAlt: 'Freigelegter Sockelbereich einer Fassade vor der Sanierung',
       afterAlt: 'Fassade nach Sockelinstandsetzung und Abdichtungsarbeiten',
       caption: 'Fassadensanierung nach Horizontalabdichtung – vorher & nachher',
@@ -244,7 +244,7 @@ const serviceData = {
       { text: 'Nach DIN-Norm', sub: 'Aktuelle Verarbeitung', icon: 'CheckSquare' },
       { text: 'Energieeffizient', sub: 'GEG-konform', icon: 'Leaf' }
     ],
-    heroImage: '/images/hero-fassade-stock.png',
+    heroImage: '/images/hero-fassade-stock.webp',
     intro: 'Die Fassade ist die Visitenkarte Ihres Gebäudes — und elementar für Energieeffizienz und Werterhalt. Als Fachbetrieb sind wir spezialisiert auf professionelle Putzarbeiten, Altbausanierung und Wärmedämmverbundsysteme (WDVS) in Leipzig. Wir verleihen Ihrem Haus ein makelloses, dauerhaftes Gesicht, das Wind und Wetter trotzt.',
     details: [
       { title: 'Wärmedämmung (WDVS)', desc: 'Erhebliche Heizkosteneinsparung durch fachgerecht angebrachte Dämmsysteme nach GEG-Standards.', icon: 'Zap' },
@@ -279,20 +279,20 @@ const serviceData = {
         title: 'Sockel- und Fassadeninstandsetzung',
         description: 'Nach der Horizontalabdichtung wurde der betroffene Sockelbereich freigelegt, instandgesetzt und wieder sauber aufgebaut.',
         images: [
-          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.jpg', alt: 'Beschädigter Fassadensockel vor der Instandsetzung', label: 'Bestand' },
-          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-2.jpg', alt: 'Freigelegter Sockelbereich am Gebäude', label: 'Freilegen' },
-          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-1.jpg', alt: 'Neu aufgebauter Sockelbereich während der Sanierung', label: 'Aufbau' },
-          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-2.jpg', alt: 'Fassadensockel während der Abdichtungsarbeiten', label: 'Abdichtung' },
-          { src: '/images/arbeiten/fassade-horizontalabdichtung-fertig.jpg', alt: 'Fertig instandgesetzter Fassadensockel', label: 'Fertigstellung' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-1.webp', alt: 'Beschädigter Fassadensockel vor der Instandsetzung', label: 'Bestand' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-bestand-2.webp', alt: 'Freigelegter Sockelbereich am Gebäude', label: 'Freilegen' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-1.webp', alt: 'Neu aufgebauter Sockelbereich während der Sanierung', label: 'Aufbau' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-aufbau-2.webp', alt: 'Fassadensockel während der Abdichtungsarbeiten', label: 'Abdichtung' },
+          { src: '/images/arbeiten/fassade-horizontalabdichtung-fertig.webp', alt: 'Fertig instandgesetzter Fassadensockel', label: 'Fertigstellung' },
         ],
       },
       {
         title: 'Sanierung einer Klinkerfassade',
         description: 'Mehrgeschossige Klinkerfassade mit Gerüststellung und schrittweiser Bearbeitung der Fassadenflächen.',
         images: [
-          { src: '/images/arbeiten/klinkerfassade-sanierung-1.jpg', alt: 'Klinkerfassade mit Gerüst zu Beginn der Sanierung', label: 'Start' },
-          { src: '/images/arbeiten/klinkerfassade-sanierung-2.jpg', alt: 'Klinkerfassade während der Sanierungsarbeiten', label: 'Bearbeitung' },
-          { src: '/images/arbeiten/klinkerfassade-sanierung-3.jpg', alt: 'Klinkerfassade im fortgeschrittenen Sanierungszustand', label: 'Fortschritt' },
+          { src: '/images/arbeiten/klinkerfassade-sanierung-1.webp', alt: 'Klinkerfassade mit Gerüst zu Beginn der Sanierung', label: 'Start' },
+          { src: '/images/arbeiten/klinkerfassade-sanierung-2.webp', alt: 'Klinkerfassade während der Sanierungsarbeiten', label: 'Bearbeitung' },
+          { src: '/images/arbeiten/klinkerfassade-sanierung-3.webp', alt: 'Klinkerfassade im fortgeschrittenen Sanierungszustand', label: 'Fortschritt' },
         ],
       },
     ],

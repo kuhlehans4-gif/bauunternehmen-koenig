@@ -11,28 +11,28 @@ const services = [
     title: 'Maurer- & Betonbau',
     description: 'Präzise Maurer- und Betonarbeiten nach DIN-Normen. Vom Fundament bis zur Mauerkrone — meisterliche Qualität.',
     link: '/leistungen/maurer-betonbau',
-    image: '/images/service-card-maurer-betonbau-ai.png',
+    image: '/images/service-card-maurer-betonbau-ai.webp',
   },
   {
     icon: Building2,
     title: 'Sanierung & Instandsetzung',
     description: 'Komplettsanierung, Altbaumodernisierung und Instandsetzung von Bestandsimmobilien — fachgerecht und termintreu aus einer Hand.',
     link: '/leistungen/sanierung',
-    image: '/images/service-card-sanierung-ai.png',
+    image: '/images/service-card-sanierung-ai.webp',
   },
   {
     icon: Wrench,
     title: 'Innenausbau & Trockenbau',
     description: 'Professioneller Innenausbau: Trockenbau, Spachtelarbeiten und moderne Raumgestaltung für Ihr Zuhause.',
     link: '/leistungen/innenausbau',
-    image: '/images/service-card-innenausbau-trockenbau-ai.png',
+    image: '/images/service-card-innenausbau-trockenbau-ai.webp',
   },
   {
     icon: PaintBucket,
     title: 'Fassaden- & Putzarbeiten',
     description: 'Neue Fassaden, fachgerechte Putzarbeiten und Wärmedämmung. Wir geben Ihrem Gebäude ein neues Gesicht.',
     link: '/leistungen/fassade',
-    image: '/images/service-card-fassade-putz-ai.png',
+    image: '/images/service-card-fassade-putz-ai.webp',
   },
 ]
 
@@ -102,7 +102,7 @@ export default function Home() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="/images/hero.png"
+            src="/images/hero.webp"
             alt="Bauunternehmen König — Baustelle in Leipzig"
             className="w-full h-full object-cover animate-[scaleInSimple_30s_infinite_alternate]"
             fetchpriority="high"
@@ -226,7 +226,15 @@ export default function Home() {
                 {[...Array(5)].map((_, i) => <Star key={i} size={24} className="fill-gold text-gold" />)}
               </div>
             </div>
-            <p className="text-gray-400 text-sm">Basierend auf echten Kundenbewertungen</p>
+            <p className="text-gray-400 text-sm">Basierend auf echten Google-Bewertungen</p>
+            <a
+              href="https://share.google/6pEhXFu8zL4QNewda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-gold text-sm font-semibold hover:underline"
+            >
+              Alle Bewertungen auf Google ansehen →
+            </a>
           </RevealSection>
         </div>
 
@@ -325,7 +333,7 @@ export default function Home() {
 
       {/* ========== PROCESS ========== */}
       <section className="section-padding bg-charcoal rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 mb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero.png')] opacity-[0.03] object-cover mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero.webp')] opacity-[0.03] object-cover mix-blend-overlay"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <RevealSection>
             <SectionHeading
@@ -375,7 +383,7 @@ export default function Home() {
             <RevealSection delay={200}>
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                <img src="/images/tim-portrait.png" alt="Tim König auf der Baustelle" className="w-full h-[380px] sm:h-[500px] object-cover grayscale brightness-75" loading="lazy" decoding="async" />
+                <img src="/images/tim-portrait.webp" alt="Tim König auf der Baustelle" className="w-full h-[380px] sm:h-[500px] object-cover grayscale brightness-75" loading="lazy" decoding="async" />
                 <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-20">
                   <h3 className="text-white text-2xl sm:text-3xl font-heading font-bold mb-1">Tim König</h3>
                   <p className="text-gold font-medium">Maurer- und Betonbauermeister</p>
@@ -462,7 +470,7 @@ export default function Home() {
                 
                 <div className="hidden lg:block relative text-center">
                   <div className="absolute inset-0 bg-gold/5 rounded-full blur-[60px] transform scale-150 -z-10"></div>
-                  <img src="/images/logo-cta.png" alt="Bauunternehmen König" className="w-full max-w-[400px] h-auto mx-auto object-contain drop-shadow-xl" loading="lazy" decoding="async" />
+                  <img src="/images/logo-cta.webp" alt="Bauunternehmen König" className="w-full max-w-[400px] h-auto mx-auto object-contain drop-shadow-xl" loading="lazy" decoding="async" />
                   
                   <div className="absolute -top-12 -right-4 bg-white px-5 py-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce" style={{animationDuration: '4s'}}>
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">

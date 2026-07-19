@@ -36,9 +36,13 @@ function NotFound() {
           <p className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4">404</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-900 text-charcoal mb-6">Diese Seite gibt es nicht mehr</h1>
           <p className="text-gray-500 mb-8">
-            Manche alten Google-Treffer werden nach dem Relaunch automatisch auf passende neue Inhalte weitergeleitet.
+            Kein Problem — hier finden Sie alles Wichtige direkt:
           </p>
-          <Link to="/" className="btn-primary">Zur Startseite</Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/" className="btn-primary">Zur Startseite</Link>
+            <Link to="/leistungen" className="btn-primary">Unsere Leistungen</Link>
+            <Link to="/kontakt" className="btn-primary">Kontakt aufnehmen</Link>
+          </div>
         </div>
       </section>
     </>

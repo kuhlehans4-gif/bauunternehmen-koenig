@@ -15,7 +15,7 @@ export const articles = [
     date: '12. Mai 2026',
     updated: '12. Mai 2026',
     author: 'Tim König',
-    img: '/images/sanierung.png',
+    img: '/images/sanierung.webp',
     excerpt: 'KfW, BAFA, BEG und Steuerbonus: Alle Fördertöpfe für die energetische Sanierung 2026 mit Förderhöhen, Antragstellung und typischen Stolperfallen.',
     content: `
       <p class="lead"><strong>Energetische Sanierung 2026:</strong> Wer sein Haus modernisiert, kann mit der richtigen Strategie zwischen 15 % und 70 % der Kosten über öffentliche Fördermittel zurückholen. Wir zeigen Ihnen, welche Programme aktuell laufen, welche Voraussetzungen gelten und wie Sie typische Fehler bei der Antragstellung vermeiden.</p>
@@ -149,7 +149,7 @@ export const articles = [
     date: '03. April 2026',
     updated: '03. April 2026',
     author: 'Tim König',
-    img: '/images/hero.png',
+    img: '/images/hero.webp',
     excerpt: 'Welche Unterlagen brauchen Sie? Was kostet ein Bauantrag in Leipzig? Wir führen Sie durch das gesamte Verfahren – inklusive Sächsischer Bauordnung und Bebauungsplänen.',
     content: `
       <p class="lead"><strong>Bauen in Leipzig</strong> heißt: zuerst Papierkrieg, dann Spatenstich. Wir zeigen Ihnen, wann Sie überhaupt eine Baugenehmigung brauchen, welche Unterlagen das Bauamt Leipzig fordert, mit welchen Kosten und Wartezeiten Sie rechnen müssen – und wie Sie typische Stolpersteine im sächsischen Baurecht umgehen.</p>
@@ -291,7 +291,7 @@ export const articles = [
     date: '21. März 2026',
     updated: '21. März 2026',
     author: 'Tim König',
-    img: '/images/innenausbau.png',
+    img: '/images/innenausbau.webp',
     excerpt: 'Q1 bis Q4 – die vier Spachtelqualitäten im Trockenbau erklärt. Inklusive Kosten pro m², Anwendungsbeispielen und einer Entscheidungshilfe für Ihr Projekt.',
     content: `
       <p class="lead"><strong>Q1, Q2, Q3, Q4</strong> – diese Kürzel begegnen Ihnen bei jedem Trockenbau-Angebot. Sie definieren die Oberflächenqualität von Gipskartonplatten und entscheiden maßgeblich über das spätere Erscheinungsbild Ihrer Wand. Wir erklären die Unterschiede praxisnah und zeigen, welche Qualitätsstufe Sie für welchen Anwendungsfall wirklich brauchen.</p>

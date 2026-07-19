@@ -9,28 +9,28 @@ const services = [
     title: 'Maurer- & Betonbauarbeiten',
     description: 'Präzise Maurer- und Betonarbeiten nach DIN-Normen. Fundamente, Mauern, Betondecken und mehr — alles aus Meisterhand.',
     link: '/leistungen/maurer-betonbau',
-    image: '/images/service-card-maurer-betonbau-ai.png',
+    image: '/images/service-card-maurer-betonbau-ai.webp',
   },
   {
     icon: Building2,
     title: 'Sanierung & Instandsetzung',
     description: 'Komplettsanierung, Altbaumodernisierung und Instandsetzung von Bestandsimmobilien. Fachgerecht und termintreu aus einer Hand.',
     link: '/leistungen/sanierung',
-    image: '/images/service-card-sanierung-ai.png',
+    image: '/images/service-card-sanierung-ai.webp',
   },
   {
     icon: Wrench,
     title: 'Innenausbau & Trockenbau',
     description: 'Trockenbau, Spachtelarbeiten in Q2–Q4, Trockenestrich und moderne Raumgestaltung für Wohn- und Gewerberäume.',
     link: '/leistungen/innenausbau',
-    image: '/images/service-card-innenausbau-trockenbau-ai.png',
+    image: '/images/service-card-innenausbau-trockenbau-ai.webp',
   },
   {
     icon: PaintBucket,
     title: 'Fassaden- & Putzarbeiten',
     description: 'Professionelle Fassadengestaltung, Außenputz, Wärmedämmverbundsysteme und Renovierung bestehender Fassaden.',
     link: '/leistungen/fassade',
-    image: '/images/service-card-fassade-putz-ai.png',
+    image: '/images/service-card-fassade-putz-ai.webp',
   },
 ]
 
@@ -58,7 +58,7 @@ export default function Leistungen() {
       {/* Hero */}
       <section className="relative pt-40 sm:pt-48 md:pt-52 pb-16 sm:pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/images/hero.png" alt="" className="w-full h-full object-cover" fetchpriority="high" decoding="async" />
+          <img src="/images/hero.webp" alt="" className="w-full h-full object-cover" fetchpriority="high" decoding="async" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

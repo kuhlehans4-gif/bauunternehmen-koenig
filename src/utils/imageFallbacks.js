@@ -1,3 +1,3 @@
-export function resolvePublicImage(src, fallback = '/images/hero.png') {
+export function resolvePublicImage(src, fallback = '/images/hero.webp') {
   return src || fallback
 }

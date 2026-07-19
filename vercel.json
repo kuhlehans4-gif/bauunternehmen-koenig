@@ -1,6 +1,31 @@
 {
   "redirects": [
     {
+      "source": "/maurer-betonbauarbeiten",
+      "destination": "/leistungen/maurer-betonbau",
+      "permanent": true
+    },
+    {
+      "source": "/fassaden-putzarbeiten",
+      "destination": "/leistungen/fassade",
+      "permanent": true
+    },
+    {
+      "source": "/innenausbau",
+      "destination": "/leistungen/innenausbau",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung",
+      "destination": "/leistungen/sanierung",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-mich",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
       "source": "/services-7-1",
       "destination": "/ratgeber/feuchtigkeit-schimmel-sanieren-leipzig",
       "permanent": true

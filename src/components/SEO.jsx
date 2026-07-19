@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 const SITE_URL = 'https://www.bauunternehmen-koenig.com'
-const DEFAULT_IMAGE = `${SITE_URL}/images/hero.png`
+const DEFAULT_IMAGE = `${SITE_URL}/images/og-hero.jpg`
 
 export default function SEO({
   title,
