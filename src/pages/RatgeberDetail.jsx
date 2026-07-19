@@ -15,7 +15,7 @@ const articlesData = {
     updated: '10. April 2026',
     updatedISO: '2026-04-10',
     author: 'Tim König',
-    img: '/images/ratgeber/fassadensanierung-leipzig-kosten-foerderung.svg',
+    img: '/images/article_fassade.webp',
     content: `
       <h2>Wann eine Fassadensanierung unumgänglich wird</h2>
       <p>Gerade in Leipzig prägen historische Putzfassaden und Altbauten das Stadtbild. Doch woran erkennt man, dass die Fassade nicht nur verschmutzt ist, sondern eine echte Sanierung braucht?</p>
@@ -44,7 +44,7 @@ const articlesData = {
     updated: '02. April 2026',
     updatedISO: '2026-04-02',
     author: 'Tim König',
-    img: '/images/ratgeber/risse-fassade-mauerwerk-leipzig.svg',
+    img: '/images/article_risse.webp',
     content: `
       <h2>Panikmache oder echtes Problem?</h2>
       <p>Ein Riss im heimischen Mauerwerk löst bei vielen Hausbesitzern in Leipzig sofort Panik aus. Doch nicht jeder Riss bedeutet den sofortigen Einsturz.</p>
@@ -73,7 +73,7 @@ const articlesData = {
     updated: '25. März 2026',
     updatedISO: '2026-03-25',
     author: 'Tim König',
-    img: '/images/ratgeber/trockenbau-altbauwohnungen-leipzig.svg',
+    img: '/images/article_trockenbau.webp',
     content: `
       <h2>Mehr Raum und Komfort durch modernen Innenausbau</h2>
       <p>Die Sanierung alter Plattenbauten in Grünau oder klassischer Gründerzeithäuser im Leipziger Zentrum stellt Planer oft vor Herausforderungen.</p>
@@ -102,7 +102,7 @@ const articlesData = {
     updated: '18. März 2026',
     updatedISO: '2026-03-18',
     author: 'Tim König',
-    img: '/images/ratgeber/feuchtigkeit-schimmel-sanieren-leipzig.svg',
+    img: '/images/article_schimmel.webp',
     content: `
       <h2>Warum drüberstreichen niemals hilft</h2>
       <p>Schwarze Ränder an den Ecken oder muffiger Geruch im Schlafzimmer: Schimmel ist ein echter Endgegner in vielen Leipziger Wohnungen.</p>
@@ -135,7 +135,7 @@ const articlesData = {
     updated: '10. März 2026',
     updatedISO: '2026-03-10',
     author: 'Tim König',
-    img: '/images/ratgeber/sanierungskosten-leipzig-2026.svg',
+    img: '/images/article_kosten.webp',
     content: `
       <h2>Transparente Baupreise für den Großraum Leipzig</h2>
       <p>Was kostet der Handwerker heute? Bevor ein Bauunternehmen beauftragt wird, ist die Budgetfrage die wichtigste.</p>
@@ -168,7 +168,7 @@ const articlesData = {
     updated: '02. März 2026',
     updatedISO: '2026-03-02',
     author: 'Tim König',
-    img: '/images/ratgeber/denkmalgeschuetzte-haeuser-sanieren-leipzig.svg',
+    img: '/images/article_denkmal.webp',
     content: `
       <h2>Was erlaubt ist und was extrem teuer werden kann</h2>
       <p>Leipzig besitzt eines der größten geschlossenen Gründerzeitensembles Europas.</p>
@@ -197,7 +197,7 @@ const articlesData = {
     updated: '25. Februar 2026',
     updatedISO: '2026-02-25',
     author: 'Tim König',
-    img: '/images/ratgeber/innenwaende-modernisieren-trockenbau-massivbau.svg',
+    img: '/images/article_innenwand.webp',
     content: `
       <h2>Trockenbau vs. Massivbau: Der direkte Vergleich</h2>
       <p>Sie möchten aus einem großen Zimmer zwei Kinderzimmer machen oder Räume neu aufteilen?</p>
@@ -226,7 +226,7 @@ const articlesData = {
     updated: '18. Februar 2026',
     updatedISO: '2026-02-18',
     author: 'Tim König',
-    img: '/images/ratgeber/betonreparatur-spachteln-statiker-leipzig.svg',
+    img: '/images/article_beton.webp',
     content: `
       <h2>Wann kleine Abplatzer zur Gefahr werden</h2>
       <p>Offenfliegender, verrosteter Stahl an alten Kellertreppen, bröckelnde Balkonkanten oder Risse im Gerüstboden.</p>
@@ -260,7 +260,7 @@ const articlesData = {
     updated: '10. Februar 2026',
     updatedISO: '2026-02-10',
     author: 'Tim König',
-    img: '/images/ratgeber/energieeffiziente-fassadendaemmung-leipzig.svg',
+    img: '/images/article_daemmung.webp',
     content: `
       <h2>GEG-Vorgaben und smarte Kombinationen</h2>
       <p>Wer seine Fassade in Leipzig neu verputzen muss, kommt am Gebäudeenergiegesetz (GEG) heute kaum noch vorbei.</p>
@@ -289,7 +289,7 @@ const articlesData = {
     updated: '02. Februar 2026',
     updatedISO: '2026-02-02',
     author: 'Tim König',
-    img: '/images/ratgeber/die-8-teuersten-fehler-sanierung-leipzig.svg',
+    img: '/images/article_fehler.webp',
     content: `
       <h2>Planungsdesaster von Anfang an vermeiden</h2>
       <p>Sanieren ist eine Investition – doppelt zu sanieren hingegen ist ein finanzielles Desaster.</p>
@@ -320,7 +320,7 @@ const articlesData = {
     updated: '06. Mai 2026',
     updatedISO: '2026-05-06',
     author: 'Tim König',
-    img: '/images/ratgeber/keller-abdichten-feuchtigkeit-leipzig.svg',
+    img: '/images/arbeiten/sockel-abdichtung-aufgraben.webp',
     content: `
       <h2>Erst die Ursache klären, dann abdichten</h2>
       <p>Feuchte Keller sind in Leipzig kein seltenes Bild: ältere Ziegelkeller, fehlende Horizontalsperren, dichter gewordene Fenster und punktuelle Schäden an der Außenabdichtung treffen oft aufeinander.</p>
@@ -353,7 +353,7 @@ const articlesData = {
     updated: '06. Mai 2026',
     updatedISO: '2026-05-06',
     author: 'Tim König',
-    img: '/images/ratgeber/wanddurchbruch-tragende-wand-leipzig.svg',
+    img: '/images/maurer.webp',
     content: `
       <h2>Der Durchbruch beginnt nicht mit dem Vorschlaghammer</h2>
       <p>Ein Wanddurchbruch kann Räume heller, großzügiger und moderner machen. Sobald die Wand tragend sein könnte, entscheidet aber die Statik über den Ablauf: Lasten müssen sicher abgefangen und über einen passenden Stahlträger oder Betonsturz weitergeleitet werden.</p>
@@ -382,7 +382,7 @@ const articlesData = {
     readTime: '3 Min.',
     date: '01. Januar 2026',
     author: 'Tim König',
-    img: '/images/ratgeber/die-8-teuersten-fehler-sanierung-leipzig.svg',
+    img: '/images/article_fehler.webp',
     content: `
       <h2>Wissenswertes rund ums Bauen in Leipzig</h2>
       <p>Bitte wählen Sie einen spezifischen Beitrag aus unserer Experten-Übersicht aus, um geballtes Fachwissen zu Bau und Sanierung abzurufen.</p>

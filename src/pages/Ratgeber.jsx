@@ -11,7 +11,7 @@ const articles = [
     title: 'Fassaden sanieren in Leipzig: Kosten & Förderungen 2026',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/ratgeber/fassadensanierung-leipzig-kosten-foerderung.svg',
+    img: '/images/article_fassade.webp',
     excerpt: 'Wann eine Komplettsanierung sinnvoll ist, welche Förderungen es gibt und woran man erkennt, dass Putz und Fassade Probleme machen.'
   },
   {
@@ -19,7 +19,7 @@ const articles = [
     title: 'Risse in Fassade & Mauerwerk richtig sanieren',
     category: 'Materialkunde',
     readTime: '5 Min.',
-    img: '/images/ratgeber/risse-fassade-mauerwerk-leipzig.svg',
+    img: '/images/article_risse.webp',
     excerpt: 'Setzungen oder Feuchtigkeit? Ursachen für Risse in Leipziger Altbauten erkennen und wann zur Sicherheit der Profi ran muss.'
   },
   {
@@ -27,7 +27,7 @@ const articles = [
     title: 'Trockenbau in Altbauwohnungen Leipzig',
     category: 'Innenausbau',
     readTime: '6 Min.',
-    img: '/images/ratgeber/trockenbau-altbauwohnungen-leipzig.svg',
+    img: '/images/article_trockenbau.webp',
     excerpt: 'Schallschutz, Brandschutz und schneller Raumgewinn: Was man bei Leipziger Plattenbauten oder Gründerzeit-Häusern beachten muss.'
   },
   {
@@ -35,7 +35,7 @@ const articles = [
     title: 'Feuchtigkeit & Schimmel dauerhaft beheben',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/ratgeber/feuchtigkeit-schimmel-sanieren-leipzig.svg',
+    img: '/images/article_schimmel.webp',
     excerpt: 'Die 7 häufigsten Ursachen, warum einfach Putz drüberstreichen rein gar nichts bringt und welche echten Sanierungsmaßnahmen wirklich helfen.'
   },
   {
@@ -43,7 +43,7 @@ const articles = [
     title: 'Sanierungskosten Leipzig 2026: Ein Praxischeck',
     category: 'Kosten',
     readTime: '7 Min.',
-    img: '/images/ratgeber/sanierungskosten-leipzig-2026.svg',
+    img: '/images/article_kosten.webp',
     excerpt: 'Realistische Preisspannen pro m² für kleinere bis mittlere Aufträge wie Fassadenputz, Trockenbau oder nachhaltige Rissverpressung.'
   },
   {
@@ -51,7 +51,7 @@ const articles = [
     title: 'Denkmalgeschützte Häuser sanieren',
     category: 'Baugenehmigung',
     readTime: '7 Min.',
-    img: '/images/ratgeber/denkmalgeschuetzte-haeuser-sanieren-leipzig.svg',
+    img: '/images/article_denkmal.webp',
     excerpt: 'Denkmalsanierung in Leipzig: Was bei Fassade, Putz und Innenwänden genehmigt wird und wie der Umbau ohne teure Überraschungen gelingt.'
   },
   {
@@ -59,7 +59,7 @@ const articles = [
     title: 'Innenwände modernisieren ohne Baustaub-Chaos',
     category: 'Innenausbau',
     readTime: '5 Min.',
-    img: '/images/ratgeber/innenwaende-modernisieren-trockenbau-massivbau.svg',
+    img: '/images/article_innenwand.webp',
     excerpt: 'Zeitaufwand, Kosten und der direkte Vergleich: Wann schlanker Trockenbau in der Wohnung die weitaus bessere Alternative zum Massivbau ist.'
   },
   {
@@ -67,7 +67,7 @@ const articles = [
     title: 'Betonreparatur Leipzig: Spachteln oder Statiker?',
     category: 'Materialkunde',
     readTime: '5 Min.',
-    img: '/images/ratgeber/betonreparatur-spachteln-statiker-leipzig.svg',
+    img: '/images/article_beton.webp',
     excerpt: 'Risse im Beton an alten Treppen, Balkonen und Garagen beurteilen und typische Leipziger Schadstellen nachhaltig abdichten.'
   },
   {
@@ -75,7 +75,7 @@ const articles = [
     title: 'Energieeffiziente Fassadendämmung: Was bringt sie?',
     category: 'Sanierung',
     readTime: '6 Min.',
-    img: '/images/ratgeber/energieeffiziente-fassadendaemmung-leipzig.svg',
+    img: '/images/article_daemmung.webp',
     excerpt: 'Fassade dämmen in Leipzig: GEG-Vorgaben, was bei Altbauten überhaupt möglich ist und wie man Putz mit intelligenter Dämmung kombiniert.'
   },
   {
@@ -83,7 +83,7 @@ const articles = [
     title: 'Die 8 teuersten Fehler bei der Sanierung',
     category: 'Tipps',
     readTime: '8 Min.',
-    img: '/images/ratgeber/die-8-teuersten-fehler-sanierung-leipzig.svg',
+    img: '/images/article_fehler.webp',
     excerpt: 'Falscher Putz, fehlende Abnahmen, Förderungen verpasst. Wir zeigen, wie Sie diese Planungsdesaster beim Hausumbau von Anfang an vermeiden.'
   },
   {
@@ -91,7 +91,7 @@ const articles = [
     title: 'Keller abdichten in Leipzig: Innen oder außen?',
     category: 'Sanierung',
     readTime: '7 Min.',
-    img: '/images/ratgeber/keller-abdichten-feuchtigkeit-leipzig.svg',
+    img: '/images/arbeiten/sockel-abdichtung-aufgraben.webp',
     excerpt: 'Feuchte Kellerwände, Salzausblühungen und muffige Räume richtig einordnen: Wann Innenabdichtung reicht und wann von außen freigelegt werden muss.'
   },
   {
@@ -99,7 +99,7 @@ const articles = [
     title: 'Wanddurchbruch: Kosten, Statik & Ablauf',
     category: 'Maurer',
     readTime: '7 Min.',
-    img: '/images/ratgeber/wanddurchbruch-tragende-wand-leipzig.svg',
+    img: '/images/maurer.webp',
     excerpt: 'Eine tragende Wand öffnen ohne Risiko: Statiker, Stahlträger, Staubschutz und realistische Kosten für Durchbrüche in Leipziger Wohnungen und Häusern.'
   }
 ]
